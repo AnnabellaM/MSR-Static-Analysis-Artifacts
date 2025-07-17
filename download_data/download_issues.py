@@ -3,7 +3,6 @@ from github import Auth
 from dotenv import dotenv_values
 import os
 import json
-import argparse
 from tqdm import tqdm
 import pandas as pd
 import requests

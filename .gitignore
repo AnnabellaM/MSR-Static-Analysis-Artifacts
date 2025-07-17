@@ -3,8 +3,11 @@ __pycache__
 .env
 .DS_Store
 
-no_save*
+# Catiss
+catiss
 pytorch_model.bin
+model
+output
 
 github-labels-top3-803k-test.csv
 github-labels-top3-803k-train.csv
@@ -13,3 +16,5 @@ github-labels-top3-803k-train.csv
 raw_data/
 data/
 csv/
+
+MSR.zip

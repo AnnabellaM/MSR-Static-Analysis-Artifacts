@@ -22,13 +22,10 @@
         - [`interest_groups.ipynb`](#interest_groupsipynb)
 - [Topic Modeling/](#topic-modeling)
 - [Figures/](#figures)
-    - [`common_properties_figures.ipynb`](#common_properties_figuresipynb)
-    - [`interest_groups_figures.ipynb`](#interest_groups_figuresipynb)
-    - [`interest_groups_per_group_figures.ipynb`](#interest_groups_per_group_figuresipynb)
 - [Utils/](#utils)
     - [`constants.py`](#constantspy)
     - [`dataloader.py`](#dataloaderpy)
-    - [`diamantopoulos_preprocessor.py`](#diamantopoulos_preprocessorpy)
+    - [`diamantopoulos_preprocessor.py`](#diamantopoulospreprocessorpy)
 
 ## Purpose
 This artifact repository contains the code, data, and results for the paper *"Mining Repositories to Understand User and Developer Challenges with Static Analysis Tools"*.

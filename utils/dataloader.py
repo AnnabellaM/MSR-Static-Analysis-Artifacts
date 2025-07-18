@@ -28,6 +28,8 @@ def get_issues(filter=None):
         issues = pd.read_csv(f'{data_folder_path}/issues_metadata.csv')
         issues['timeline'] = issues['timeline'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else x)
         issues['labels'] = issues['labels'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else x)
+        issues['comments'] = issues['comments'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else x)
+
     elif filter == 'properties':
         issues = pd.read_csv(f'{data_folder_path}/issues_properties.csv')
     else:

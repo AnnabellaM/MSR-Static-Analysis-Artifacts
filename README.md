@@ -112,7 +112,10 @@ The Catiss model is used to classify all the issues into bug, question, and enha
 4. Verify the results by running [predictions_analysis.ipynb](./analysis/catiss_classification/predictions_analysis.ipynb). This notebook calculates the accuracy of the Catiss model against the issues with labels.
 
 ### Format Tool Names
-The formatted tool names are generated from [set_tool_name.py](./analysis/general/set_tool_name.py). The script reads the `issues_properties.csv` file and generates the tool names for each issue from the constants in `utils/constants.py`. The tool names are saved in the `issues_properties.csv` file in the `data` folder in the column `tool_name`.
+The formatted tool names are generated from [set_tool_name.py](./analysis/general/set_tool_name.py). The script reads the `issues_properties.csv` file and generates the tool names for each issue from the constants in `utils/constants.py`. The tool names are saved in the `issues_properties.csv` file in the `data` folder in the column `tool_name`. Run the following command to format the tool names:
+```bash
+python analysis/general/set_tool_name.py
+```
 
 ### Common Properties Figures
 The common properties figures are generated from [common_properties_figures.ipynb](./analysis/common_properties/common_properties_figures.ipynb). This notebook generates the figures for the common properties of the issues and saves them in the `results/figures/common_properties` folder.

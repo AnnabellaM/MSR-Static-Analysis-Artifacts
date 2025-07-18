@@ -1,6 +1,3 @@
-import sys
-sys.path.append('../../')
-
 from utils.constants import TOOL_NAME_MAPPING
 from utils.dataloader import get_issues
 

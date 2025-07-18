@@ -1,20 +1,102 @@
-# MSR-Static-Analysis-Artifacts
-This repository contains the code for the paper "Mining Repositories to Understand User and Developer Challenges with Static Analysis Tools".
+# The Artifacts for "Mining Repositories to Understand User and Developer Challenges with Static Analysis Tools"
 
-## Code Structure
-- 'analysis': Contains the scripts and notebooks for all analyses performed in the paper.
-- 'download_data': Contains scripts to download the data used in the analyses.
-- 'results': Contains the results of the analyses, including figures and tables (csv)
-- 'utils': Contains utility functions used across the different analyses (ex. constants, data loading functions, preprocessing functions).
+## Table of Contents
+- [Purpose](##purpose)
+- [Repository Structure](##repository-structure)
+- [Setup](##setup)
+    - [Requirements](###requirements)
+    - [Download Data](###download-data)
+        - [issues_metadata.csv](####issues_metadata.csv)
+        - [pull_requests_metadata.csv](####pull_requests_metadata.csv)
+        - [commits_metadata.csv](####commits_metadata.csv)
+        - [issues_properties.csv](####issues_properties.csv)
+        - [repositories.csv](####repositories.csv)
 
-## Data
-The get the data used in this project, download the data from the following link:
-[MSR-Static-Analysis Data](https://drive.google.com/file/d/12cIILySkvsyZYdkrPSwRWKQaI0dDLTKq/view?usp=sharing)
-Save the data in the root directory of this repository and unzip it. The data should be in a folder named `data`.
+## Purpose
+This artifact repository contains the code, data, and results for the paper *"Mining Repositories to Understand User and Developer Challenges with Static Analysis Tools"*.
 
-## Requirements
-The python requirements for the project can be found in the `requirements.txt` file. You can install them using pip:
+## Repository Structure
+- `analysis`: Contains the scripts and notebooks for all analyses performed in the paper.
+- `download_data`: Contains scripts to download the data used in the analyses.
+- `results`: Contains the results of the analyses, including figures and tables (csv)
+- `utils`: Contains utility functions used across the different analyses (ex. constants, data loading functions, preprocessing functions).
 
+
+
+## Setup
+### Requirements
+The python version used in this project is `3.9.6`. First create a virtual enviornment using the commands:
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows use .venv\Scripts\activate
+```
+Then install the required packages. The requirements are listed in the `requirements.txt` file.
+The packages used in this project can be install using the following command:
 ```bash
 pip install -r requirements.txt
 ```
+
+### Download Data (From Google Drive) (Recommended)
+To get the data used in this project, download the data from the following link:
+[MSR-Static-Analysis Data](https://drive.google.com/file/d/12cIILySkvsyZYdkrPSwRWKQaI0dDLTKq/view?usp=sharing)
+Save the data in the root directory of this repository and unzip it. The data should be in a folder named `data`.
+
+#### `issues_metadata.csv`
+This file contains the raw metadata of the issues collected from GitHub or BitBucket. It includes information such as issue ID, title, body, labels, etc..
+
+#### `pull_requests_metadata.csv`
+This file contains the raw metadata of the pull requests collected from GitHub or BitBucket. It includes information such as pull request ID, linked commits, etc.
+
+#### `commits_metadata.csv`
+This file contains the raw metadata of the commits collected from GitHub or BitBucket. It includes information such as commit ID, number of files changed, etc.
+
+#### `issues_properties.csv`
+This file contains the properties of the issues which are generated from this [notebook](./analysis/common_properties/generate_common_properties.ipynb). All the columns with the prefix `prop:` are considered properties. The columns with the prefix `ig:` are interest group information, having a boolean value indicating whether the corresponding issue is part of the interest group or not.
+
+#### `repositories.csv`
+This file contains the repositories used in the paper. It includes the repository name and host (GitHub or BitBucket).
+
+### Download Data (From GitHub/BitBucket)
+If you want to download the data directly from GitHub or BitBucket, you can use the scripts in the `download_data` folder.
+Run the following command to download the issues and pull requests metadata from GitHub or BitBucket:
+```bash
+python download_data/download_issues.py
+```
+Run the following command to download the commits metadata from GitHub or BitBucket:
+```bash
+python download_data/download_commits.py
+```
+Then run the following command to generate the csv data files:
+```bash
+python download_data/generate_csv.py
+```
+
+### RQ1. Common Properties and Patterns
+#### Common Properties
+The common properties of the issues are generated from [generate_common_properties.ipynb](./analysis/common_properties/generate_common_properties.ipynb). This notebook generates the common properties of the issues and saves them in the `issues_properties.csv` file in the `data` folder. The properties are identified by the prefix `prop:` in the column names.
+#### Category
+To generate the category of the issues, run the [catiss_classification.ipynb](./analysis/catiss_classification/catiss_classification.ipynb) notebook. This notebook uses the CatISS model to classify the issues into three categories: bug, question, and enhancement. The category is saved in the `issues_properties.csv` file in the `data` folder.
+
+### Common Properties Figures
+The common properties figures are generated from [common_properties_figures.ipynb](./analysis/common_properties/common_properties_figures.ipynb). This notebook generates the figures for the common properties of the issues and saves them in the `results/figures/common_properties` folder.
+
+#### Interest Groups
+The next step of RQ1 is generating the interest groups. The interest groups are generated from [interest_groups.ipynb](./analysis/interest_groups/interest_groups.ipynb). This notebook generates the interest groups and saves them in the `issues_properties.csv` file in the `data` folder. The interest groups are identified by the prefix `ig:` in the column names.
+
+#### Interest Groups Figures
+The interest groups figures are generated from [interest_groups_figures.ipynb](./analysis/interest_groups/interest_groups_figures.ipynb). This notebook generates the figures for the interest groups and saves them in the `results/figures/interest_groups` folder.
+
+### RQ2. Common Challenges
+#### Topic Modeling with BERTopic
+The common challenges are identified through topic modeling with BERTopic. The clustering can found in the [clustering](./analysis/topic_modeling/clustering) folder. Each file in this folder clusters one of the issue categories (bug, question, enhancement). Run each of the notebooks in this folder to generate the clusters. The clusters are saved in the results folder.
+
+***The work after this point in RQ2 is largely done manually, such as the labeling of the clusters. Thus, after this point, use the data folder provided from the Google Drive mentioned previously***
+
+#### Topic Modeling Figures
+The topic modeling figures are generated from [topic_modeling_figures.ipynb](./analysis/topic_modeling/topic_modeling_figures.ipynb). This notebook generates the figures for the topic modeling and saves them in the `results/figures/topic_modeling` folder.
+
+#### Cross Comparison of Interest Groups and Topic Groups
+The cross-comparison of interest groups and topic groups is performed to identify common patterns and relationships between the two. This analysis helps in understanding how different interest groups are associated with specific topics and vice versa. The cross-comparison is done in [interest_groups_per_group.ipynb](./analysis/cross_comparison/interest_groups_per_group.ipynb). This notebook generates the cross-comparison and saves the results in the `results/cross_comparison` folder.
+
+### RQ3. Static Analysis Tools
+The work in this section is performed manually.

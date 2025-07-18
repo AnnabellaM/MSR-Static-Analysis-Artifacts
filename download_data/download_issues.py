@@ -7,19 +7,18 @@ from tqdm import tqdm
 import pandas as pd
 import requests
 import json
+import sys
+sys.path.append('../')
+
+from utils.dataloader import get_repos
 
 config = dotenv_values("../.env")
 auth = Auth.Token(config['GITHUB_TOKEN'])
 gh = Github(auth=auth)
 
-# repos = pd.read_csv('./repositories.csv')
-repos = [
-    {'Repository': 'phpstan/phpstan-src', 'Host': 'Github'},
-]
+repos = get_repos()
 
-repos = pd.DataFrame(repos)
-
-output_dir = '../data'
+output_dir = '../raw_data'
 
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)

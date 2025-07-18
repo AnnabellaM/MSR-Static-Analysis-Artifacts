@@ -8,12 +8,25 @@ def get_repos():
     repos = pd.read_csv(f'{data_folder_path}/repositories.csv')
     return repos
 
-def get_issues():
-    issues_metadata = pd.read_csv(f'{data_folder_path}/issues_metadata.csv')
-    issues_properties = pd.read_csv(f'{data_folder_path}/issues_properties.csv')
-    issues_properties.drop(columns=['html_url', 'repo', 'host', 'repo', 'url'], inplace=True)
+def get_issues(filter=None):
+    if filter == None:
+        issues_metadata = pd.read_csv(f'{data_folder_path}/issues_metadata.csv')
+        
+        # check if exists
+        if (data_folder_path / 'issues_properties.csv').exists():
+            issues_properties = pd.read_csv(f'{data_folder_path}/issues_properties.csv')
+            issues_properties.drop(columns=['html_url', 'repo', 'host', 'repo', 'url'], inplace=True)
 
-    issues = issues_metadata.merge(issues_properties, on='id', how='left')
+            issues = issues_metadata.merge(issues_properties, on='id', how='left')
+        else:
+            issues = issues_metadata
+    elif filter == 'metadata':
+        issues = pd.read_csv(f'{data_folder_path}/issues_metadata.csv')
+    elif filter == 'properties':
+        issues = pd.read_csv(f'{data_folder_path}/issues_properties.csv')
+    else:
+        raise ValueError("Invalid filter. Use None or 'properties'.")
+
     return issues
 
 def get_pull_requests():

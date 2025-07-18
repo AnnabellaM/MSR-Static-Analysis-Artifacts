@@ -9,10 +9,10 @@
     - [Download Data (From GitHub/BitBucket)](#download-data-from-githubbitbucket)
 - [RQ1. Common Properties and Patterns](#rq1-common-properties-and-patterns)
     - [Generate Common Properties (already included with Google Drive download)](#generate-common-properties-already-included-with-google-drive-download)
-    - [Category (already included with Google Drive download)](#category-already-included-with-google-drive-download)
+    - [Generate Category With Catiss (already included with Google Drive download)](#generate-category-with-catiss-already-included-with-google-drive-download)
     - [Common Properties Figures](#common-properties-figures)
-    - [Interest Groups (already included with Google Drive download)](#interest-groups-already-included-with-google-drive-download)
-    - [Interest Groups Figures](#interest-groups-figures)
+    - [Interest Groups (already included with Google Drive download)](#generate-interest-groups-already-included-with-google-drive-download)
+    - [Generate Interest Groups Figures](#interest-groups-figures)
 - [RQ2. Common Challenges](#rq2-common-challenges)
     - [Topic Modeling with BERTopic (already included with Google Drive download)](#topic-modeling-with-bertopic-already-included-with-google-drive-download)
     - [Topic Modeling Figures](#topic-modeling-figures)
@@ -84,13 +84,20 @@ python download_data/generate_csv.py
 ## RQ1. Common Properties and Patterns
 ### Generate Common Properties (already included with Google Drive download)
 The common properties of the issues are generated from [generate_common_properties.ipynb](./analysis/common_properties/generate_common_properties.ipynb). This notebook generates the common properties of the issues and saves them in the `issues_properties.csv` file in the `data` folder. The properties are identified by the prefix `prop:` in the column names.
-### Category (already included with Google Drive download)
-To generate the category of the issues, run the [catiss_classification.ipynb](./analysis/catiss_classification/catiss_classification.ipynb) notebook. This notebook uses the CatISS model to classify the issues into three categories: bug, question, and enhancement. The category is saved in the `issues_properties.csv` file in the `data` folder.
+### Generate Category With Catiss (already included with Google Drive download)
+The Catiss model is used to classify all the issues into bug, question, and enhancement. To download the Catiss model, perform the following steps:
+1. Clone the Catiss Repository in the current directory:
+    ```bash
+    git clone https://github.com/MalihehIzadi/catiss.git catiss
+    ```
+2. Download the catiss model (pytorch_model.bin) from https://drive.google.com/drive/folders/1jgV4U41-2acctpc6jH5DWL3fF5V6bKF8 and place in the `catiss/model/` directory.
+3. Run the [catiss_classification.ipynb](./analysis/catiss_classification/catiss_classification.ipynb) notebook to classify the issues into bug, question, and enhancement. The results are saved in the `issues_properties.csv` file in the `data` folder. The category is identified by `prop:category` in the column names.
+4. Verify the results by running [predictions_analysis.ipynb](./analysis/catiss_classification/predictions_analysis.ipynb). This notebook calculates the accuracy of the Catiss model against the issues with labels.
 
-## Common Properties Figures
+### Common Properties Figures
 The common properties figures are generated from [common_properties_figures.ipynb](./analysis/common_properties/common_properties_figures.ipynb). This notebook generates the figures for the common properties of the issues and saves them in the `results/figures/common_properties` folder.
 
-### Interest Groups (already included with Google Drive download)
+### Generate Interest Groups (already included with Google Drive download)
 The next step of RQ1 is generating the interest groups. The interest groups are generated from [interest_groups.ipynb](./analysis/interest_groups/interest_groups.ipynb). This notebook generates the interest groups and saves them in the `issues_properties.csv` file in the `data` folder. The interest groups are identified by the prefix `ig:` in the column names.
 
 ### Interest Groups Figures

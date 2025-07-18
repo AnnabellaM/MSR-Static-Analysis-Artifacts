@@ -1,0 +1,106 @@
+ID,Count,Percentage,Refined Topic,Representation,KeyBERTInspired,PartOfSpeech,MaximalMarginalRelevance,Top Documents
+1,314,0.112585156,Class Loading,"['support', 'array', 'support question', 'question', 'extension', 'error', 'like', 'trait', 'param', 'value']","['array', 'generic', 'extension', 'implement', 'iterator', 'extend', 'mock', 'iterable', 'foreach', 'require']","['array', 'support', 'extension', 'question', 'error', 'trait', 'param', 'value', 'foo', 'work']","['array', 'extension', 'error', 'trait', 'phpdoc', 'template', 'extend', 'composer', 'expect', 'closure']","https://github.com/phpstan/phpstan/issues/2326
+https://github.com/phpstan/phpstan/issues/35
+https://github.com/phpstan/phpstan/issues/3032
+https://github.com/phpstan/phpstan/issues/521
+https://github.com/phpstan/phpstan/issues/3079"
+2,291,0.1043384726,Call Graph,"['graph', 'edge', 'callgraph', 'info', 'create', 'warn', 'find', 'constructor', 'substitute subclass', 'create valid']","['build graph', 'generate graph', 'create graph', 'edge staticinvoke', 'edge specialinvoke', 'callgraph', 'edge virtualinvoke', 'edge clinit', 'clinit edge', 'graph']","['graph', 'edge', 'callgraph', 'clinit edge', 'clinit', 'node', 'spark', 'generate', 'code', 'file']","['edge', 'callgraph', 'clinit edge', 'node', 'spark', 'edge staticinvoke', 'node context', 'edge clinit', 'context node', 'generate graph']","https://github.com/soot-oss/soot/issues/1133
+https://github.com/scottrogowski/code2flow/issues/45
+https://github.com/soot-oss/soot/issues/566
+https://github.com/soot-oss/soot/issues/1830
+https://github.com/soot-oss/soot/issues/1383"
+3,230,0.08246683399,IR,"['i8', 'line', 'loop', 'file', 'code', 'main', 'align', 'pointer', 'offsets', 'program']","['line bytecode_index', 'bytecode_index', 'buffer1', 'program', 'file dead2', 'buffer1 buffer1', 'code', 'instruction', 'file line', 'pointer']","['i8', 'loop', 'line', 'align', 'offsets', 'file', 'notsanitized', 'unsigned', 'pointer', 'i32']","['offsets', 'file', 'unsigned', 'pointer', 'i32', 'offset', 'file line', 'offsets notsanitized', 'i32 align', 'file dead2']","https://github.com/wala/WALA/issues/1099
+https://github.com/secure-software-engineering/phasar/issues/12
+https://github.com/diffblue/cbmc/issues/684
+https://github.com/diffblue/cbmc/issues/6572
+https://github.com/secure-software-engineering/phasar/issues/298"
+4,216,0.07744711366,Taint Analysis,"['sink', 'source', 'taint', 'flow', 'analysis', 'source sink', 'result', 'leak', 'sink sink', 'detect']","['taint analysis', 'taint propagation', 'taint path', 'taint wrapper', 'source sink', 'data flow', 'sink source', 'detect leak', 'taint', 'find leak']","['sink', 'source', 'taint', 'flow', 'leak', 'analysis', 'path', 'datum', 'result', 'thank']","['taint', 'source sink', 'flow', 'sink sink', 'taint analysis', 'datum flow', 'detect', 'virtualinvoke', 'data flow', 'taint path']","https://github.com/facebook/infer/issues/1356
+https://github.com/facebook/infer/issues/965
+https://github.com/facebook/infer/issues/1889
+https://github.com/secure-software-engineering/FlowDroid/issues/766
+https://github.com/facebook/infer/issues/1314"
+5,204,0.07314449624,Unable to summarize a topic,"['warn warn', 'warn', 'info', 'detector', 'exception analyze', 'analyze detector', 'detector exception', 'project', 'analyze', 'error error']","['backend work', 'development', 'software engineering', 'codebase', 'programming', 'refactoring', 'documentation', 'develop', 'framework', 'backend']","['language', 'code', 'work', 'project', 'time', 'support', 'development', 'user', 'contribute', 'refactoring']","['language', 'code', 'project', 'development', 'refactoring', 'designer', 'backend', 'flacocobot', 'feedback', 'backend work']","https://github.com/pmd/pmd/issues/2238
+https://github.com/soot-oss/soot/issues/1195
+https://github.com/phpstan/phpstan/issues/1915
+https://github.com/spotbugs/spotbugs/issues/2111
+https://github.com/soot-oss/soot/issues/1789"
+6,188,0.067407673,Unable to summarize a topic,"['file', 'analyze', 'analysis', 'code', 'source', 'relation', 'find', 'error', 'fact', 'line']","['analyze file', 'file analyze', 'file analysis', 'analyze project', 'file correspond', 'analyze', 'analysis instruction', 'analyse', 'analyze starting', 'want analyze']","['file', 'analyze', 'analysis', 'library', 'project', 'microtestcase', 'application', 'source', 'folder', 'single']","['class file', 'analyze file', '_lyj jar', 'project file', 'file analysis', 'file depend', 'source file', 'contain file', 'file analyze', 'jar file']","https://github.com/pmd/pmd/issues/3997
+https://github.com/facebook/infer/issues/822
+https://github.com/secure-software-engineering/FlowDroid/issues/211
+https://github.com/soot-oss/soot/issues/715
+https://github.com/facebook/infer/issues/820"
+7,163,0.0584438867,Build System,"['maven', 'error', 'build', 'version', 'error error', 'project', 'debug env', 'env', 'debug', 'info']","['maven build', 'maven project', 'install maven', 'repository maven', 'maven repository', 'maven', 'release maven', 'maven central', 'maven repo', 'restore maven']","['maven', 'repository', 'project', 'version', 'build', 'release', 'central', 'snapshot', 'error', 'repo']","['maven', 'repository', 'maven repository', 'repo', 'maven central', 'dst power', 'restore maven', 'rename src', 'maven original', 'error run']","https://github.com/pmd/pmd/issues/1560
+https://github.com/spotbugs/spotbugs/issues/111
+https://github.com/pmd/pmd/issues/685
+https://github.com/wala/WALA/issues/1205
+https://github.com/wala/WALA/issues/1260"
+8,162,0.05808533525,(Android) Instrumentation,"['android', 'apk', 'app', 'file', 'thread', 'application', 'jar', 'instrument', 'code', 'find']","['android jar', 'android application', 'androidruntime source', 'androidruntime', 'instrument android', 'android app', 'androidruntime androidruntime', 'androidinstrument', 'android', 'dex file']","['android', 'app', 'instrument', 'jar', 'file', 'thread', 'application', 'code', 'process', 'androidruntime']","['android', 'apk', 'application', 'process', 'android jar', 'androidruntime', 'trap handler', 'instruction trap', 'debug instruction', 'android application']","https://github.com/soot-oss/soot/issues/1168
+https://github.com/soot-oss/soot/issues/281
+https://github.com/wala/WALA/issues/354
+https://github.com/soot-oss/soot/issues/582
+https://github.com/facebook/infer/issues/892"
+9,159,0.05700968089,IR,"['jimple', 'code', 'local', 'virtualinvoke', 'exception', 'line number', 'number', 'args', 'line', 'body']","['jimple code', 'jimple file', 'convert jimple', 'jimple line', 'jimple representation', 'jimple', 'jimple body', 'line code', 'jimplebody', 'code line']","['jimple', 'local', 'virtualinvoke', 'code', 'number', 'line', 'unit', 'scanner', 'stmt', 'body']","['jimple', 'virtualinvoke', 'code', 'line number', 'scanner', 'bytecode', 'jimple file', 'source code', 'jimple code', 'convert jimple']","https://github.com/soot-oss/soot/issues/1186
+https://github.com/soot-oss/soot/issues/803
+https://github.com/soot-oss/soot/issues/1714
+https://github.com/soot-oss/soot/issues/1237
+https://github.com/soot-oss/soot/issues/740"
+10,139,0.04983865185,Class Loading,"['jsourcecrawler', 'jsourcecrawler jsourcecrawler', '08 18', '08', '18 34', '18', '34 08', '34', 'javac', 'error']","['command javac', 'command jar', 'javac cp', 'error javac', 'compilation command', 'process dir', 'javac', 'file command', 'classpath', 'command line']","['command', 'file', 'path', 'javac', 'jar', 'classpath', 'directory', 'dir', 'exception', 'folder']","['javac', 'jar', 'classpath', 'directory', 'process dir', 'command line', 'path properly', 'exception thread', 'find path', 'file line']","https://github.com/soot-oss/soot/issues/1169
+https://github.com/soot-oss/soot/issues/649
+https://github.com/soot-oss/soot/issues/1213
+https://github.com/soot-oss/soot/issues/622
+https://github.com/soot-oss/soot/issues/1289"
+11,112,0.04015776264,Rule Definitions,"['rule', 'custom', 'custom rule', 'apex', 'code', 'ruleset', 'description', 'like', 'extend', 'designer']","['custom rule', 'rule description', 'write rule', 'rule rule', 'rule set', 'code rule', 'rule check', 'ruleset', 'rule', 'version rule']","['rule', 'custom', 'ruleset', 'code', 'description', 'designer', 'extend', 'cli', 'run', 'gradle']","['rule', 'custom rule', 'ruleset', 'code sample', 'gradle', 'gradle designer', 'rule description', 'cli maven', 'affects version', 'xml']","https://github.com/facebook/infer/issues/1554
+https://github.com/phpstan/phpstan/issues/2706
+https://github.com/secure-software-engineering/FlowDroid/issues/98
+https://github.com/pmd/pmd/issues/2144
+https://github.com/phpstan/phpstan/issues/782"
+12,102,0.03657224812,Compilation,"['backend', 'annot', 'module', 'error', 'harness', 'bin', 'opensource', 'annot warn', 'annot bin', 'error safe']","['clang error', 'make error', 'error make', 'compile', 'build', 'compiler', 'makefile', 'clang', 'clang note', 'cmake']","['backend', 'harness', 'opensource', 'bin', 'checker', 'clang', 'error', 'module', 'check', 'std']","['annot warn', 'annot bin', 'warn error', 'opensource harness', 'harness eradicate', 'checker backend', 'backend opensource', 'safe backend', 'backend annot', 'module backend']","https://github.com/facebook/infer/issues/1427
+https://github.com/facebook/infer/issues/236
+https://github.com/secure-software-engineering/phasar/issues/31
+https://github.com/facebook/infer/issues/1595
+https://github.com/facebook/infer/issues/1082"
+13,95,0.03406238795,Compilation,"['error', '15', 'error 15', '04', '15 04', '13', '38', '38 step', '34 38', '13 34']","['gradle build', 'gradlew build', 'gradle', 'capture gradle', 'gradlew', 'android', 'error 15', 'error warning', 'compilation', 'error 14']","['error', 'step', 'gradle', 'build', 'file', 'line', 'note', 'project', 'recompile', 'character']","['15', 'error', 'error 15', '15 04', 'step 13', 'gradle', 'build', 'error note', 'error 14', 'gradlew']","https://github.com/facebook/infer/issues/387
+https://github.com/facebook/infer/issues/864
+https://github.com/facebook/infer/issues/908
+https://github.com/facebook/infer/issues/199
+https://github.com/facebook/infer/issues/1730"
+14,88,0.03155252779,Unable to summarize a topic,"['line character', 'character', 'amd64', 'character call', 'call file', 'call', 'line', 'file line', 'file', 'unpack']","['dockerfile', 'docker', 'docker image', 'docker container', 'cmake', 'version version', 'information version', 'apt install', 'version', 'build']","['amd64', 'unpack', 'unselected', 'prepare', 'stretch', 'docker', 'unpack unpack', 'selecting', 'set', 'dev']","['amd64', 'unpack', 'prepare unpack', 'previously unselected', 'stretch amd64', 'docker', 'unpack unpack', 'amd64 prepare', 'amd64 18deb9u1', 'amd64 get']","https://github.com/facebook/infer/issues/1588
+https://github.com/phpstan/phpstan/issues/1937
+https://github.com/facebook/infer/issues/751
+https://bitbucket.org/yanniss/doop-deprecated/issues/22/runtimeexception-in-using-doop
+https://github.com/facebook/infer/issues/1602"
+15,70,0.02509860165,IDE Plugin,"['eclipse', 'plugin', 'eclipse plugin', 'project', 'build', 'error', 'install', 'plug', 'source source', 'problem']","['plugin eclipse', 'eclipse plugin', 'eclipse plug', 'project eclipse', 'eclipseplugin', 'build eclipse', 'instal eclipse', 'eclipse project', 'install eclipse', 'eclipse version']","['eclipse', 'plugin', 'eclipse plugin', 'project', 'plug', 'install', 'build', 'error', 'problem', 'source']","['eclipse', 'eclipse plugin', 'build', 'source source', 'project eclipse', 'eclipse project', 'install eclipse', 'plugin eclipse', 'gradle', 'workspace']","https://github.com/soot-oss/soot/issues/664
+https://github.com/spotbugs/spotbugs/issues/509
+https://github.com/pmd/pmd/issues/4067
+https://github.com/spotbugs/spotbugs/issues/75
+https://github.com/soot-oss/soot/issues/908"
+16,63,0.02258874148,Build System,"['wno', 'xcodebuild', 'file', 'line character', 'character', 'line', 'character call', 'call file', 'ios', 'call']","['xcodebuild', 'clang error', 'xcode', 'sdk iphonesimulator', 'xcodebuild workspace', 'debug sdk', 'configuration debug', 'compilec', 'debug', 'iphonesimulator']","['xcodebuild', 'file', 'character', 'line', 'ios', 'call', 'conversion', 'iphonesimulator', 'error', 'debug']","['xcodebuild', 'call file', 'file line', 'iphonesimulator', 'sdk iphonesimulator', 'debug sdk', 'xcodebuild workspace', 'ios ios', 'xcode', 'workspace scheme']","https://github.com/facebook/infer/issues/112
+https://github.com/facebook/infer/issues/1169
+https://github.com/facebook/infer/issues/960
+https://github.com/facebook/infer/issues/213
+https://github.com/facebook/infer/issues/403"
+17,45,0.01613481535,Build System,"['instal', 'instal current', 'current version', 'current', 'v0', 'version', 'note', 'check', 'opam', '11']","['unix ocamlbuild', 'ocaml version', 'ocamlbuild findlib', 'check ocaml', 'ocamlfind', 'ocaml', 'ocamlopt', 'error compilation', 'ocamlc', 'ocamlbuild']","['instal', 'current version', 'current', 'note', 'check', 'version', 'opam', 'install', 'conf', 'error']","['instal', 'version note', 'version v0', 'error 60527', 'ocaml', 'ocamlfind', 'configure', 'ocamlbuild', 'ocamlc', 'compiler']","https://github.com/facebook/infer/issues/267
+https://github.com/facebook/infer/issues/984
+https://github.com/facebook/infer/issues/972
+https://github.com/facebook/infer/issues/381
+https://github.com/facebook/infer/issues/904"
+18,41,0.01470060954,Memory,"['memory', 'issue', 'enable issue', 'entity_5', 'memory leak', 'shell', 'enable', 'next', 'leak', 'memory_leak']","['run memory', 'large memory', 'memory increase', 'memory usage', 'memory leak', 'report memory', 'memory limit', 'memory_limit4000', 'huge memory', 'memory_limit']","['memory', 'leak', 'builder', 'project', 'consumption', 'observer', 'testview', 'stuck', 'self', 'memory_leak']","['memory', 'memory leak', 'leak', 'error hierarchy', 'testview', 'allocate', 'memory_leak', 'large memory', 'g_imservice', 'memory usage']","https://github.com/phpstan/phpstan/issues/1148
+https://github.com/facebook/infer/issues/105
+https://github.com/facebook/infer/issues/104
+https://github.com/soot-oss/soot/issues/691
+https://github.com/facebook/infer/issues/481"
+19,39,0.01398350663,New Release,"['release', 'version', 'support', 'paddle', 'plan', 'release version', 'fedora', 'release plan', 'late version', 'late']","['version release', 'release support', 'release version', 'support release', 'release tag', 'release plan', 'release', 'possible release', 'plan release', 'release note']","['release', 'version', 'support', 'plan', 'late', 'late version', 'tag', 'library', 'thank', 'documentation']","['release plan', 'release version', 'late version', 'support version', 'support release', 'release note', 'version tag', 'release4', 'release tag', 'library versions']","https://github.com/soot-oss/soot/issues/1878
+https://github.com/soot-oss/soot/issues/1898
+https://github.com/facebook/infer/issues/879
+https://github.com/facebook/infer/issues/1027
+https://github.com/facebook/infer/issues/1838"
+20,38,0.01362495518,Code Slicing,"['slice', 'statement', 'slicing', 'backward', 'code', 'list', 'slicer', 'seed', 'backward slicing', 'backward slice']","['slice code', 'backward slicing', 'slicing statement', 'slicing', 'backward slice', 'slicing technique', 'forward slicing', 'slice tool', 'slicer tutorial', 'slice source']","['slice', 'statement', 'slicing', 'backward', 'code', 'list', 'slicer', 'backward slicing', 'seed', 'backward slice']","['slice', 'slicing', 'slicer', 'backward slicing', 'slice result', 'backward slice', 'source code', 'perform forward', 'node context', 'instructionindex']","https://github.com/wala/WALA/issues/782
+https://github.com/wala/WALA/issues/839
+https://github.com/wala/WALA/issues/367
+https://github.com/vitsalis/PyCG/issues/42
+https://github.com/wala/WALA/issues/752"
+21,30,0.01075654356,Unable to summarize a topic,"['net', 'security', 'scan', 'nuget', 'visual', 'visual studio', 'security scan', 'tool', 'net core', 'project']","['vs2019 vs2017', 'vs2017 vs2015', 'dotnet version', 'vs2017', 'dotnet core', 'vs2019', 'vs2015', 'vs2015 visual', 'framework version', 'branch vs2019']","['security', 'scan', 'nuget', 'tool', 'project', 'dotnet', 'visual', 'core', 'version', 'visual studio']","['security scan', 'dotnet', 'net core', 'visual studio', 'vs2017', 'code scan', 'security code', 'extension nuget', 'securitycodescan', 'core tool']","https://github.com/diffblue/cbmc/issues/61
+https://github.com/security-code-scan/security-code-scan/issues/219
+https://github.com/security-code-scan/security-code-scan/issues/112
+https://github.com/security-code-scan/security-code-scan/issues/78
+https://github.com/security-code-scan/security-code-scan/issues/161"

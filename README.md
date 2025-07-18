@@ -74,7 +74,7 @@ This file contains the repositories used in the paper. It includes the repositor
 #### Analysis
 The analysis performed in the paper is located in the `code/analysis/` directory. They answer RQ1 of the paper. The analysis is divided into the following subdirectories:
 
-##### subject_tools
+##### Subject Tools
 Contains the code to provide the general statistics of the subject tools. This answers Section 3 of the paper (Research Questions and Study Objects). It identifies the number of stars, issues, and LoC of the subject tools (using cloc).
 
 - [subject_tools.ipynb](./code/analysis/subject_tools/subject_tools.ipynb)
@@ -86,7 +86,7 @@ This notebook contains the code to calculate the lines of code (LoC) of the subj
 - [set_tool_name.py](./code/analysis/subject_tools/set_tool_name.py)
 This script is used to set the formatted names of the subject tools in the issue data.
 
-##### common_properties
+##### Common Properties
 - [generate_common_properties.ipynb](./code/analysis/common_properties/generate_common_properties.ipynb)
 Contains the code to generate the common properties of the issues. The properties are listed as follows:
     - *state*: whether the issue is open or closed
@@ -114,13 +114,13 @@ This notebook contains the code to classify issues into bugs, questions, and enh
     - [predictions_analysis.ipynb](./code/analysis/catiss_classification/predictions_analysis.ipynb) 
 This notebook contains the code to analyze the accuracy of the CatISS model predictions. It compares the predictions with the existing labels in the dataset and calculates the accuracy of the model.
 
-##### figures
+##### Figures
 The figures in the paper are generated using the code in the `code/analysis/figures/` directory. These figure notebooks are calculated from the results of the analysis. The figures are as follows:
 - *Figure 2*: Distribution of properties of static analysis issues across all tools. ([common_properties_figures.ipynb](./code/analysis/figures/common_properties_figures.ipynb))
 - *Figure 3*: Distribution of interest groups by tool. ([interest_groups_figures.ipynb](./code/analysis/figures/interest_groups_figures.ipynb))
 - *Figure 4*: Distribution of interest groups by topic groups. ([interest_groups_per_group_figures.ipynb](./code/analysis/figures/interest_groups_per_group_figures.ipynb))
 
-##### interest_groups
+##### Interest Groups
 Contains the code to generate the interest groups (RQ1).
 
 - [interest_groups.ipynb](./code/analysis/interest_groups/interest_groups.ipynb)

@@ -19,7 +19,7 @@ def get_issues(filter=None):
         # check if exists
         if (data_folder_path / 'issues_properties.csv').exists():
             issues_properties = pd.read_csv(f'{data_folder_path}/issues_properties.csv')
-            issues_properties.drop(columns=['html_url', 'repo', 'host', 'repo', 'url'], inplace=True)
+            issues_properties.drop(columns=['repo', 'host'], inplace=True)
 
             issues = issues_metadata.merge(issues_properties, on='id', how='left')
         else:

@@ -88,9 +88,9 @@ The interest groups figures are generated from [interest_groups_figures.ipynb](.
 
 ### RQ2. Common Challenges
 #### Topic Modeling with BERTopic
-The common challenges are identified through topic modeling with BERTopic. The clustering can found in the [clustering](./analysis/topic_modeling/clustering) folder. Each file in this folder clusters one of the issue categories (bug, question, enhancement). Run each of the notebooks in this folder to generate the clusters. The clusters are saved in the results folder.
+The common challenges are identified through topic modeling with BERTopic. The clustering can found in the [clustering](./analysis/topic_modeling/clustering) folder. Each file in this folder clusters one of the issue categories (bug, question, enhancement). Run each of the notebooks in this folder to generate the clusters. The topics for each are generated in `results/csv/topic_modeling/manual_review` folder. These are the topics that we label during the *Topic Refinement* step in the paper.
 
-***The work after this point in RQ2 is largely done manually, such as the labeling of the clusters. Thus, after this point, use the data folder provided from the Google Drive mentioned previously***
+**IMPORTANT: At this point, to recreate the results, you must use the `data` folder provided from the Google Drive link previously mentioned, as it contains the clustering results we generated.**
 
 #### Topic Modeling Figures
 The topic modeling figures are generated from [topic_modeling_figures.ipynb](./analysis/topic_modeling/topic_modeling_figures.ipynb). This notebook generates the figures for the topic modeling and saves them in the `results/figures/topic_modeling` folder.

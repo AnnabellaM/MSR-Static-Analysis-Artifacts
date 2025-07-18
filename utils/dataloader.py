@@ -14,6 +14,7 @@ def get_issues(filter=None):
         issues_metadata = pd.read_csv(f'{data_folder_path}/issues_metadata.csv')
         issues_metadata['timeline'] = issues_metadata['timeline'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else x)
         issues_metadata['labels'] = issues_metadata['labels'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else x)
+        issues_metadata['comments'] = issues_metadata['comments'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else x)
         
         # check if exists
         if (data_folder_path / 'issues_properties.csv').exists():

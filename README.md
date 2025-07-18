@@ -56,8 +56,10 @@ The evaluation of this artifact does not require specific hardware. However, the
 - **Python** 3.9.6 (version project was developed on)
 - **Pip** 25.1.1 (version project was developed on)
 
+## Detailed Description
 ### Data
-To get the data used in this project are located in the `data.zip` file in the root directory of this repository. Details regarding each of the files are provided below:
+#### data.zip
+The full dataset of all issues used in this project are located in the `data/data.zip` file of this repository. Details regarding each of the files inside the zipped data file are provided below:
 
 - `issues_metadata.csv`
 This file contains the raw metadata of the issues collected from GitHub or BitBucket. It includes information such as issue ID, title, body, labels, etc..
@@ -74,10 +76,11 @@ This file contains the properties of the issues which are generated from this [n
 - `repositories.csv`
 This file contains the repositories used in the paper. It includes the repository name and host (GitHub or BitBucket).
 
-## Analysis
+#### Code
+#### Analysis
 The analysis performed in the paper is located in the `code/analysis/` directory. They answer RQ1 of the paper. The analysis is divided into the following subdirectories:
 
-### `subject_tools/`
+##### `subject_tools/`
 Contains the code to provide the general statistics of the subject tools. This answers Section 3 of the paper (Research Questions and Study Objects). It identifies the number of stars, issues, and LoC of the subject tools (using cloc).
 
 #### [subject_tools.ipynb](./code/analysis/subject_tools/subject_tools.ipynb)

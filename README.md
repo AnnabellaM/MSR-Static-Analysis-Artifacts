@@ -73,6 +73,11 @@ This file contains the repositories used in the paper. It includes the repositor
 
 ### Download Data (From GitHub/BitBucket)
 If you want to download the data directly from GitHub or BitBucket, you can use the scripts in the `download_data` folder.
+First, get API keys from both Github and Atlassian and save them in a .env file in the root directory of this repository. The file should contain the following variables:
+```GITHUB_TOKEN=your_github_token
+ATLASSIAN_TOKEN=your_atlassian_token
+```
+
 Run the following command to download the issues and pull requests metadata from GitHub or BitBucket:
 ```bash
 python download_data/download_issues.py

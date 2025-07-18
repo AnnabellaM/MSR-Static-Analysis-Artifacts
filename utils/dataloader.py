@@ -39,10 +39,12 @@ def get_issues(filter=None):
 
 def get_pull_requests():
     pull_requests = pd.read_csv(f'{data_folder_path}/pull_requests_metadata.csv')
+    pull_requests['commits'] = pull_requests['commits'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else x)
 
     return pull_requests
 
 def get_commits():
     commits = pd.read_csv(f'{data_folder_path}/commits_metadata.csv')
+    commits['files'] = commits['files'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else x)
 
     return commits

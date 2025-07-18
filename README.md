@@ -5,12 +5,19 @@
 - [Repository Structure](##repository-structure)
 - [Setup](##setup)
     - [Requirements](###requirements)
-    - [Download Data](###download-data)
-        - [issues_metadata.csv](####issues_metadata.csv)
-        - [pull_requests_metadata.csv](####pull_requests_metadata.csv)
-        - [commits_metadata.csv](####commits_metadata.csv)
-        - [issues_properties.csv](####issues_properties.csv)
-        - [repositories.csv](####repositories.csv)
+    - [Download Data (From Google Drive) (Recommended)](###download-data-from-google-drive-recommended)
+    - [Download Data (From GitHub/BitBucket)](###download-data-from-githubbitbucket)
+- [RQ1. Common Properties and Patterns](##rq1-common-properties-and-patterns)
+    - [Generate Common Properties (already included with Google Drive download)](###generate-common-properties-already-included-with-google-drive-download)
+    - [Category (already included with Google Drive download)](###category-already-included-with-google-drive-download)
+    - [Common Properties Figures](###common-properties-figures)
+    - [Interest Groups (already included with Google Drive download)](###interest-groups-already-included-with-google-drive-download)
+    - [Interest Groups Figures](###interest-groups-figures)
+- [RQ2. Common Challenges](##rq2-common-challenges)
+    - [Topic Modeling with BERTopic (already included with Google Drive download)](###topic-modeling-with-bertopic-already-included-with-google-drive-download)
+    - [Topic Modeling Figures](###topic-modeling-figures)
+    - [Cross Comparison of Interest Groups and Topic Groups](###cross-comparison-of-interest-groups-and-topic-groups)
+- [RQ3. Static Analysis Tools](##rq3-static-analysis-tools)
 
 ## Purpose
 This artifact repository contains the code, data, and results for the paper *"Mining Repositories to Understand User and Developer Challenges with Static Analysis Tools"*.
@@ -25,7 +32,10 @@ This artifact repository contains the code, data, and results for the paper *"Mi
 
 ## Setup
 ### Requirements
-The python version used in this project is `3.9.6`. First create a virtual enviornment using the commands:
+The evaluation of this artifact does not require specific hardware. However, the recommended specifications are as listed:
+- **Python** 3.9.6 (version project was developed on)
+
+First create a virtual enviornment using the commands:
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # On Windows use .venv\Scripts\activate
@@ -72,22 +82,22 @@ python download_data/generate_csv.py
 ```
 
 ### RQ1. Common Properties and Patterns
-#### Common Properties
+#### Generate Common Properties (already included with Google Drive download)
 The common properties of the issues are generated from [generate_common_properties.ipynb](./analysis/common_properties/generate_common_properties.ipynb). This notebook generates the common properties of the issues and saves them in the `issues_properties.csv` file in the `data` folder. The properties are identified by the prefix `prop:` in the column names.
-#### Category
+#### Category (already included with Google Drive download)
 To generate the category of the issues, run the [catiss_classification.ipynb](./analysis/catiss_classification/catiss_classification.ipynb) notebook. This notebook uses the CatISS model to classify the issues into three categories: bug, question, and enhancement. The category is saved in the `issues_properties.csv` file in the `data` folder.
 
 ### Common Properties Figures
 The common properties figures are generated from [common_properties_figures.ipynb](./analysis/common_properties/common_properties_figures.ipynb). This notebook generates the figures for the common properties of the issues and saves them in the `results/figures/common_properties` folder.
 
-#### Interest Groups
+#### Interest Groups (already included with Google Drive download)
 The next step of RQ1 is generating the interest groups. The interest groups are generated from [interest_groups.ipynb](./analysis/interest_groups/interest_groups.ipynb). This notebook generates the interest groups and saves them in the `issues_properties.csv` file in the `data` folder. The interest groups are identified by the prefix `ig:` in the column names.
 
 #### Interest Groups Figures
 The interest groups figures are generated from [interest_groups_figures.ipynb](./analysis/interest_groups/interest_groups_figures.ipynb). This notebook generates the figures for the interest groups and saves them in the `results/figures/interest_groups` folder.
 
 ### RQ2. Common Challenges
-#### Topic Modeling with BERTopic
+#### Topic Modeling with BERTopic (already included with Google Drive download)
 The common challenges are identified through topic modeling with BERTopic. The clustering can found in the [clustering](./analysis/topic_modeling/clustering) folder. Each file in this folder clusters one of the issue categories (bug, question, enhancement). Run each of the notebooks in this folder to generate the clusters. The topics for each are generated in `results/csv/topic_modeling/manual_review` folder. These are the topics that we label during the *Topic Refinement* step in the paper.
 
 **IMPORTANT: At this point, to recreate the results, you must use the `data` folder provided from the Google Drive link previously mentioned, as it contains the clustering results we generated.**

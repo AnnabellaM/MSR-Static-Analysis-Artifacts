@@ -14,6 +14,5 @@ github-labels-top3-803k-train.csv
 
 # Ignore all files in the data directory
 raw_data/
-data/
 
 MSR.zip

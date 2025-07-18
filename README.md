@@ -81,32 +81,32 @@ Then run the following command to generate the csv data files:
 python download_data/generate_csv.py
 ```
 
-### RQ1. Common Properties and Patterns
-#### Generate Common Properties (already included with Google Drive download)
+## RQ1. Common Properties and Patterns
+### Generate Common Properties (already included with Google Drive download)
 The common properties of the issues are generated from [generate_common_properties.ipynb](./analysis/common_properties/generate_common_properties.ipynb). This notebook generates the common properties of the issues and saves them in the `issues_properties.csv` file in the `data` folder. The properties are identified by the prefix `prop:` in the column names.
-#### Category (already included with Google Drive download)
+### Category (already included with Google Drive download)
 To generate the category of the issues, run the [catiss_classification.ipynb](./analysis/catiss_classification/catiss_classification.ipynb) notebook. This notebook uses the CatISS model to classify the issues into three categories: bug, question, and enhancement. The category is saved in the `issues_properties.csv` file in the `data` folder.
 
-### Common Properties Figures
+## Common Properties Figures
 The common properties figures are generated from [common_properties_figures.ipynb](./analysis/common_properties/common_properties_figures.ipynb). This notebook generates the figures for the common properties of the issues and saves them in the `results/figures/common_properties` folder.
 
-#### Interest Groups (already included with Google Drive download)
+### Interest Groups (already included with Google Drive download)
 The next step of RQ1 is generating the interest groups. The interest groups are generated from [interest_groups.ipynb](./analysis/interest_groups/interest_groups.ipynb). This notebook generates the interest groups and saves them in the `issues_properties.csv` file in the `data` folder. The interest groups are identified by the prefix `ig:` in the column names.
 
-#### Interest Groups Figures
+### Interest Groups Figures
 The interest groups figures are generated from [interest_groups_figures.ipynb](./analysis/interest_groups/interest_groups_figures.ipynb). This notebook generates the figures for the interest groups and saves them in the `results/figures/interest_groups` folder.
 
-### RQ2. Common Challenges
-#### Topic Modeling with BERTopic (already included with Google Drive download)
+## RQ2. Common Challenges
+### Topic Modeling with BERTopic (already included with Google Drive download)
 The common challenges are identified through topic modeling with BERTopic. The clustering can found in the [clustering](./analysis/topic_modeling/clustering) folder. Each file in this folder clusters one of the issue categories (bug, question, enhancement). Run each of the notebooks in this folder to generate the clusters. The topics for each are generated in `results/csv/topic_modeling/manual_review` folder. These are the topics that we label during the *Topic Refinement* step in the paper.
 
 **IMPORTANT: At this point, to recreate the results, you must use the `data` folder provided from the Google Drive link previously mentioned, as it contains the clustering results we generated.**
 
-#### Topic Modeling Figures
+### Topic Modeling Figures
 The topic modeling figures are generated from [topic_modeling_figures.ipynb](./analysis/topic_modeling/topic_modeling_figures.ipynb). This notebook generates the figures for the topic modeling and saves them in the `results/figures/topic_modeling` folder.
 
-#### Cross Comparison of Interest Groups and Topic Groups
+### Cross Comparison of Interest Groups and Topic Groups
 The cross-comparison of interest groups and topic groups is performed to identify common patterns and relationships between the two. This analysis helps in understanding how different interest groups are associated with specific topics and vice versa. The cross-comparison is done in [interest_groups_per_group.ipynb](./analysis/cross_comparison/interest_groups_per_group.ipynb). This notebook generates the cross-comparison and saves the results in the `results/cross_comparison` folder.
 
-### RQ3. Static Analysis Tools
+## RQ3. Static Analysis Tools
 The work in this section is performed manually.

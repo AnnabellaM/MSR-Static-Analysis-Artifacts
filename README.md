@@ -4,6 +4,7 @@ This repository contains the code for the paper "Mining Repositories to Understa
 ## Code Structure
 - 'analysis': Contains the scripts and notebooks for all analyses performed in the paper.
 - 'download_data': Contains scripts to download the data used in the analyses.
+- 'results': Contains the results of the analyses, including figures and tables (csv)
 - 'utils': Contains utility functions used across the different analyses (ex. constants, data loading functions, preprocessing functions).
 
 ## Data

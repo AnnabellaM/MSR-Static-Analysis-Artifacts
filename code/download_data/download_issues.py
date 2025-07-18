@@ -12,13 +12,13 @@ sys.path.append('../')
 
 from utils.dataloader import get_repos
 
-config = dotenv_values("../.env")
+config = dotenv_values("../../.env")
 auth = Auth.Token(config['GITHUB_TOKEN'])
 gh = Github(auth=auth)
 
 repos = get_repos()
 
-output_dir = '../raw_data'
+output_dir = '../../raw_data'
 
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)

@@ -6,19 +6,19 @@ raw_issue_data = []
 raw_pull_request_data = []
 raw_commit_data = []
 
-for file in os.listdir('./raw_data/issues'):
+for file in os.listdir('../../raw_data/issues'):
     if file.endswith('.json'):
-        issue_data = json.load(open(os.path.join('./raw_data/issues', file), 'r'))
+        issue_data = json.load(open(os.path.join('../../raw_data/issues', file), 'r'))
         raw_issue_data.append(issue_data)
 
-for file in os.listdir('./raw_data/pull_requests'):
+for file in os.listdir('../../raw_data/pull_requests'):
     if file.endswith('.json'):
-        pull_request_data = json.load(open(os.path.join('./raw_data/pull_requests', file), 'r'))
+        pull_request_data = json.load(open(os.path.join('../../raw_data/pull_requests', file), 'r'))
         raw_pull_request_data.append(pull_request_data)
 
-for file in os.listdir('./raw_data/commits'):
+for file in os.listdir('../../raw_data/commits'):
     if file.endswith('.json'):
-        commit_data = json.load(open(os.path.join('./raw_data/commits', file), 'r'))
+        commit_data = json.load(open(os.path.join('../../raw_data/commits', file), 'r'))
         raw_commit_data.append(commit_data)
 
 # Convert raw issue data to DataFrame
@@ -26,8 +26,16 @@ issues_df = pd.DataFrame(raw_issue_data)
 pull_requests_df = pd.DataFrame(raw_pull_request_data)
 commits_df = pd.DataFrame(raw_commit_data)
 
-
 issues_df = issues_df[['id', 'title', 'body', 'user', 'state', 'created_at', 'closed_at', 'updated_on', 'timeline', 'comments', 'html_url', 'labels', 'repo', 'host']]
+for i, row in issues_df.iterrows():
+    if isinstance(row['comments'], list):
+        comments = row['comments']
+        new_comments = []
+        for comment in comments:
+            # Process each comment
+            new_comments.append({'actor': comment['actor']})
+        issues_df.at[i, 'comments'] = new_comments
+
 pull_requests_df = pull_requests_df[['id', 'html_url', 'repo', 'host', 'commits']]
 
 commits_df = commits_df[['sha', 'files']]
@@ -48,9 +56,9 @@ for i, row in commits_df.iterrows():
 new_commits_df = pd.DataFrame(new_commits)
 
 # create folder if it does not exist
-if not os.path.exists('./data'):
-    os.makedirs('./data')
+if not os.path.exists('../../data'):
+    os.makedirs('../../data')
 # Save the processed data to CSV files
-issues_df.to_csv('./data/issues_metadata.csv', index=False)
-pull_requests_df.to_csv('./data/pull_requests_metadata.csv', index=False)
-commits_df.to_csv('./data/commits_metadata.csv', index=False)
+issues_df.to_csv('../../data/issues_metadata.csv', index=False)
+pull_requests_df.to_csv('../../data/pull_requests_metadata.csv', index=False)
+commits_df.to_csv('../../data/commits_metadata.csv', index=False)

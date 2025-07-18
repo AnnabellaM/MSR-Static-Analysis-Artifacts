@@ -3,7 +3,7 @@ from pathlib import Path
 import ast
 
 # datafolder path is ../data relative to the current file make sure it is always regardless of where the file is called
-data_folder_path = Path(__file__).resolve().parents[1] / 'data'
+data_folder_path = Path(__file__).resolve().parents[2] / 'data'
 
 def get_repos():
     repos = pd.read_csv(f'{data_folder_path}/repositories.csv')

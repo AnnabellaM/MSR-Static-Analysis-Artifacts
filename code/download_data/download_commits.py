@@ -10,13 +10,13 @@ import sys
 sys.path.append('../')
 from utils.dataloader import get_repos
 
-config = dotenv_values("../.env")
+config = dotenv_values("../../.env")
 auth = Auth.Token(config['GITHUB_TOKEN'])
 gh = Github(auth=auth)
 repos = get_repos()
 
-if not os.path.exists('../raw_data/commits'):
-    os.makedirs('../raw_data/commits')
+if not os.path.exists('../../raw_data/commits'):
+    os.makedirs('../../raw_data/commits')
 
 # Github
 for _, repo in repos[repos['Host'] == "Github"].iterrows():
@@ -24,14 +24,14 @@ for _, repo in repos[repos['Host'] == "Github"].iterrows():
     repository = gh.get_repo(repo['Repository'])
     commits = repository.get_commits()
     for commit in tqdm(commits, desc=repo['Repository'], total=commits.totalCount):
-        if os.path.exists(f'../raw_data/commits/Github_{repo["Repository"].split("/")[1]}_{commit.sha}.json'):
+        if os.path.exists(f'../../raw_data/commits/Github_{repo["Repository"].split("/")[1]}_{commit.sha}.json'):
             tqdm.write(f"Skipping commit {commit.sha}")
             continue
         tqdm.write(f"Downloading commit {commit.sha}")
         # Save commit data to file
         raw_data = commit.raw_data
         raw_data['repo'] = repo['Repository']
-        json.dump(commit.raw_data, open(f'../raw_data/commits/Github_{repo["Repository"].split("/")[1]}_{commit.sha}.json', 'w')) 
+        json.dump(commit.raw_data, open(f'../../raw_data/commits/Github_{repo["Repository"].split("/")[1]}_{commit.sha}.json', 'w')) 
 
 # Bitbucket
 for _, repo in repos[repos['Host'] == "Bitbucket"].iterrows():
@@ -43,7 +43,7 @@ for _, repo in repos[repos['Host'] == "Bitbucket"].iterrows():
 
         commits = response.json()
         for commit in commits['values']:
-            if os.path.exists(f'../raw_data/commits/Bitbucket_{repo["Repository"].split("/")[1]}_{commit["hash"]}.json'):
+            if os.path.exists(f'../../raw_data/commits/Bitbucket_{repo["Repository"].split("/")[1]}_{commit["hash"]}.json'):
                 tqdm.write(f"Skipping commit {commit['hash']}")
                 continue
             tqdm.write(f"Downloading commit {commit['hash']}")
@@ -60,7 +60,7 @@ for _, repo in repos[repos['Host'] == "Bitbucket"].iterrows():
             data['parent'] = [parent['hash'] for parent in commit['parents']]
             data['patch'] = commit['links']['diff']['href']
 
-            json.dump(data, open(f'../raw_data/commits/Bitbucket_{repo["Repository"].split("/")[1]}_{commit["hash"]}.json', 'w'))
+            json.dump(data, open(f'../../raw_data/commits/Bitbucket_{repo["Repository"].split("/")[1]}_{commit["hash"]}.json', 'w'))
 
         if 'next' in commits:
             url = commits['next']

@@ -6,6 +6,7 @@
 - [Setup](#setup)
     - [Requirements](#requirements)
     - [Data](#data)
+- [Download Data](#download-data)
 - [Analysis/](#analysis)
     - [Subject Tools/](#subject-tools)
         - [`subject_tools.ipynb`](#subject_toolsipynb)
@@ -73,6 +74,12 @@ This file contains the properties of the issues which are generated from this [n
 
 - `repositories.csv`
 This file contains the repositories used in the paper. It includes the repository name and host (GitHub or BitBucket).
+
+## Download Data
+The data is downloaded from GitHub and BitBucket in the scripts located in the `code/download_data/` directory. The scripts are as follows:
+- [download_issues.py](./code/download_data/download_issues.py): This script downloads issues and pull requests from GitHub and BitBucket. These are saved into json files in a `raw_data/` directory.
+- [download_commits.py](./code/download_data/download_commits.py): This script downloads commits from GitHub and BitBucket. These are saved into json files in a `raw_data/` directory.
+- [generate_dataset.py](./code/download_data/generate_dataset.py): This script generates the dataset from the raw data downloaded from GitHub and BitBucket. It processes the raw data and saves it into CSV files in the `data/` directory. Specifically, it generates the `issues_metadata.csv`, `pull_requests_metadata.csv`, and `commits_metadata.csv`.
 
 ## Analysis
 The analysis performed in the paper is located in the `code/analysis/` directory. They answer RQ1 of the paper. The analysis is divided into the following subdirectories:

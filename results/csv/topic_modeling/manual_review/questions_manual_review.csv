@@ -1,0 +1,532 @@
+Topic,Count,Percentage,Topic Label (to be filled in by reviewer),Representation,KeyBERTInspired,PartOfSpeech,MaximalMarginalRelevance,top_documents,quick fix,slow fix,hot topic,first time,easy fix,hard fix,reason,result type,answer,phase,user/developer,Related Tools,Kadiray,Miao,agree,top_documents_repo
+0,314,0.112585156,Class Loading,"['support', 'array', 'support question', 'question', 'extension', 'error', 'like', 'trait', 'param', 'value']","['array', 'generic', 'extension', 'implement', 'iterator', 'extend', 'mock', 'iterable', 'foreach', 'require']","['array', 'support', 'extension', 'question', 'error', 'trait', 'param', 'value', 'foo', 'work']","['array', 'extension', 'error', 'trait', 'phpdoc', 'template', 'extend', 'composer', 'expect', 'closure']","https://github.com/phpstan/phpstan/issues/2326
+https://github.com/phpstan/phpstan/issues/35
+https://github.com/phpstan/phpstan/issues/3032
+https://github.com/phpstan/phpstan/issues/521
+https://github.com/phpstan/phpstan/issues/3079",177,26,89,4,1,1,,,,,,"phpstan/phpstan (272)
+facebook/infer (9)
+soot-oss/soot (8)
+pmd/pmd (6)
+spotbugs/spotbugs (4)
+diffblue/cbmc (3)
+wala/WALA (3)
+soot-oss/SootUp (2)
+secure-software-engineering/phasar (2)
+security-code-scan/security-code-scan (2)
+opalj/opal (1)
+scottrogowski/code2flow (1)
+yanniss/doop-deprecated (1)",working with autoload,Proper autoloading,Y,"https://github.com/soot-oss/soot/issues/840
+https://github.com/facebook/infer/issues/1427
+https://github.com/spotbugs/spotbugs/issues/111
+https://github.com/pmd/pmd/issues/304
+https://github.com/arguslab/Argus-SAF/issues/53
+https://github.com/wala/WALA/issues/879
+https://github.com/phpstan/phpstan/issues/2628
+https://github.com/diffblue/cbmc/issues/6572
+https://github.com/secure-software-engineering/FlowDroid/issues/766
+https://github.com/soot-oss/SootUp/issues/914
+https://github.com/scottrogowski/code2flow/issues/89
+https://bitbucket.org/yanniss/doop-deprecated/issues/24/error-with-may-point-to-analysis
+https://github.com/plast-lab/doop/issues/11
+https://github.com/security-code-scan/security-code-scan/issues/116"
+1,291,0.1043384726,Call Graph,"['graph', 'edge', 'callgraph', 'info', 'create', 'warn', 'find', 'constructor', 'substitute subclass', 'create valid']","['build graph', 'generate graph', 'create graph', 'edge staticinvoke', 'edge specialinvoke', 'callgraph', 'edge virtualinvoke', 'edge clinit', 'clinit edge', 'graph']","['graph', 'edge', 'callgraph', 'clinit edge', 'clinit', 'node', 'spark', 'generate', 'code', 'file']","['edge', 'callgraph', 'clinit edge', 'node', 'spark', 'edge staticinvoke', 'node context', 'edge clinit', 'context node', 'generate graph']","https://github.com/soot-oss/soot/issues/1133
+https://github.com/scottrogowski/code2flow/issues/45
+https://github.com/soot-oss/soot/issues/566
+https://github.com/soot-oss/soot/issues/1830
+https://github.com/soot-oss/soot/issues/1383",28,39,14,16,3,1,,,,,,"soot-oss/soot (106)
+secure-software-engineering/FlowDroid (74)
+wala/WALA (52)
+scottrogowski/code2flow (14)
+soot-oss/SootUp (10)
+arguslab/Argus-SAF (10)
+vitsalis/PyCG (7)
+secure-software-engineering/phasar (6)
+opalj/opal (2)
+yanniss/doop-deprecated (2)
+facebook/infer (2)
+cs-au-dk/TAJS (2)
+diffblue/cbmc (1)
+phpstan/phpstan (1)
+spotbugs/spotbugs (1)
+plast-lab/doop (1)",working with call graphs,Impact of options on call graph generation,Y,"https://github.com/soot-oss/soot/issues/582
+https://github.com/facebook/infer/issues/104
+https://github.com/spotbugs/spotbugs/issues/4
+https://github.com/pmd/pmd/issues/2238
+https://github.com/arguslab/Argus-SAF/issues/13
+https://github.com/wala/WALA/issues/1205
+https://github.com/phpstan/phpstan/issues/3955
+https://github.com/secure-software-engineering/phasar/issues/31
+https://github.com/diffblue/cbmc/issues/7945
+https://github.com/secure-software-engineering/FlowDroid/issues/777
+https://github.com/soot-oss/SootUp/issues/771
+https://github.com/scottrogowski/code2flow/issues/20
+https://bitbucket.org/yanniss/doop-deprecated/issues/18/p-taint-can-the-interface-type-be-defined
+https://github.com/MIT-PAC/droidsafe-src/issues/6
+https://github.com/security-code-scan/security-code-scan/issues/108"
+6,230,0.08246683399,IR,"['i8', 'line', 'loop', 'file', 'code', 'main', 'align', 'pointer', 'offsets', 'program']","['line bytecode_index', 'bytecode_index', 'buffer1', 'program', 'file dead2', 'buffer1 buffer1', 'code', 'instruction', 'file line', 'pointer']","['i8', 'loop', 'line', 'align', 'offsets', 'file', 'notsanitized', 'unsigned', 'pointer', 'i32']","['offsets', 'file', 'unsigned', 'pointer', 'i32', 'offset', 'file line', 'offsets notsanitized', 'i32 align', 'file dead2']","https://github.com/wala/WALA/issues/1099
+https://github.com/secure-software-engineering/phasar/issues/12
+https://github.com/diffblue/cbmc/issues/684
+https://github.com/diffblue/cbmc/issues/6572
+https://github.com/secure-software-engineering/phasar/issues/298",52,35,26,3,3,3,,,,,,"diffblue/cbmc (78)
+facebook/infer (59)
+phpstan/phpstan (23)
+soot-oss/soot (13)
+wala/WALA (11)
+secure-software-engineering/phasar (11)
+pmd/pmd (9)
+spotbugs/spotbugs (6)
+vitsalis/PyCG (5)
+soot-oss/SootUp (4)
+scottrogowski/code2flow (3)
+security-code-scan/security-code-scan (2)
+secure-software-engineering/FlowDroid (2)
+yanniss/doop-deprecated (1)
+opalj/opal (1)
+arguslab/Argus-SAF (1)
+plast-lab/doop (1)",understanding the IR,IR related question,Y,"https://github.com/soot-oss/soot/issues/1878
+https://github.com/facebook/infer/issues/870
+https://github.com/spotbugs/spotbugs/issues/2339
+https://github.com/pmd/pmd/issues/4663
+https://github.com/arguslab/Argus-SAF/issues/48
+https://github.com/wala/WALA/issues/367
+https://github.com/phpstan/phpstan/issues/8321
+https://github.com/diffblue/cbmc/issues/6953
+https://github.com/secure-software-engineering/FlowDroid/issues/100
+https://github.com/soot-oss/SootUp/issues/528
+https://github.com/security-code-scan/security-code-scan/issues/77"
+2,216,0.07744711366,Taint Analysis,"['sink', 'source', 'taint', 'flow', 'analysis', 'source sink', 'result', 'leak', 'sink sink', 'detect']","['taint analysis', 'taint propagation', 'taint path', 'taint wrapper', 'source sink', 'data flow', 'sink source', 'detect leak', 'taint', 'find leak']","['sink', 'source', 'taint', 'flow', 'leak', 'analysis', 'path', 'datum', 'result', 'thank']","['taint', 'source sink', 'flow', 'sink sink', 'taint analysis', 'datum flow', 'detect', 'virtualinvoke', 'data flow', 'taint path']","https://github.com/facebook/infer/issues/1356
+https://github.com/facebook/infer/issues/965
+https://github.com/facebook/infer/issues/1889
+https://github.com/secure-software-engineering/FlowDroid/issues/766
+https://github.com/facebook/infer/issues/1314",30,24,10,11,2,1,,,,,,"secure-software-engineering/FlowDroid (117)
+facebook/infer (24)
+secure-software-engineering/phasar (16)
+soot-oss/soot (15)
+wala/WALA (14)
+arguslab/Argus-SAF (9)
+diffblue/cbmc (4)
+yanniss/doop-deprecated (4)
+vitsalis/PyCG (2)
+scottrogowski/code2flow (2)
+phpstan/phpstan (2)
+plast-lab/doop (2)
+pmd/pmd (2)
+spotbugs/spotbugs (1)
+security-code-scan/security-code-scan (1)
+opalj/opal (1)",working with taint analysis,How to properly use taint analysis,Y,"https://github.com/soot-oss/soot/issues/740
+https://github.com/facebook/infer/issues/1588
+https://github.com/spotbugs/spotbugs/issues/712
+https://github.com/pmd/pmd/issues/438
+https://github.com/arguslab/Argus-SAF/issues/74
+https://github.com/wala/WALA/issues/782
+https://github.com/phpstan/phpstan/issues/2240
+https://github.com/diffblue/cbmc/issues/5850
+https://github.com/secure-software-engineering/FlowDroid/issues/522
+https://bitbucket.org/yanniss/doop-deprecated/issues/21/how-to-fliter-out-the-results-we-want
+https://github.com/opalj/opal/issues/198
+https://github.com/plast-lab/doop/issues/15
+https://github.com/security-code-scan/security-code-scan/issues/78
+https://github.com/vitsalis/PyCG/issues/10"
+14,204,0.07314449624,Unable to summarize a topic,"['warn warn', 'warn', 'info', 'detector', 'exception analyze', 'analyze detector', 'detector exception', 'project', 'analyze', 'error error']","['backend work', 'development', 'software engineering', 'codebase', 'programming', 'refactoring', 'documentation', 'develop', 'framework', 'backend']","['language', 'code', 'work', 'project', 'time', 'support', 'development', 'user', 'contribute', 'refactoring']","['language', 'code', 'project', 'development', 'refactoring', 'designer', 'backend', 'flacocobot', 'feedback', 'backend work']","https://github.com/pmd/pmd/issues/2238
+https://github.com/soot-oss/soot/issues/1195
+https://github.com/phpstan/phpstan/issues/1915
+https://github.com/spotbugs/spotbugs/issues/2111
+https://github.com/soot-oss/soot/issues/1789",34,25,43,5,3,9,,,,,,"facebook/infer (46)
+spotbugs/spotbugs (35)
+pmd/pmd (30)
+phpstan/phpstan (22)
+diffblue/cbmc (20)
+soot-oss/soot (14)
+wala/WALA (8)
+security-code-scan/security-code-scan (6)
+secure-software-engineering/FlowDroid (6)
+soot-oss/SootUp (5)
+scottrogowski/code2flow (3)
+arguslab/Argus-SAF (2)
+yanniss/doop-deprecated (2)
+cs-au-dk/TAJS (2)
+plast-lab/doop (1)
+vitsalis/PyCG (1)
+opalj/opal (1)",Unable to summarize a topic,Unable to summarize a topic,Y,"https://github.com/soot-oss/soot/issues/1289
+https://github.com/facebook/infer/issues/1314
+https://github.com/spotbugs/spotbugs/issues/761
+https://github.com/pmd/pmd/issues/302
+https://github.com/arguslab/Argus-SAF/issues/88
+https://github.com/wala/WALA/issues/354
+https://github.com/phpstan/phpstan/issues/864
+https://github.com/diffblue/cbmc/issues/5485
+https://github.com/secure-software-engineering/FlowDroid/issues/231
+https://github.com/scottrogowski/code2flow/issues/84
+https://github.com/vitsalis/PyCG/issues/22"
+16,188,0.067407673,Unable to summarize a topic,"['file', 'analyze', 'analysis', 'code', 'source', 'relation', 'find', 'error', 'fact', 'line']","['analyze file', 'file analyze', 'file analysis', 'analyze project', 'file correspond', 'analyze', 'analysis instruction', 'analyse', 'analyze starting', 'want analyze']","['file', 'analyze', 'analysis', 'library', 'project', 'microtestcase', 'application', 'source', 'folder', 'single']","['class file', 'analyze file', '_lyj jar', 'project file', 'file analysis', 'file depend', 'source file', 'contain file', 'file analyze', 'jar file']","https://github.com/pmd/pmd/issues/3997
+https://github.com/facebook/infer/issues/822
+https://github.com/secure-software-engineering/FlowDroid/issues/211
+https://github.com/soot-oss/soot/issues/715
+https://github.com/facebook/infer/issues/820",37,23,21,5,1,0,,,,,,"facebook/infer (45)
+soot-oss/soot (39)
+secure-software-engineering/FlowDroid (20)
+yanniss/doop-deprecated (17)
+wala/WALA (13)
+phpstan/phpstan (11)
+spotbugs/spotbugs (10)
+pmd/pmd (8)
+diffblue/cbmc (7)
+soot-oss/SootUp (6)
+arguslab/Argus-SAF (5)
+MIT-PAC/droidsafe-src (2)
+secure-software-engineering/phasar (1)
+cs-au-dk/TAJS (1)
+vitsalis/PyCG (1)
+scottrogowski/code2flow (1)
+security-code-scan/security-code-scan (1)",Generic (novice) analysis questions,Unable to summarize a topic,N,"https://github.com/soot-oss/soot/issues/1097
+https://github.com/facebook/infer/issues/1021
+https://github.com/spotbugs/spotbugs/issues/1963
+https://github.com/pmd/pmd/issues/4802
+https://github.com/wala/WALA/issues/611
+https://github.com/phpstan/phpstan/issues/4078
+https://github.com/secure-software-engineering/phasar/issues/624
+https://github.com/diffblue/cbmc/issues/413
+https://github.com/secure-software-engineering/FlowDroid/issues/595
+https://bitbucket.org/yanniss/doop-deprecated/issues/26/p-taint-sql-injection
+https://github.com/security-code-scan/security-code-scan/issues/254
+https://github.com/vitsalis/PyCG/issues/43"
+13,163,0.0584438867,Build System,"['maven', 'error', 'build', 'version', 'error error', 'project', 'debug env', 'env', 'debug', 'info']","['maven build', 'maven project', 'install maven', 'repository maven', 'maven repository', 'maven', 'release maven', 'maven central', 'maven repo', 'restore maven']","['maven', 'repository', 'project', 'version', 'build', 'release', 'central', 'snapshot', 'error', 'repo']","['maven', 'repository', 'maven repository', 'repo', 'maven central', 'dst power', 'restore maven', 'rename src', 'maven original', 'error run']","https://github.com/pmd/pmd/issues/1560
+https://github.com/spotbugs/spotbugs/issues/111
+https://github.com/pmd/pmd/issues/685
+https://github.com/wala/WALA/issues/1205
+https://github.com/wala/WALA/issues/1260",48,21,25,3,3,4,,,,,,"spotbugs/spotbugs (34)
+facebook/infer (31)
+wala/WALA (26)
+secure-software-engineering/FlowDroid (20)
+phpstan/phpstan (18)
+pmd/pmd (11)
+soot-oss/soot (7)
+arguslab/Argus-SAF (6)
+soot-oss/SootUp (4)
+diffblue/cbmc (2)
+security-code-scan/security-code-scan (1)
+yanniss/doop-deprecated (1)
+scottrogowski/code2flow (1)
+vitsalis/PyCG (1)",Build system issues (Maven),Build system issues (Maven),Y,"https://github.com/soot-oss/soot/issues/1468
+https://github.com/facebook/infer/issues/908
+https://github.com/spotbugs/spotbugs/issues/1480
+https://github.com/pmd/pmd/issues/321
+https://github.com/arguslab/Argus-SAF/issues/56
+https://github.com/wala/WALA/issues/517
+https://github.com/phpstan/phpstan/issues/1148
+https://github.com/secure-software-engineering/phasar/issues/49
+https://github.com/diffblue/cbmc/issues/7941
+https://github.com/secure-software-engineering/FlowDroid/issues/300
+https://github.com/soot-oss/SootUp/issues/673
+https://github.com/scottrogowski/code2flow/issues/70
+https://github.com/MIT-PAC/droidsafe-src/issues/9"
+3,162,0.05808533525,(Android) Instrumentation,"['android', 'apk', 'app', 'file', 'thread', 'application', 'jar', 'instrument', 'code', 'find']","['android jar', 'android application', 'androidruntime source', 'androidruntime', 'instrument android', 'android app', 'androidruntime androidruntime', 'androidinstrument', 'android', 'dex file']","['android', 'app', 'instrument', 'jar', 'file', 'thread', 'application', 'code', 'process', 'androidruntime']","['android', 'apk', 'application', 'process', 'android jar', 'androidruntime', 'trap handler', 'instruction trap', 'debug instruction', 'android application']","https://github.com/soot-oss/soot/issues/1168
+https://github.com/soot-oss/soot/issues/281
+https://github.com/wala/WALA/issues/354
+https://github.com/soot-oss/soot/issues/582
+https://github.com/facebook/infer/issues/892",33,18,15,2,2,0,,,,,,"soot-oss/soot (75)
+secure-software-engineering/FlowDroid (51)
+facebook/infer (18)
+arguslab/Argus-SAF (7)
+wala/WALA (5)
+MIT-PAC/droidsafe-src (3)
+soot-oss/SootUp (1)
+yanniss/doop-deprecated (1)
+pmd/pmd (1)",parsing or instrumenting android apks,questions regarding analyzing android apks,Y,"https://github.com/soot-oss/soot/issues/1372
+https://github.com/facebook/infer/issues/840
+https://github.com/spotbugs/spotbugs/issues/908
+https://github.com/pmd/pmd/issues/2719
+https://github.com/wala/WALA/issues/222
+https://github.com/phpstan/phpstan/issues/3032
+https://github.com/secure-software-engineering/FlowDroid/issues/52
+https://github.com/scottrogowski/code2flow/issues/60
+https://bitbucket.org/yanniss/doop-deprecated/issues/7/request-for-branch-r160113
+https://github.com/opalj/opal/issues/144"
+5,159,0.05700968089,IR,"['jimple', 'code', 'local', 'virtualinvoke', 'exception', 'line number', 'number', 'args', 'line', 'body']","['jimple code', 'jimple file', 'convert jimple', 'jimple line', 'jimple representation', 'jimple', 'jimple body', 'line code', 'jimplebody', 'code line']","['jimple', 'local', 'virtualinvoke', 'code', 'number', 'line', 'unit', 'scanner', 'stmt', 'body']","['jimple', 'virtualinvoke', 'code', 'line number', 'scanner', 'bytecode', 'jimple file', 'source code', 'jimple code', 'convert jimple']","https://github.com/soot-oss/soot/issues/1186
+https://github.com/soot-oss/soot/issues/803
+https://github.com/soot-oss/soot/issues/1714
+https://github.com/soot-oss/soot/issues/1237
+https://github.com/soot-oss/soot/issues/740",33,25,8,4,1,2,,,,,,"soot-oss/soot (88)
+wala/WALA (24)
+soot-oss/SootUp (11)
+phpstan/phpstan (8)
+secure-software-engineering/FlowDroid (7)
+spotbugs/spotbugs (5)
+facebook/infer (3)
+arguslab/Argus-SAF (3)
+plast-lab/doop (2)
+vitsalis/PyCG (2)
+diffblue/cbmc (2)
+yanniss/doop-deprecated (1)
+pmd/pmd (1)
+opalj/opal (1)
+scottrogowski/code2flow (1)",understanding how Jimple IR works,understanding Jimple ,Y,"https://github.com/soot-oss/soot/issues/1607
+https://github.com/facebook/infer/issues/569
+https://github.com/spotbugs/spotbugs/issues/342
+https://github.com/pmd/pmd/issues/630
+https://github.com/wala/WALA/issues/1407
+https://github.com/phpstan/phpstan/issues/4172
+https://github.com/secure-software-engineering/phasar/issues/3
+https://github.com/secure-software-engineering/FlowDroid/issues/6
+https://bitbucket.org/yanniss/doop-deprecated/issues/52/how-to-format-properties
+https://github.com/security-code-scan/security-code-scan/issues/245"
+12,139,0.04983865185,Class Loading,"['jsourcecrawler', 'jsourcecrawler jsourcecrawler', '08 18', '08', '18 34', '18', '34 08', '34', 'javac', 'error']","['command javac', 'command jar', 'javac cp', 'error javac', 'compilation command', 'process dir', 'javac', 'file command', 'classpath', 'command line']","['command', 'file', 'path', 'javac', 'jar', 'classpath', 'directory', 'dir', 'exception', 'folder']","['javac', 'jar', 'classpath', 'directory', 'process dir', 'command line', 'path properly', 'exception thread', 'find path', 'file line']","https://github.com/soot-oss/soot/issues/1169
+https://github.com/soot-oss/soot/issues/649
+https://github.com/soot-oss/soot/issues/1213
+https://github.com/soot-oss/soot/issues/622
+https://github.com/soot-oss/soot/issues/1289",37,23,8,4,0,2,,,,,,"soot-oss/soot (62)
+facebook/infer (23)
+secure-software-engineering/FlowDroid (16)
+phpstan/phpstan (8)
+spotbugs/spotbugs (8)
+arguslab/Argus-SAF (5)
+soot-oss/SootUp (5)
+wala/WALA (4)
+diffblue/cbmc (2)
+vitsalis/PyCG (2)
+yanniss/doop-deprecated (1)
+MIT-PAC/droidsafe-src (1)
+pmd/pmd (1)
+plast-lab/doop (1)",configuring class path,class loading issues,Y,"https://github.com/soot-oss/soot/issues/1169
+https://github.com/facebook/infer/issues/1403
+https://github.com/spotbugs/spotbugs/issues/991
+https://github.com/pmd/pmd/issues/531
+https://github.com/arguslab/Argus-SAF/issues/54
+https://github.com/wala/WALA/issues/1099
+https://github.com/phpstan/phpstan/issues/2326
+https://github.com/secure-software-engineering/phasar/issues/685
+https://github.com/diffblue/cbmc/issues/8309
+https://github.com/secure-software-engineering/FlowDroid/issues/578
+https://github.com/scottrogowski/code2flow/issues/85
+https://github.com/MIT-PAC/droidsafe-src/issues/3
+https://github.com/vitsalis/PyCG/issues/69"
+4,112,0.04015776264,Rule Definitions,"['rule', 'custom', 'custom rule', 'apex', 'code', 'ruleset', 'description', 'like', 'extend', 'designer']","['custom rule', 'rule description', 'write rule', 'rule rule', 'rule set', 'code rule', 'rule check', 'ruleset', 'rule', 'version rule']","['rule', 'custom', 'ruleset', 'code', 'description', 'designer', 'extend', 'cli', 'run', 'gradle']","['rule', 'custom rule', 'ruleset', 'code sample', 'gradle', 'gradle designer', 'rule description', 'cli maven', 'affects version', 'xml']","https://github.com/facebook/infer/issues/1554
+https://github.com/phpstan/phpstan/issues/2706
+https://github.com/secure-software-engineering/FlowDroid/issues/98
+https://github.com/pmd/pmd/issues/2144
+https://github.com/phpstan/phpstan/issues/782",34,19,24,2,1,5,,,,,,"pmd/pmd (59)
+phpstan/phpstan (23)
+facebook/infer (12)
+spotbugs/spotbugs (6)
+soot-oss/soot (5)
+secure-software-engineering/FlowDroid (3)
+security-code-scan/security-code-scan (2)
+diffblue/cbmc (1)
+soot-oss/SootUp (1)",rule customization,how to add custom rules,Y,"https://github.com/soot-oss/soot/issues/2125
+https://github.com/facebook/infer/issues/400
+https://github.com/spotbugs/spotbugs/issues/2246
+https://github.com/pmd/pmd/issues/2768
+https://github.com/wala/WALA/issues/839
+https://github.com/phpstan/phpstan/issues/3292
+https://github.com/secure-software-engineering/phasar/issues/666
+https://github.com/diffblue/cbmc/issues/8392
+https://github.com/secure-software-engineering/FlowDroid/issues/494
+https://github.com/scottrogowski/code2flow/issues/69
+https://bitbucket.org/yanniss/doop-deprecated/issues/19/can-the-interface-type-be-defined-as-a"
+9,102,0.03657224812,Compilation,"['backend', 'annot', 'module', 'error', 'harness', 'bin', 'opensource', 'annot warn', 'annot bin', 'error safe']","['clang error', 'make error', 'error make', 'compile', 'build', 'compiler', 'makefile', 'clang', 'clang note', 'cmake']","['backend', 'harness', 'opensource', 'bin', 'checker', 'clang', 'error', 'module', 'check', 'std']","['annot warn', 'annot bin', 'warn error', 'opensource harness', 'harness eradicate', 'checker backend', 'backend opensource', 'safe backend', 'backend annot', 'module backend']","https://github.com/facebook/infer/issues/1427
+https://github.com/facebook/infer/issues/236
+https://github.com/secure-software-engineering/phasar/issues/31
+https://github.com/facebook/infer/issues/1595
+https://github.com/facebook/infer/issues/1082",27,10,11,1,1,0,,,,,,"facebook/infer (73)
+secure-software-engineering/phasar (8)
+diffblue/cbmc (7)
+phpstan/phpstan (3)
+wala/WALA (2)
+scottrogowski/code2flow (2)
+soot-oss/soot (2)
+opalj/opal (1)
+spotbugs/spotbugs (1)
+pmd/pmd (1)
+secure-software-engineering/FlowDroid (1)
+arguslab/Argus-SAF (1)",build issues,clang compilation error,Y,"https://github.com/soot-oss/soot/issues/1898
+https://github.com/facebook/infer/issues/383
+https://github.com/pmd/pmd/issues/767
+https://github.com/arguslab/Argus-SAF/issues/51
+https://github.com/phpstan/phpstan/issues/3887
+https://github.com/secure-software-engineering/phasar/issues/7
+https://github.com/diffblue/cbmc/issues/8258
+https://github.com/secure-software-engineering/FlowDroid/issues/561
+https://github.com/vitsalis/PyCG/issues/67"
+7,95,0.03406238795,Compilation,"['error', '15', 'error 15', '04', '15 04', '13', '38', '38 step', '34 38', '13 34']","['gradle build', 'gradlew build', 'gradle', 'capture gradle', 'gradlew', 'android', 'error 15', 'error warning', 'compilation', 'error 14']","['error', 'step', 'gradle', 'build', 'file', 'line', 'note', 'project', 'recompile', 'character']","['15', 'error', 'error 15', '15 04', 'step 13', 'gradle', 'build', 'error note', 'error 14', 'gradlew']","https://github.com/facebook/infer/issues/387
+https://github.com/facebook/infer/issues/864
+https://github.com/facebook/infer/issues/908
+https://github.com/facebook/infer/issues/199
+https://github.com/facebook/infer/issues/1730",18,10,16,4,2,0,,,,,,"facebook/infer (49)
+spotbugs/spotbugs (27)
+wala/WALA (6)
+soot-oss/soot (5)
+pmd/pmd (2)
+secure-software-engineering/FlowDroid (1)
+MIT-PAC/droidsafe-src (1)
+diffblue/cbmc (1)
+phpstan/phpstan (1)
+plast-lab/doop (1)
+yanniss/doop-deprecated (1)",gradle compilation error,gradle compilation error,Y,"https://github.com/soot-oss/soot/issues/1851
+https://github.com/facebook/infer/issues/649
+https://github.com/spotbugs/spotbugs/issues/1294
+https://github.com/wala/WALA/issues/281
+https://github.com/phpstan/phpstan/issues/3574
+https://github.com/secure-software-engineering/phasar/issues/649
+https://github.com/diffblue/cbmc/issues/8372
+https://github.com/secure-software-engineering/FlowDroid/issues/637
+https://github.com/soot-oss/SootUp/issues/701
+https://github.com/plast-lab/doop/issues/13
+https://github.com/security-code-scan/security-code-scan/issues/158"
+10,88,0.03155252779,Unable to summarize a topic,"['line character', 'character', 'amd64', 'character call', 'call file', 'call', 'line', 'file line', 'file', 'unpack']","['dockerfile', 'docker', 'docker image', 'docker container', 'cmake', 'version version', 'information version', 'apt install', 'version', 'build']","['amd64', 'unpack', 'unselected', 'prepare', 'stretch', 'docker', 'unpack unpack', 'selecting', 'set', 'dev']","['amd64', 'unpack', 'prepare unpack', 'previously unselected', 'stretch amd64', 'docker', 'unpack unpack', 'amd64 prepare', 'amd64 18deb9u1', 'amd64 get']","https://github.com/facebook/infer/issues/1588
+https://github.com/phpstan/phpstan/issues/1937
+https://github.com/facebook/infer/issues/751
+https://bitbucket.org/yanniss/doop-deprecated/issues/22/runtimeexception-in-using-doop
+https://github.com/facebook/infer/issues/1602",17,7,4,4,4,0,,,,,,"facebook/infer (63)
+phpstan/phpstan (9)
+diffblue/cbmc (6)
+yanniss/doop-deprecated (2)
+soot-oss/soot (2)
+wala/WALA (1)
+secure-software-engineering/phasar (1)
+spotbugs/spotbugs (1)
+security-code-scan/security-code-scan (1)
+pmd/pmd (1)
+scottrogowski/code2flow (1)",Unable to summarize a topic,Unable to summarize a topic,Y,"https://github.com/soot-oss/soot/issues/977
+https://github.com/facebook/infer/issues/643
+https://github.com/spotbugs/spotbugs/issues/1493
+https://github.com/pmd/pmd/issues/2176
+https://github.com/wala/WALA/issues/754
+https://github.com/phpstan/phpstan/issues/4072
+https://github.com/secure-software-engineering/phasar/issues/21
+https://github.com/secure-software-engineering/FlowDroid/issues/267"
+11,70,0.02509860165,IDE Plugin,"['eclipse', 'plugin', 'eclipse plugin', 'project', 'build', 'error', 'install', 'plug', 'source source', 'problem']","['plugin eclipse', 'eclipse plugin', 'eclipse plug', 'project eclipse', 'eclipseplugin', 'build eclipse', 'instal eclipse', 'eclipse project', 'install eclipse', 'eclipse version']","['eclipse', 'plugin', 'eclipse plugin', 'project', 'plug', 'install', 'build', 'error', 'problem', 'source']","['eclipse', 'eclipse plugin', 'build', 'source source', 'project eclipse', 'eclipse project', 'install eclipse', 'plugin eclipse', 'gradle', 'workspace']","https://github.com/soot-oss/soot/issues/664
+https://github.com/spotbugs/spotbugs/issues/509
+https://github.com/pmd/pmd/issues/4067
+https://github.com/spotbugs/spotbugs/issues/75
+https://github.com/soot-oss/soot/issues/908",14,14,11,5,4,0,,,,,,"soot-oss/soot (22)
+wala/WALA (22)
+spotbugs/spotbugs (17)
+secure-software-engineering/FlowDroid (3)
+MIT-PAC/droidsafe-src (2)
+pmd/pmd (2)
+cs-au-dk/TAJS (1)
+soot-oss/SootUp (1)",How to use as IDE plugin,How to use as IDE plugin,Y,"https://github.com/soot-oss/soot/issues/646
+https://github.com/facebook/infer/issues/1536
+https://github.com/spotbugs/spotbugs/issues/1305
+https://github.com/pmd/pmd/issues/757
+https://github.com/arguslab/Argus-SAF/issues/77
+https://github.com/wala/WALA/issues/710
+https://github.com/phpstan/phpstan/issues/4063
+https://github.com/secure-software-engineering/phasar/issues/28
+https://github.com/diffblue/cbmc/issues/1252
+https://github.com/secure-software-engineering/FlowDroid/issues/149
+https://github.com/soot-oss/SootUp/issues/600"
+8,63,0.02258874148,Build System,"['wno', 'xcodebuild', 'file', 'line character', 'character', 'line', 'character call', 'call file', 'ios', 'call']","['xcodebuild', 'clang error', 'xcode', 'sdk iphonesimulator', 'xcodebuild workspace', 'debug sdk', 'configuration debug', 'compilec', 'debug', 'iphonesimulator']","['xcodebuild', 'file', 'character', 'line', 'ios', 'call', 'conversion', 'iphonesimulator', 'error', 'debug']","['xcodebuild', 'call file', 'file line', 'iphonesimulator', 'sdk iphonesimulator', 'debug sdk', 'xcodebuild workspace', 'ios ios', 'xcode', 'workspace scheme']","https://github.com/facebook/infer/issues/112
+https://github.com/facebook/infer/issues/1169
+https://github.com/facebook/infer/issues/960
+https://github.com/facebook/infer/issues/213
+https://github.com/facebook/infer/issues/403",12,3,9,1,2,0,,,,,,"facebook/infer (62)
+pmd/pmd (1)",build issues,Build system issues (iOS),Y,"https://github.com/soot-oss/soot/issues/2056
+https://github.com/facebook/infer/issues/1076
+https://github.com/spotbugs/spotbugs/issues/2510
+https://github.com/arguslab/Argus-SAF/issues/10
+https://github.com/phpstan/phpstan/issues/3167
+https://github.com/secure-software-engineering/phasar/issues/1
+https://github.com/diffblue/cbmc/issues/8249
+https://github.com/secure-software-engineering/FlowDroid/issues/217
+https://github.com/soot-oss/SootUp/issues/550
+https://github.com/security-code-scan/security-code-scan/issues/117"
+17,45,0.01613481535,Build System,"['instal', 'instal current', 'current version', 'current', 'v0', 'version', 'note', 'check', 'opam', '11']","['unix ocamlbuild', 'ocaml version', 'ocamlbuild findlib', 'check ocaml', 'ocamlfind', 'ocaml', 'ocamlopt', 'error compilation', 'ocamlc', 'ocamlbuild']","['instal', 'current version', 'current', 'note', 'check', 'version', 'opam', 'install', 'conf', 'error']","['instal', 'version note', 'version v0', 'error 60527', 'ocaml', 'ocamlfind', 'configure', 'ocamlbuild', 'ocamlc', 'compiler']","https://github.com/facebook/infer/issues/267
+https://github.com/facebook/infer/issues/984
+https://github.com/facebook/infer/issues/972
+https://github.com/facebook/infer/issues/381
+https://github.com/facebook/infer/issues/904",11,2,8,2,2,0,,,,,,"facebook/infer (40)
+phpstan/phpstan (2)
+secure-software-engineering/phasar (1)
+wala/WALA (1)
+scottrogowski/code2flow (1)",build issues,Fail to build,Y,"https://github.com/soot-oss/soot/issues/735
+https://github.com/spotbugs/spotbugs/issues/1327
+https://github.com/pmd/pmd/issues/633
+https://github.com/arguslab/Argus-SAF/issues/58
+https://github.com/phpstan/phpstan/issues/3814
+https://github.com/diffblue/cbmc/issues/223
+https://github.com/secure-software-engineering/FlowDroid/issues/218
+https://github.com/soot-oss/SootUp/issues/770
+https://github.com/scottrogowski/code2flow/issues/105
+https://github.com/vitsalis/PyCG/issues/42"
+18,41,0.01470060954,Memory,"['memory', 'issue', 'enable issue', 'entity_5', 'memory leak', 'shell', 'enable', 'next', 'leak', 'memory_leak']","['run memory', 'large memory', 'memory increase', 'memory usage', 'memory leak', 'report memory', 'memory limit', 'memory_limit4000', 'huge memory', 'memory_limit']","['memory', 'leak', 'builder', 'project', 'consumption', 'observer', 'testview', 'stuck', 'self', 'memory_leak']","['memory', 'memory leak', 'leak', 'error hierarchy', 'testview', 'allocate', 'memory_leak', 'large memory', 'g_imservice', 'memory usage']","https://github.com/phpstan/phpstan/issues/1148
+https://github.com/facebook/infer/issues/105
+https://github.com/facebook/infer/issues/104
+https://github.com/soot-oss/soot/issues/691
+https://github.com/facebook/infer/issues/481",8,5,4,0,0,0,,,,,,"facebook/infer (29)
+phpstan/phpstan (4)
+secure-software-engineering/FlowDroid (2)
+soot-oss/SootUp (2)
+soot-oss/soot (1)
+secure-software-engineering/phasar (1)
+diffblue/cbmc (1)
+MIT-PAC/droidsafe-src (1)",memory limitations,Memory issues,Y,"https://github.com/soot-oss/soot/issues/1366
+https://github.com/facebook/infer/issues/854
+https://github.com/pmd/pmd/issues/2355
+https://github.com/wala/WALA/issues/1337
+https://github.com/phpstan/phpstan/issues/1654
+https://github.com/secure-software-engineering/phasar/issues/136
+https://github.com/diffblue/cbmc/issues/6393
+https://github.com/secure-software-engineering/FlowDroid/issues/498
+https://github.com/scottrogowski/code2flow/issues/10
+https://bitbucket.org/yanniss/doop-deprecated/issues/1/very-different-results-of-the-same
+https://github.com/plast-lab/doop/issues/6
+https://github.com/security-code-scan/security-code-scan/issues/9"
+19,39,0.01398350663,New Release,"['release', 'version', 'support', 'paddle', 'plan', 'release version', 'fedora', 'release plan', 'late version', 'late']","['version release', 'release support', 'release version', 'support release', 'release tag', 'release plan', 'release', 'possible release', 'plan release', 'release note']","['release', 'version', 'support', 'plan', 'late', 'late version', 'tag', 'library', 'thank', 'documentation']","['release plan', 'release version', 'late version', 'support version', 'support release', 'release note', 'version tag', 'release4', 'release tag', 'library versions']","https://github.com/soot-oss/soot/issues/1878
+https://github.com/soot-oss/soot/issues/1898
+https://github.com/facebook/infer/issues/879
+https://github.com/facebook/infer/issues/1027
+https://github.com/facebook/infer/issues/1838",8,5,6,0,0,0,,,,,,"soot-oss/soot (12)
+facebook/infer (8)
+spotbugs/spotbugs (4)
+diffblue/cbmc (4)
+security-code-scan/security-code-scan (2)
+pmd/pmd (2)
+secure-software-engineering/FlowDroid (2)
+arguslab/Argus-SAF (1)
+soot-oss/SootUp (1)
+phpstan/phpstan (1)
+scottrogowski/code2flow (1)
+secure-software-engineering/phasar (1)",generic questions about releases,New version inqueries (e.g. asking about feature support),Y,"https://github.com/soot-oss/soot/issues/1830
+https://github.com/facebook/infer/issues/1356
+https://github.com/spotbugs/spotbugs/issues/742
+https://github.com/pmd/pmd/issues/979
+https://github.com/wala/WALA/issues/304
+https://github.com/phpstan/phpstan/issues/123
+https://github.com/diffblue/cbmc/issues/6460
+https://github.com/secure-software-engineering/FlowDroid/issues/724
+https://github.com/security-code-scan/security-code-scan/issues/207"
+15,38,0.01362495518,Code Slicing,"['slice', 'statement', 'slicing', 'backward', 'code', 'list', 'slicer', 'seed', 'backward slicing', 'backward slice']","['slice code', 'backward slicing', 'slicing statement', 'slicing', 'backward slice', 'slicing technique', 'forward slicing', 'slice tool', 'slicer tutorial', 'slice source']","['slice', 'statement', 'slicing', 'backward', 'code', 'list', 'slicer', 'backward slicing', 'seed', 'backward slice']","['slice', 'slicing', 'slicer', 'backward slicing', 'slice result', 'backward slice', 'source code', 'perform forward', 'node context', 'instructionindex']","https://github.com/wala/WALA/issues/782
+https://github.com/wala/WALA/issues/839
+https://github.com/wala/WALA/issues/367
+https://github.com/vitsalis/PyCG/issues/42
+https://github.com/wala/WALA/issues/752",11,2,1,5,0,0,,,,,,"wala/WALA (32)
+soot-oss/soot (3)
+secure-software-engineering/FlowDroid (2)
+vitsalis/PyCG (1)",Code slicing questions,Code slicing questions,Y,"https://github.com/soot-oss/soot/issues/1213
+https://github.com/facebook/infer/issues/893
+https://github.com/spotbugs/spotbugs/issues/1889
+https://github.com/pmd/pmd/issues/1000
+https://github.com/wala/WALA/issues/260
+https://github.com/phpstan/phpstan/issues/3552
+https://github.com/secure-software-engineering/phasar/issues/55
+https://github.com/diffblue/cbmc/issues/8567
+https://github.com/secure-software-engineering/FlowDroid/issues/299
+https://github.com/soot-oss/SootUp/issues/98
+https://github.com/scottrogowski/code2flow/issues/65
+https://bitbucket.org/yanniss/doop-deprecated/issues/32/too-many-mock-object-are-false-positves"
+20,30,0.01075654356,Unable to summarize a topic,"['net', 'security', 'scan', 'nuget', 'visual', 'visual studio', 'security scan', 'tool', 'net core', 'project']","['vs2019 vs2017', 'vs2017 vs2015', 'dotnet version', 'vs2017', 'dotnet core', 'vs2019', 'vs2015', 'vs2015 visual', 'framework version', 'branch vs2019']","['security', 'scan', 'nuget', 'tool', 'project', 'dotnet', 'visual', 'core', 'version', 'visual studio']","['security scan', 'dotnet', 'net core', 'visual studio', 'vs2017', 'code scan', 'security code', 'extension nuget', 'securitycodescan', 'core tool']","https://github.com/diffblue/cbmc/issues/61
+https://github.com/security-code-scan/security-code-scan/issues/219
+https://github.com/security-code-scan/security-code-scan/issues/112
+https://github.com/security-code-scan/security-code-scan/issues/78
+https://github.com/security-code-scan/security-code-scan/issues/161",11,2,7,1,1,0,,,,,,"security-code-scan/security-code-scan (26)
+diffblue/cbmc (2)
+soot-oss/soot (1)
+facebook/infer (1)",Unable to summarize a topic,Unable to summarize a topic,Y,"https://github.com/soot-oss/soot/issues/727
+https://github.com/facebook/infer/issues/661
+https://github.com/spotbugs/spotbugs/issues/888
+https://github.com/pmd/pmd/issues/2124
+https://github.com/phpstan/phpstan/issues/1633
+https://github.com/diffblue/cbmc/issues/684
+https://github.com/secure-software-engineering/FlowDroid/issues/368
+https://github.com/scottrogowski/code2flow/issues/7"

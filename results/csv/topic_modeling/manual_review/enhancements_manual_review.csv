@@ -1,0 +1,586 @@
+Topic,Count,Percentage,Topic Label (to be filled in by reviewer),Representation,KeyBERTInspired,PartOfSpeech,MaximalMarginalRelevance,top_documents,quick fix,slow fix,hot topic,first time,easy fix,hard fix,Related Tools,Kadiray,Miao,agree,top_documents_repo
+0,228,0.0730301089,Rule Definitions,"['rule', 'code', 'propose', 'flag', 'apex', 'describe', 'property', 'description', 'category', 'possible']","['rule flag', 'description rule', 'rule customizable', 'flag rule', 'properties rule', 'apex rule', 'rule propose', 'code flag', 'propose rule', 'rule rule']","['rule', 'code', 'propose', 'apex', 'category', 'ruleset', 'describe', 'description', 'flag', 'property']","['apex', 'category', 'ruleset', 'description', 'flag', 'propose category', 'propose rule', 'code sample', 'properties', 'rule propose']","https://github.com/pmd/pmd/issues/2845
+https://github.com/pmd/pmd/issues/5304
+https://github.com/pmd/pmd/issues/1495
+https://github.com/pmd/pmd/issues/5427
+https://github.com/pmd/pmd/issues/2851",19,42,57,2,2,40,"pmd/pmd (193)
+phpstan/phpstan (20)
+spotbugs/spotbugs (5)
+diffblue/cbmc (4)
+soot-oss/SootUp (4)
+facebook/infer (1)
+soot-oss/soot (1)",new rules to enforce best practices,Request for new rule,Y,"https://github.com/soot-oss/soot/issues/49
+https://github.com/phpstan/phpstan/issues/10206
+https://github.com/diffblue/cbmc/issues/6751
+https://github.com/soot-oss/SootUp/issues/384
+https://github.com/opalj/opal/issues/13"
+1,196,0.06278026906,Type Inference,"['array', 'key', 'value', 'request', 'shape', 'feature request', 'feature', 'array shape', 'help', 'happy way']","['array feature', 'array shape', 'array key', 'arraytype', 'define array', 'array array', 'array', 'value array', 'array_filter', 'param array']","['array', 'key', 'shape', 'request', 'value', 'feature', 'help', 'happy', 'happy way', 'today']","['array', 'key', 'feature request', 'feature', 'array shape', 'array key', 'list', 'array feature', 'expect', 'template']","https://github.com/phpstan/phpstan/issues/10206
+https://github.com/phpstan/phpstan/issues/4298
+https://github.com/phpstan/phpstan/issues/7275
+https://github.com/phpstan/phpstan/issues/6892
+https://github.com/phpstan/phpstan/issues/2322",63,30,65,2,2,0,"phpstan/phpstan (187)
+diffblue/cbmc (6)
+soot-oss/SootUp (1)
+opalj/opal (1)
+soot-oss/soot (1)",improvements for array types,Advanced Array Shape Typing and Inference,Y,"https://github.com/facebook/infer/issues/1108
+https://github.com/phpstan/phpstan/issues/2842
+https://github.com/pmd/pmd/issues/264
+https://github.com/diffblue/cbmc/issues/7661"
+2,179,0.05733504164,Type Inference,"['phpdoc', 'feature', 'request', 'feature request', 'annotation', 'stub', 'help', 'param', 'support', 'happy']","['phpdoc feature', 'phpdoc param', 'phpdoc', 'phpdoc block', 'error phpdoc', 'var annotation', 'annotation', 'php7', 'phpstan', 'feature request']","['phpdoc', 'annotation', 'request', 'feature', 'symfony', 'param', 'var', 'error', 'help', 'happy']","['phpdoc', 'annotation', 'feature request', 'symfony', 'param', 'var', 'error', 'help today', 'doctrine', 'template']","https://github.com/phpstan/phpstan/issues/2842
+https://github.com/phpstan/phpstan/issues/3005
+https://github.com/phpstan/phpstan/issues/10742
+https://github.com/phpstan/phpstan/issues/7183
+https://github.com/phpstan/phpstan/issues/5736",74,18,56,1,0,0,"phpstan/phpstan (168)
+diffblue/cbmc (9)
+pmd/pmd (1)
+facebook/infer (1)",improvements for return types,Smarter Type Inference and PHPDoc Interpretation,Y,"https://github.com/facebook/infer/issues/1799
+https://github.com/soot-oss/soot/issues/636
+https://github.com/phpstan/phpstan/issues/8503
+https://github.com/spotbugs/spotbugs/issues/879
+https://github.com/pmd/pmd/issues/1620
+https://github.com/diffblue/cbmc/issues/6468
+https://github.com/secure-software-engineering/phasar/issues/728
+https://github.com/soot-oss/SootUp/issues/727
+https://github.com/secure-software-engineering/FlowDroid/issues/774
+https://github.com/wala/WALA/issues/1133
+https://github.com/arguslab/Argus-SAF/issues/30
+https://github.com/security-code-scan/security-code-scan/issues/91
+https://bitbucket.org/yanniss/doop-deprecated/issues/58/improvement-of-constant-folding-addon
+https://github.com/cs-au-dk/TAJS/issues/6
+https://github.com/opalj/opal/issues/223"
+3,133,0.04260089686,Error Messages Refinement,"['request', 'feature request', 'feature', 'expect', 'value', 'range', 'comparison', 'integer', 'happy', 'foo']","['asserttype filter_var', 'expect output', 'expect error', 'value specify', 'option min_range', 'filter_varstr option', 'integer range', 'min_range max_range', 'min_range', 'request expect']","['request', 'feature', 'range', 'numeric', 'value', 'integer', 'dump', 'happy', 'min_range', 'happy way']","['expect', 'range', 'asserttype', 'filter_var', 'min_range', 'expect output', 'max_range', 'option min_range', 'filter_varstr', 'expect error']","https://github.com/phpstan/phpstan/issues/5522
+https://github.com/phpstan/phpstan/issues/7834
+https://github.com/phpstan/phpstan/issues/10814
+https://github.com/phpstan/phpstan/issues/1421
+https://github.com/phpstan/phpstan/issues/10547",34,24,30,2,0,4,"phpstan/phpstan (118)
+diffblue/cbmc (6)
+soot-oss/SootUp (4)
+spotbugs/spotbugs (2)
+pmd/pmd (2)
+cs-au-dk/TAJS (1)",Improving Error Messages,Improving Error Messages,Y,"https://github.com/facebook/infer/issues/1598
+https://github.com/soot-oss/soot/issues/1064
+https://github.com/phpstan/phpstan/issues/3657
+https://github.com/diffblue/cbmc/issues/1859
+https://github.com/secure-software-engineering/phasar/issues/76
+https://github.com/soot-oss/SootUp/issues/71
+https://github.com/secure-software-engineering/FlowDroid/issues/288
+https://github.com/wala/WALA/issues/1459
+https://github.com/scottrogowski/code2flow/issues/3
+https://github.com/vitsalis/PyCG/issues/39
+https://github.com/opalj/opal/issues/207"
+4,190,0.06085842409,Unable to summarize a topic,"['pointer', 'std', 'line', '__u', 'std __u', 'loop', 'program', 'implement', 'main', 'allocator']","['pointer check', 'failure pointer', 'pointer', 'invalid pointer', 'implement', 'program', 'dereference failure', 'x86_64', 'instruction', 'code']","['pointer', 'loop', 'program', 'failure', 'dereference', 'check', 'success', 'analysis', 'instruction', 'line']","['pointer', 'program', 'line dereference', 'dereference failure', 'success line', 'exit', 'failure pointer', 'uint32_t', 'myprocessbuilder', 'termination']","https://github.com/diffblue/cbmc/issues/6468
+https://github.com/facebook/infer/issues/1799
+https://github.com/diffblue/cbmc/issues/7821
+https://github.com/diffblue/cbmc/issues/6841
+https://github.com/diffblue/cbmc/issues/8217",12,44,9,1,3,18,"diffblue/cbmc (89)
+soot-oss/SootUp (17)
+secure-software-engineering/phasar (15)
+security-code-scan/security-code-scan (13)
+soot-oss/soot (10)
+spotbugs/spotbugs (10)
+pmd/pmd (9)
+phpstan/phpstan (8)
+facebook/infer (6)
+wala/WALA (5)
+secure-software-engineering/FlowDroid (2)
+yanniss/doop-deprecated (2)
+arguslab/Argus-SAF (2)
+cs-au-dk/TAJS (1)
+opalj/opal (1)",Request for new rule,Unable to summarize a topic,N,"https://github.com/phpstan/phpstan/issues/5522
+https://github.com/spotbugs/spotbugs/issues/561
+https://github.com/pmd/pmd/issues/412
+https://github.com/diffblue/cbmc/issues/1340
+https://github.com/soot-oss/SootUp/issues/335
+https://github.com/cs-au-dk/TAJS/issues/2"
+5,133,0.04260089686,Documentation,"['documentation', 'github', 'page', 'release', 'build', 'logo', 'project', 'doc', 'need', 'version']","['documentation', 'upgrade guide', 'github', 'github actions', 'build tool', 'build source', 'repo', 'guide', 'maintain', 'repository']","['documentation', 'github', 'page', 'release', 'build', 'website', 'devdoc', 'wiki', 'project', 'note']","['documentation', 'github', 'build', 'devdoc', 'userdoc', 'release note', 'travis', 'changelog', 'version', 'sourceforge']","https://github.com/facebook/infer/issues/1171
+https://github.com/pmd/pmd/issues/791
+https://github.com/facebook/infer/issues/1228
+https://github.com/diffblue/cbmc/issues/7907
+https://github.com/pmd/pmd/issues/985",19,25,27,1,5,11,"pmd/pmd (42)
+phpstan/phpstan (24)
+diffblue/cbmc (12)
+spotbugs/spotbugs (12)
+soot-oss/soot (11)
+soot-oss/SootUp (11)
+secure-software-engineering/phasar (8)
+facebook/infer (7)
+wala/WALA (4)
+opalj/opal (1)
+secure-software-engineering/FlowDroid (1)",Improvements for documentation site,Improvements for documentation site,Y,"https://github.com/soot-oss/soot/issues/279
+https://github.com/phpstan/phpstan/issues/4392
+https://github.com/pmd/pmd/issues/1115
+https://github.com/wala/WALA/issues/256
+https://github.com/security-code-scan/security-code-scan/issues/24
+https://github.com/cs-au-dk/TAJS/issues/3"
+6,174,0.05573350416,Config Files,"['file', 'path', 'cache', 'config', 'configuration', 'directory', 'project', 'option', 'neon', 'request']","['path config', 'configuration file', 'path file', 'relative path', 'config file', 'file path', 'configdir', 'filepath', 'path command', 'absolute path']","['file', 'path', 'config', 'relative', 'configuration', 'relative path', 'setting', 'option', 'directory', 'project']","['path', 'config', 'configuration', 'config file', 'relative path', 'configuration file', 'directory', 'absolute path', 'configure', 'filepath']","https://github.com/phpstan/phpstan/issues/171
+https://github.com/phpstan/phpstan/issues/145
+https://github.com/phpstan/phpstan/issues/8422
+https://github.com/security-code-scan/security-code-scan/issues/37
+https://github.com/phpstan/phpstan/issues/8011",63,26,51,0,2,9,"phpstan/phpstan (110)
+pmd/pmd (20)
+spotbugs/spotbugs (10)
+soot-oss/SootUp (7)
+facebook/infer (5)
+soot-oss/soot (4)
+scottrogowski/code2flow (4)
+diffblue/cbmc (3)
+security-code-scan/security-code-scan (2)
+opalj/opal (2)
+wala/WALA (2)
+secure-software-engineering/FlowDroid (2)
+cs-au-dk/TAJS (1)
+secure-software-engineering/phasar (1)
+vitsalis/PyCG (1)",improvements to config,Improvements for config file usage,Y,"https://github.com/facebook/infer/issues/1171
+https://github.com/soot-oss/soot/issues/446
+https://github.com/phpstan/phpstan/issues/6004
+https://github.com/spotbugs/spotbugs/issues/875
+https://github.com/pmd/pmd/issues/791
+https://github.com/diffblue/cbmc/issues/7907
+https://github.com/secure-software-engineering/phasar/issues/538
+https://github.com/soot-oss/SootUp/issues/1003
+https://github.com/secure-software-engineering/FlowDroid/issues/807
+https://github.com/wala/WALA/issues/90
+https://github.com/opalj/opal/issues/27"
+7,163,0.05221012172,Multi-Language Support,"['language', 'rule', 'node', 'deprecate', 'core', 'remove', 'version', 'ruleset', 'need', 'parse']","['base language', 'language language', 'language specific', 'parseroptions', 'language version', 'languageregistry', 'language property', 'language', 'annotation', 'parser']","['language', 'node', 'common base', 'common', 'parse', 'base', 'core', 'need', 'comma_expression', 'parser']","['common base', 'parse', 'core', 'base language', 'comma_expression', 'parser', 'grammar', 'language version', 'xml', 'heavy_check_mark']","https://github.com/diffblue/cbmc/issues/2908
+https://github.com/pmd/pmd/issues/4120
+https://github.com/pmd/pmd/issues/334
+https://github.com/pmd/pmd/issues/677
+https://github.com/soot-oss/SootUp/issues/317",9,58,36,0,4,65,"pmd/pmd (98)
+soot-oss/SootUp (19)
+diffblue/cbmc (16)
+phpstan/phpstan (14)
+facebook/infer (3)
+scottrogowski/code2flow (3)
+spotbugs/spotbugs (2)
+arguslab/Argus-SAF (2)
+wala/WALA (2)
+soot-oss/soot (2)
+cs-au-dk/TAJS (1)
+opalj/opal (1)",specifying different language options,Improvements for language support,Y,"https://github.com/facebook/infer/issues/685
+https://github.com/soot-oss/soot/issues/1459
+https://github.com/phpstan/phpstan/issues/171
+https://github.com/spotbugs/spotbugs/issues/856
+https://github.com/pmd/pmd/issues/712
+https://github.com/diffblue/cbmc/issues/1945
+https://github.com/secure-software-engineering/phasar/issues/564
+https://github.com/soot-oss/SootUp/issues/162
+https://github.com/secure-software-engineering/FlowDroid/issues/249
+https://github.com/wala/WALA/issues/1280
+https://github.com/security-code-scan/security-code-scan/issues/37
+https://github.com/scottrogowski/code2flow/issues/98
+https://github.com/cs-au-dk/TAJS/issues/15
+https://github.com/vitsalis/PyCG/issues/54
+https://github.com/opalj/opal/issues/245"
+8,66,0.02114029468,Test Suites,"['test', 'unit', 'source', 'suite', 'test suite', 'regression', 'unit test', 'test source', 'test test', 'coverage']","['test test', 'test', 'testing', 'test separately', 'test module', 'create test', 'test implement', 'test suite', 'test need', 'unit test']","['test', 'suite', 'unit', 'regression', 'source', 'junit', 'bytecode', 'coverage', 'write', 'build']","['test suite', 'unit test', 'regression test', 'junit', 'create test', 'test source', 'testing', 'minimaltestsuite', 'testcase', 'integration test']","https://github.com/soot-oss/SootUp/issues/257
+https://github.com/diffblue/cbmc/issues/257
+https://github.com/facebook/infer/issues/1139
+https://github.com/soot-oss/SootUp/issues/823
+https://github.com/diffblue/cbmc/issues/921",6,18,5,1,2,14,"soot-oss/SootUp (22)
+diffblue/cbmc (10)
+pmd/pmd (8)
+spotbugs/spotbugs (7)
+phpstan/phpstan (5)
+wala/WALA (4)
+facebook/infer (3)
+soot-oss/soot (3)
+secure-software-engineering/phasar (2)
+arguslab/Argus-SAF (1)
+security-code-scan/security-code-scan (1)",improve tests,Improvements for test suites,Y,"https://github.com/phpstan/phpstan/issues/8021
+https://github.com/spotbugs/spotbugs/issues/2547
+https://github.com/pmd/pmd/issues/1572
+https://github.com/diffblue/cbmc/issues/182
+https://github.com/secure-software-engineering/phasar/issues/512
+https://github.com/wala/WALA/issues/1118
+https://github.com/arguslab/Argus-SAF/issues/42
+https://github.com/opalj/opal/issues/7"
+9,55,0.01761691224,Call Graph,"['graph', 'callgraph', 'algorithm', 'edge', 'spark', 'graph algorithm', 'call', 'handle', 'worklist', 'entrypoint']","['graph algorithm', 'graph implementation', 'graph construction', 'graph', 'create graph', 'generate graph', 'give graph', 'graphql', 'graph worklist', 'dependency graph']","['graph', 'callgraph', 'spark', 'edge', 'call', 'handle', 'worklist', 'entrypoint', 'helper', 'classhierarchy']","['graph', 'callgraph', 'algorithm', 'spark', 'edge', 'graph algorithm', 'analysisscope', 'implementation', 'node', 'generate graph']","https://github.com/soot-oss/SootUp/issues/71
+https://github.com/soot-oss/SootUp/issues/1298
+https://github.com/soot-oss/SootUp/issues/1000
+https://github.com/soot-oss/SootUp/issues/429
+https://github.com/scottrogowski/code2flow/issues/3",6,16,1,0,1,2,"soot-oss/SootUp (25)
+soot-oss/soot (7)
+phpstan/phpstan (4)
+scottrogowski/code2flow (4)
+wala/WALA (3)
+facebook/infer (3)
+secure-software-engineering/FlowDroid (2)
+secure-software-engineering/phasar (2)
+opalj/opal (2)
+vitsalis/PyCG (2)
+diffblue/cbmc (1)",call-graph generation,Improvements for call graph algorithms,Y,"https://github.com/soot-oss/soot/issues/1001
+https://github.com/spotbugs/spotbugs/issues/3143
+https://github.com/soot-oss/SootUp/issues/1119
+https://github.com/secure-software-engineering/FlowDroid/issues/507
+https://github.com/wala/WALA/issues/33"
+10,56,0.01793721973,XPath,"['xpath', 'rule', 'node', 'attribute', 'expression', 'xpath rule', 'xpath query', 'query', 'xpath expression', 'tree']","['rule xpath', 'xpath support', 'xpath rule', 'core xpath', 'xpath expression', 'xpath', 'xpath query', 'xpath attribute', 'resolution xpath', 'attribute node']","['xpath', 'rule', 'node', 'attribute', 'expression', 'element', 'saxon', 'designer', 'match', 'core']","['xpath', 'attribute', 'xpath rule', 'xpath query', 'xpath expression', 'rule xpath', 'element', 'saxon', 'domnode', 'xpath attribute']","https://github.com/pmd/pmd/issues/1115
+https://github.com/pmd/pmd/issues/2523
+https://github.com/pmd/pmd/issues/569
+https://github.com/pmd/pmd/issues/2511
+https://github.com/pmd/pmd/issues/3876",2,20,11,0,1,16,"pmd/pmd (47)
+phpstan/phpstan (4)
+security-code-scan/security-code-scan (2)
+cs-au-dk/TAJS (1)
+wala/WALA (1)
+soot-oss/soot (1)",Improvements for XPath support,Improvements for XPath support,Y,"https://github.com/phpstan/phpstan/issues/824
+https://github.com/spotbugs/spotbugs/issues/390
+https://github.com/pmd/pmd/issues/1435
+https://github.com/diffblue/cbmc/issues/1091
+https://github.com/soot-oss/SootUp/issues/849
+https://github.com/secure-software-engineering/FlowDroid/issues/784"
+11,114,0.03651505445,Error Management,"['error', 'baseline', 'file', 'ignore', 'ignore error', 'line', 'feature', 'level', 'request', 'feature request']","['regenerate baseline', 'error baseline', 'update baseline', 'remove error', 'baseline remove', 'baseline file', 'issue baseline', 'ignore error', 'ignore baseline', 'remove ignore']","['baseline', 'error', 'ignore', 'file', 'baseline file', 'remove', 'regenerate', 'line', 'generate', 'unmatched']","['baseline', 'ignore error', 'baseline file', 'error baseline', 'error pattern', 'generate baseline', 'baseline feature', 'regenerate baseline', 'remove ignore', 'find error']","https://github.com/phpstan/phpstan/issues/3973
+https://github.com/phpstan/phpstan/issues/3082
+https://github.com/phpstan/phpstan/issues/9695
+https://github.com/phpstan/phpstan/issues/11929
+https://github.com/phpstan/phpstan/issues/6852",53,13,24,1,0,1,"phpstan/phpstan (95)
+diffblue/cbmc (6)
+pmd/pmd (3)
+wala/WALA (3)
+facebook/infer (3)
+security-code-scan/security-code-scan (2)
+soot-oss/soot (1)
+vitsalis/PyCG (1)",reporting and handlind errors regarding baseline,"Improvements for error management (e.g., PHPStan baseline fle)",Y,"https://github.com/facebook/infer/issues/262
+https://github.com/soot-oss/soot/issues/300
+https://github.com/phpstan/phpstan/issues/808
+https://github.com/spotbugs/spotbugs/issues/1244
+https://github.com/pmd/pmd/issues/4333
+https://github.com/diffblue/cbmc/issues/2215
+https://github.com/secure-software-engineering/phasar/issues/4
+https://github.com/soot-oss/SootUp/issues/50
+https://github.com/wala/WALA/issues/441
+https://github.com/arguslab/Argus-SAF/issues/24
+https://github.com/opalj/opal/issues/41
+https://github.com/MIT-PAC/droidsafe-src/issues/8"
+12,105,0.033632287,Language Version Support,"['update', 'preview', 'version', 'support', 'module', 'jep', 'update update', 'kotlin', 'remove', 'release']","['support openjdk', 'openjdk schedule', 'openjdk', 'jdk22', 'jep pattern', 'javadoc', 'follow jeps', 'jeps', 'jsp', 'jeps important']","['preview', 'update', 'version', 'jep', 'support', 'release', 'experimental', 'remove', 'language', 'pattern']","['jep', 'update update', 'preview update', 'version preview', 'language version', 'update implementation', 'preview feature', 'openjdk', 'patterns', 'dependency update']","https://github.com/spotbugs/spotbugs/issues/1244
+https://github.com/soot-oss/soot/issues/300
+https://github.com/pmd/pmd/issues/4333
+https://github.com/pmd/pmd/issues/5478
+https://github.com/pmd/pmd/issues/4015",9,22,16,1,4,23,"pmd/pmd (35)
+soot-oss/SootUp (19)
+spotbugs/spotbugs (15)
+soot-oss/soot (10)
+wala/WALA (7)
+facebook/infer (5)
+diffblue/cbmc (5)
+opalj/opal (4)
+arguslab/Argus-SAF (2)
+phpstan/phpstan (1)
+secure-software-engineering/phasar (1)
+MIT-PAC/droidsafe-src (1)",handlind different language versions,"Dependency compatibility updates (e.g., JDK)",N,"https://github.com/phpstan/phpstan/issues/9660
+https://github.com/spotbugs/spotbugs/issues/873
+https://github.com/soot-oss/SootUp/issues/1179"
+13,68,0.02178090967,Missing Results,"['report', 'feature request', 'feature', 'request', 'error', 'today', 'way', 'happy way', 'today happy', 'help today']","['report error', 'request report', 'report invalid', 'response report', 'report closure', 'report unreachable', 'unresolvable report', 'undefined report', 'request error', 'report useless']","['report', 'request', 'feature', 'error', 'unreachable', 'way', 'response', 'today', 'happy way', 'happy']","['report', 'feature request', 'feature', 'report error', 'error', 'request report', 'way response', 'response report', 'report unreachable', 'unreachable statement']","https://github.com/phpstan/phpstan/issues/9660
+https://github.com/phpstan/phpstan/issues/11320
+https://github.com/phpstan/phpstan/issues/4710
+https://github.com/phpstan/phpstan/issues/10900
+https://github.com/spotbugs/spotbugs/issues/873",20,7,16,0,0,0,"phpstan/phpstan (64)
+soot-oss/SootUp (2)
+spotbugs/spotbugs (2)",Improvements for missing reports ,Improvements for missing reports ,Y,"https://github.com/facebook/infer/issues/1724
+https://github.com/soot-oss/soot/issues/265
+https://github.com/phpstan/phpstan/issues/2884
+https://github.com/spotbugs/spotbugs/issues/464
+https://github.com/pmd/pmd/issues/3752
+https://github.com/diffblue/cbmc/issues/1824
+https://github.com/soot-oss/SootUp/issues/719
+https://github.com/wala/WALA/issues/5"
+14,56,0.01793721973,Rule Definitions,"['rule', 'description', 'affects version', 'affects', 'version rule', 'sample', 'version', 'rule description', 'run', 'code sample']","['version rule', 'ignore statement', 'option ignore', 'flag statement', 'configure flag', 'version description', 'affects version', 'description rule', 'rule description', 'statement affects']","['affects', 'rule', 'description', 'sample', 'statement', 'version', 'run', 'code', 'gradle', 'simplify']","['affects version', 'version rule', 'rule description', 'version', 'code sample', 'gradle', 'gradle designer', 'cli maven', 'maven gradle', 'description rule']","https://github.com/pmd/pmd/issues/2187
+https://github.com/pmd/pmd/issues/1608
+https://github.com/facebook/infer/issues/568
+https://github.com/pmd/pmd/issues/2223
+https://github.com/pmd/pmd/issues/1362",12,16,19,0,6,4,"pmd/pmd (48)
+spotbugs/spotbugs (4)
+wala/WALA (2)
+facebook/infer (1)
+phpstan/phpstan (1)",new rules and rule improvements,Rule improvements,Y,"https://github.com/facebook/infer/issues/256
+https://github.com/soot-oss/soot/issues/797
+https://github.com/phpstan/phpstan/issues/12486
+https://github.com/spotbugs/spotbugs/issues/82
+https://github.com/pmd/pmd/issues/5033
+https://github.com/diffblue/cbmc/issues/571
+https://github.com/secure-software-engineering/phasar/issues/760
+https://github.com/soot-oss/SootUp/issues/595
+https://github.com/wala/WALA/issues/466
+https://github.com/opalj/opal/issues/197"
+15,52,0.01665598975,Cleanup Deprecations,"['deprecate', 'remove', 'migrate', 'cleanup', 'remove deprecate', 'deprecated', 'core', 'replace', 'task', 'release']","['remove deprecate', 'deprecate api', 'core deprecate', 'cleanup deprecated', 'deprecate system', 'officially deprecate', 'deprecate', 'deprecation notice', 'deprecate attribute', 'usage deprecate']","['deprecate', 'remove', 'cleanup', 'core', 'release', 'core deprecate', 'task', 'api', 'replace', 'issue']","['deprecate', 'remove deprecate', 'deprecated', 'core remove', 'core deprecate', 'deprecate system', 'cleanup deprecated', 'mark deprecated', 'deprecate api', 'deprecation notice']","https://github.com/pmd/pmd/issues/4301
+https://github.com/diffblue/cbmc/issues/2070
+https://github.com/pmd/pmd/issues/4767
+https://github.com/soot-oss/soot/issues/250
+https://github.com/pmd/pmd/issues/5703",4,14,4,0,1,12,"diffblue/cbmc (17)
+pmd/pmd (13)
+phpstan/phpstan (7)
+spotbugs/spotbugs (5)
+soot-oss/SootUp (4)
+soot-oss/soot (4)
+secure-software-engineering/FlowDroid (1)
+secure-software-engineering/phasar (1)",clean up deprecated components,Cleanup deprecated code,Y,"https://github.com/facebook/infer/issues/809
+https://github.com/soot-oss/soot/issues/74
+https://github.com/phpstan/phpstan/issues/1010
+https://github.com/spotbugs/spotbugs/issues/373
+https://github.com/pmd/pmd/issues/4642
+https://github.com/diffblue/cbmc/issues/256
+https://github.com/secure-software-engineering/phasar/issues/745
+https://github.com/soot-oss/SootUp/issues/732
+https://github.com/wala/WALA/issues/20
+https://github.com/security-code-scan/security-code-scan/issues/8
+https://github.com/cs-au-dk/TAJS/issues/1
+https://github.com/opalj/opal/issues/11"
+16,78,0.02498398463,Generic Types,"['template', 'generic', 'param', 'promise', 'value', 'callable', 'literal', 'feature', 'feature request', 'request']","['template generic', 'generic template', 'bound template', 'support generic', 'generics', 'template param', 'generic feature', 'define generic', 'template feature', 'param collection']","['template', 'promise', 'generic', 'param', 'collection', 'covariant', 'feature', 'ref', 'generic template', 'request']","['template', 'param', 'promise promise', 'covariant', 'feature request', 'generic template', 'generic feature', 'generics', 'template feature', 'request template']","https://github.com/phpstan/phpstan/issues/6240
+https://github.com/phpstan/phpstan/issues/4049
+https://github.com/wala/WALA/issues/36
+https://github.com/phpstan/phpstan/issues/4856
+https://github.com/phpstan/phpstan/issues/12646",28,12,30,1,0,1,"phpstan/phpstan (68)
+spotbugs/spotbugs (2)
+soot-oss/soot (2)
+secure-software-engineering/phasar (2)
+scottrogowski/code2flow (1)
+wala/WALA (1)
+soot-oss/SootUp (1)
+diffblue/cbmc (1)",Improvement for handling generic types,Improvement for handling generic types,Y,"https://github.com/facebook/infer/issues/605
+https://github.com/soot-oss/soot/issues/55
+https://github.com/phpstan/phpstan/issues/11723
+https://github.com/spotbugs/spotbugs/issues/1567
+https://github.com/pmd/pmd/issues/319
+https://github.com/diffblue/cbmc/issues/218
+https://github.com/secure-software-engineering/phasar/issues/540
+https://github.com/soot-oss/SootUp/issues/446
+https://github.com/secure-software-engineering/FlowDroid/issues/744
+https://github.com/wala/WALA/issues/189
+https://github.com/arguslab/Argus-SAF/issues/28
+https://github.com/security-code-scan/security-code-scan/issues/10
+https://github.com/scottrogowski/code2flow/issues/21
+https://github.com/opalj/opal/issues/90"
+17,122,0.03907751441,"Speed
+Memory
+Usability Issues","['analysis', 'solver', 'project', 'code', 'result', 'slice', 'deliverable', 'provide', 'level', 'implement']","['application', 'framework', 'criteria follow', 'implement', 'criteria', 'scope acceptance', 'issue scope', 'runtime', 'program', 'analysis']","['analysis', 'solver', 'deliverable', 'slice', 'structure', 'project', 'result', 'communication', 'summary', 'integer']","['analysis', 'solver', 'slice', 'project', 'bitvec', 'coverage', 'application', 'smt2lib', 'iteration', 'step']","https://github.com/secure-software-engineering/phasar/issues/540
+https://github.com/pmd/pmd/issues/319
+https://github.com/secure-software-engineering/phasar/issues/668
+https://github.com/pmd/pmd/issues/2507
+https://github.com/soot-oss/soot/issues/55",8,28,15,1,0,7,"secure-software-engineering/phasar (24)
+pmd/pmd (24)
+soot-oss/SootUp (15)
+phpstan/phpstan (13)
+diffblue/cbmc (11)
+facebook/infer (7)
+soot-oss/soot (7)
+security-code-scan/security-code-scan (6)
+spotbugs/spotbugs (5)
+wala/WALA (4)
+opalj/opal (3)
+arguslab/Argus-SAF (1)
+scottrogowski/code2flow (1)
+secure-software-engineering/FlowDroid (1)",General improvement on performance and usability,General improvement on performance and usability,Y,"https://github.com/facebook/infer/issues/575
+https://github.com/soot-oss/soot/issues/273
+https://github.com/phpstan/phpstan/issues/3973
+https://github.com/pmd/pmd/issues/3895
+https://github.com/diffblue/cbmc/issues/657
+https://github.com/wala/WALA/issues/19
+https://github.com/security-code-scan/security-code-scan/issues/140
+https://github.com/vitsalis/PyCG/issues/52"
+18,40,0.01281229981,Annotation,"['annotation', 'filter', 'support', 'annotate', 'annotation support', 'element', 'guava', 'support annotation', 'javax', 'symbol']","['annotation support', 'annotation filter', 'filter annotation', 'specific annotation', 'example annotation', 'support annotation', 'annotation like', 'annotations', 'annotation information', 'check annotation']","['annotation', 'filter', 'support', 'annotate', 'element', 'guava', 'inject', 'racerd', 'value', 'symbol']","['annotation', 'annotation support', 'annotate', 'support annotation', 'annotation like', 'annotation filter', 'filter annotation', 'support filter', 'annotation value', 'fxml']","https://github.com/spotbugs/spotbugs/issues/464
+https://github.com/spotbugs/spotbugs/issues/523
+https://github.com/spotbugs/spotbugs/issues/1691
+https://github.com/pmd/pmd/issues/3752
+https://github.com/spotbugs/spotbugs/issues/947",3,10,10,0,2,4,"spotbugs/spotbugs (12)
+soot-oss/SootUp (8)
+pmd/pmd (7)
+diffblue/cbmc (4)
+facebook/infer (4)
+wala/WALA (2)
+soot-oss/soot (2)
+phpstan/phpstan (1)",working with annotations,Improvements for annotation support,Y,"https://github.com/facebook/infer/issues/75
+https://github.com/phpstan/phpstan/issues/3495
+https://github.com/spotbugs/spotbugs/issues/2739
+https://github.com/pmd/pmd/issues/1286
+https://github.com/diffblue/cbmc/issues/1770
+https://github.com/security-code-scan/security-code-scan/issues/14"
+19,80,0.02562459962,Exception Handling,"['exception', 'feature request', 'request', 'feature', 'regex', 'check', 'error', 'detect', 'like', 'describe']","['exception feature', 'exception support', 'exception factory', 'detect exception', 'handle exception', 'exception report', 'exception handling', 'exception chain', 'have exception', 'exception allow']","['exception', 'check', 'unchecked', 'unchecked exception', 'handle', 'possible', 'chain', 'request', 'feature', 'child']","['check exception', 'unchecked exception', 'exception feature', 'exception allow', 'exception handling', 'exception check', 'child exception', 'parent exception', 'detect exception', 'catchclasse']","https://github.com/spotbugs/spotbugs/issues/2547
+https://github.com/phpstan/phpstan/issues/8021
+https://github.com/phpstan/phpstan/issues/9921
+https://github.com/phpstan/phpstan/issues/4316
+https://github.com/phpstan/phpstan/issues/8163",22,6,26,0,0,3,"phpstan/phpstan (48)
+pmd/pmd (18)
+spotbugs/spotbugs (9)
+diffblue/cbmc (1)
+secure-software-engineering/phasar (1)
+arguslab/Argus-SAF (1)
+opalj/opal (1)
+wala/WALA (1)",Improvement for handling exceptions,Improvement for handling exceptions,Y,"https://github.com/soot-oss/soot/issues/1080
+https://github.com/phpstan/phpstan/issues/6240
+https://github.com/spotbugs/spotbugs/issues/2832
+https://github.com/diffblue/cbmc/issues/1309
+https://github.com/secure-software-engineering/phasar/issues/415
+https://github.com/soot-oss/SootUp/issues/150
+https://github.com/wala/WALA/issues/36
+https://github.com/scottrogowski/code2flow/issues/33"
+20,35,0.01121076233,Test Suites,"['test', 'rule', 'junit', 'exclude', 'junit5', 'assertion', 'code', 'description', 'expect', 'junit4']","['junit test', 'test rule', 'rule test', 'asserttrue', 'assertequals', 'junit5', 'test exceptionteste', 'junit4', 'junit', 'test testbad']","['test', 'rule', 'junit', 'junit5', 'assertion', 'exception', 'exclude', 'sample', 'code', 'issue']","['test', 'junit', 'junit5', 'assertion', 'exception', 'junit4', 'test code', 'rule test', 'assertequals', 'junit test']","https://github.com/pmd/pmd/issues/1435
+https://github.com/spotbugs/spotbugs/issues/390
+https://github.com/pmd/pmd/issues/638
+https://github.com/diffblue/cbmc/issues/1091
+https://github.com/pmd/pmd/issues/2944",5,5,9,0,0,7,"pmd/pmd (23)
+spotbugs/spotbugs (4)
+phpstan/phpstan (3)
+diffblue/cbmc (3)
+secure-software-engineering/FlowDroid (1)
+soot-oss/SootUp (1)",Improvements for handling unit tests,Improvements for handling unit tests,Y,"https://github.com/facebook/infer/issues/1199
+https://github.com/soot-oss/soot/issues/97
+https://github.com/phpstan/phpstan/issues/1686
+https://github.com/spotbugs/spotbugs/issues/3395
+https://github.com/pmd/pmd/issues/3427
+https://github.com/diffblue/cbmc/issues/1314
+https://github.com/soot-oss/SootUp/issues/981
+https://github.com/secure-software-engineering/FlowDroid/issues/89
+https://github.com/vitsalis/PyCG/issues/33"
+21,90,0.02882767457,Build System,"['maven', 'gradle', 'plugin', 'build', 'release', 'project', 'core', 'designer', 'eclipse', 'dependency']","['maven build', 'gradle build', 'maven project', 'gradlew build', 'compilation gradlew', 'documentation maven', 'configure gradle', 'remove maven', 'gradle configuration', 'task gradle']","['gradle', 'maven', 'task', 'build', 'plugin', 'project', 'eclipse', 'linter', 'check', 'compilation']","['gradle', 'maven', 'gradlew', 'gradle plugin', 'maven build', 'maven project', 'gradle build', 'gradlew check', 'maven plugin', 'msridhar']","https://github.com/spotbugs/spotbugs/issues/82
+https://github.com/wala/WALA/issues/466
+https://github.com/soot-oss/SootUp/issues/595
+https://github.com/spotbugs/spotbugs/issues/133
+https://github.com/spotbugs/spotbugs/issues/515",13,21,17,1,4,10,"spotbugs/spotbugs (28)
+pmd/pmd (19)
+wala/WALA (17)
+soot-oss/SootUp (13)
+soot-oss/soot (7)
+facebook/infer (2)
+phpstan/phpstan (1)
+diffblue/cbmc (1)
+secure-software-engineering/phasar (1)
+opalj/opal (1)",integrationg with build tools,Improvements for usability with build systems,Y,"https://github.com/soot-oss/soot/issues/250
+https://github.com/phpstan/phpstan/issues/6410
+https://github.com/spotbugs/spotbugs/issues/2776
+https://github.com/pmd/pmd/issues/4301
+https://github.com/diffblue/cbmc/issues/2070
+https://github.com/secure-software-engineering/phasar/issues/79
+https://github.com/soot-oss/SootUp/issues/47
+https://github.com/secure-software-engineering/FlowDroid/issues/476"
+22,36,0.01153106983,IR,"['jimple', 'javajimple', 'implement', 'names', 'nest base', 'interfaceinvoke', 'dacapo', 'access control', 'base access', 'trap']","['implement jimple', 'jimple javajimple', 'jimple file', 'directly jimple', 'jimple', 'factory jimple', 'logic jimple', 'migrate jimple', 'like jimple', 'marker jimple']","['jimple', 'javajimple', 'interfaceinvoke', 'stack18', 'stack16', 'name', 'factory', 'trap', 'sink', 'operands']","['jimple', 'interfaceinvoke', 'declare sink', 'jimple javajimple', 'interfaceinvoke names', 'jimpleprinter', 'stack17 interfaceinvoke', 'jimple file', 'implement jimple', 'stack18 dynamicinvoke']","https://github.com/soot-oss/SootUp/issues/1119
+https://github.com/soot-oss/SootUp/issues/692
+https://github.com/soot-oss/SootUp/issues/756
+https://github.com/soot-oss/SootUp/issues/412
+https://github.com/soot-oss/SootUp/issues/18",1,6,0,0,0,6,"soot-oss/SootUp (30)
+soot-oss/soot (3)
+wala/WALA (1)
+spotbugs/spotbugs (1)
+secure-software-engineering/FlowDroid (1)",working with the IR (Jimple),"Jimple related improvements (e.g., serialization, simplification)",Y,"https://github.com/soot-oss/soot/issues/1711
+https://github.com/diffblue/cbmc/issues/1317
+https://github.com/soot-oss/SootUp/issues/1010"
+23,137,0.04388212684,Language Version Support,"['version', 'update', 'release', 'action', 'build', 'checkout', 'action checkout', 'support', 'docker', 'checkout action']","['version release', 'release support', 'release update', 'late release', 'release number', 'improve release', 'support version', 'release date', 'beta version', 'file version']","['release', 'version', 'beta', 'update', 'stable', 'late', 'stable version', 'support', 'repo', 'date']","['beta', 'version release', 'release support', 'stable version', 'release update', 'baksmali version', 'beta version', 'update beta', 'release date', 'release number']","https://github.com/pmd/pmd/issues/4642
+https://github.com/pmd/pmd/issues/2505
+https://github.com/spotbugs/spotbugs/issues/373
+https://github.com/spotbugs/spotbugs/issues/3391
+https://github.com/facebook/infer/issues/809",35,25,14,2,4,3,"facebook/infer (35)
+phpstan/phpstan (22)
+soot-oss/SootUp (15)
+spotbugs/spotbugs (14)
+diffblue/cbmc (12)
+pmd/pmd (10)
+wala/WALA (8)
+secure-software-engineering/phasar (8)
+security-code-scan/security-code-scan (7)
+soot-oss/soot (4)
+opalj/opal (1)
+cs-au-dk/TAJS (1)",clarifying dependency and language versions,Dependency compatibility updates,N,"https://github.com/facebook/infer/issues/164
+https://github.com/soot-oss/soot/issues/245
+https://github.com/phpstan/phpstan/issues/2794
+https://github.com/spotbugs/spotbugs/issues/3411
+https://github.com/pmd/pmd/issues/4120
+https://github.com/diffblue/cbmc/issues/2908
+https://github.com/soot-oss/SootUp/issues/317
+https://github.com/wala/WALA/issues/81
+https://github.com/arguslab/Argus-SAF/issues/33
+https://github.com/scottrogowski/code2flow/issues/88
+https://github.com/cs-au-dk/TAJS/issues/5
+https://github.com/opalj/opal/issues/115"
+24,34,0.01089045484,Output Format,"['json', 'sarif', 'output', 'format', 'json output', 'ui', 'report', 'json ui', 'json format', 'sarif report']","['support json', 'json ui', 'json file', 'json output', 'json parser', 'output json', 'json format', 'custom json', 'instead json', 'json']","['json', 'output', 'json output', 'format', 'assertion', 'ui', 'json format', 'information', 'xml', 'property']","['json', 'output', 'json output', 'format', 'json ui', 'json format', 'json xml', 'json parser', 'json file', 'json_encode']","https://github.com/security-code-scan/security-code-scan/issues/14
+https://github.com/phpstan/phpstan/issues/3495
+https://github.com/diffblue/cbmc/issues/1770
+https://github.com/phpstan/phpstan/issues/6958
+https://github.com/phpstan/phpstan/issues/158",7,5,9,1,0,4,"diffblue/cbmc (12)
+phpstan/phpstan (12)
+pmd/pmd (4)
+security-code-scan/security-code-scan (2)
+facebook/infer (2)
+spotbugs/spotbugs (2)",Impovements for output format,Impovements for output format,Y,"https://github.com/facebook/infer/issues/247
+https://github.com/soot-oss/soot/issues/1387
+https://github.com/phpstan/phpstan/issues/564
+https://github.com/spotbugs/spotbugs/issues/641
+https://github.com/pmd/pmd/issues/5174
+https://github.com/diffblue/cbmc/issues/1847
+https://github.com/secure-software-engineering/phasar/issues/328
+https://github.com/soot-oss/SootUp/issues/839
+https://github.com/wala/WALA/issues/218
+https://github.com/arguslab/Argus-SAF/issues/31
+https://github.com/security-code-scan/security-code-scan/issues/35"
+25,36,0.01153106983,IR,"['body', 'interceptor', 'bodyinterceptor', 'trap', 'unit', 'bytecode', 'stmt', 'stmtgraph', 'replacement', 'enclose']","['interceptors', 'interceptor', 'interceptor test', 'bodyinterceptor stubs', 'propagate bodyinterceptors', 'body constructor', 'modification bodybuilder', 'bodyinterceptor', 'bodyinterceptors', 'bodybuilder']","['interceptor', 'body', 'bodyinterceptor', 'trap', 'unit', 'stmtgraph', 'enclose', 'bodyinterceptors', 'bodybuilder', 'graph']","['interceptor', 'body', 'bodyinterceptor', 'trap', 'bodyinterceptors', 'bodybuilder', 'enclosing body', 'interceptor test', 'body constructor', 'interceptors']","https://github.com/soot-oss/SootUp/issues/1010
+https://github.com/soot-oss/SootUp/issues/56
+https://github.com/soot-oss/soot/issues/1711
+https://github.com/soot-oss/SootUp/issues/281
+https://github.com/soot-oss/SootUp/issues/306",0,11,0,0,1,6,"soot-oss/SootUp (30)
+soot-oss/soot (5)
+diffblue/cbmc (1)","working with the IR (Jimple Body, i.e. Stmt Graph)",Unable to summarize a topic,N,"https://github.com/soot-oss/soot/issues/109
+https://github.com/phpstan/phpstan/issues/7442
+https://github.com/spotbugs/spotbugs/issues/1241
+https://github.com/pmd/pmd/issues/1027
+https://github.com/diffblue/cbmc/issues/254
+https://github.com/soot-oss/SootUp/issues/166
+https://github.com/wala/WALA/issues/316
+https://github.com/security-code-scan/security-code-scan/issues/75
+https://github.com/opalj/opal/issues/8"
+26,229,0.0733504164,Type Inference,"['property', 'check', 'feature', 'request', 'feature request', 'value', 'nullable', 'like', 'code', 'constructor']","['property feature', 'uninitialised property', 'property nullable', 'property allow', 'nullable property', 'property property', 'property initialization', 'property beeing', 'property constructor', 'declare property']","['property', 'nullable', 'constructor', 'non', 'access', 'access property', 'epgprogramme', 'bar', 'username', 'initialization']","['property', 'property feature', 'non nullable', 'access property', 'property constructor', 'property initialization', 'property value', 'nullable property', 'epgprogramme epgprogramme', 'initialization feature']","https://github.com/phpstan/phpstan/issues/7442
+https://github.com/phpstan/phpstan/issues/9062
+https://github.com/phpstan/phpstan/issues/2984
+https://github.com/pmd/pmd/issues/1027
+https://github.com/phpstan/phpstan/issues/9500",78,34,62,1,2,11,"phpstan/phpstan (166)
+pmd/pmd (21)
+spotbugs/spotbugs (14)
+diffblue/cbmc (11)
+soot-oss/SootUp (7)
+soot-oss/soot (5)
+wala/WALA (2)
+security-code-scan/security-code-scan (2)
+opalj/opal (1)",improving typed properties ,Enhance property type analysis,Y,"https://github.com/facebook/infer/issues/814
+https://github.com/soot-oss/soot/issues/1320
+https://github.com/phpstan/phpstan/issues/6225
+https://github.com/spotbugs/spotbugs/issues/1415
+https://github.com/pmd/pmd/issues/2845
+https://github.com/diffblue/cbmc/issues/318
+https://github.com/soot-oss/SootUp/issues/251"
+27,100,0.03203074952,Error Management,"['error', 'report', 'output', 'format', 'feature', 'message', 'request', 'formatter', 'feature request', 'file']","['error formatter', 'errorformat custom', 'error format', 'errorformat', 'errorformat config', 'run errorformat', 'custom error', 'error formatraw', 'ignore error', 'error identifier']","['error', 'formatter', 'message', 'line', 'inspection', 'output', 'errorformat', 'identifier', 'teamcity', 'print']","['error', 'formatter', 'errorformat', 'teamcity', 'print', 'format', 'error message', 'error formatter', 'error format', 'error identifier']","https://github.com/phpstan/phpstan/issues/1686
+https://github.com/phpstan/phpstan/issues/8041
+https://github.com/phpstan/phpstan/issues/553
+https://github.com/diffblue/cbmc/issues/1314
+https://github.com/phpstan/phpstan/issues/2921",39,20,22,1,0,7,"phpstan/phpstan (60)
+pmd/pmd (16)
+soot-oss/SootUp (6)
+diffblue/cbmc (5)
+spotbugs/spotbugs (5)
+soot-oss/soot (3)
+facebook/infer (3)
+vitsalis/PyCG (1)
+secure-software-engineering/FlowDroid (1)",better error management,"Improvements for error management (e.g., group by error type)",Y,"https://github.com/facebook/infer/issues/568
+https://github.com/phpstan/phpstan/issues/12489
+https://github.com/spotbugs/spotbugs/issues/623
+https://github.com/pmd/pmd/issues/2187
+https://github.com/wala/WALA/issues/1187"
+28,137,0.04388212684,Error Management,"['log', 'error', 'report', 'suppression', 'warning', 'ignore', 'describe', 'suppress', 'rule', 'renderer']","['report suppress', 'suppression code', 'suppress', 'warning generate', 'suppress violation', 'disable suppression', 'suppresswarning nopmd', 'warning core', 'disable certain', 'unnecessary suppressfbwarning']","['suppression', 'warning', 'disable', 'rule', 'certain check', 'suppress', 'check', 'certain', 'option', 'securerandom']","['suppression', 'disable', 'certain check', 'suppress', 'disable certain', 'securerandom', 'warning notice', 'disable suppression', 'nopmd', 'option disable']","https://github.com/pmd/pmd/issues/5174
+https://github.com/pmd/pmd/issues/1900
+https://github.com/spotbugs/spotbugs/issues/641
+https://github.com/security-code-scan/security-code-scan/issues/35
+https://github.com/security-code-scan/security-code-scan/issues/212",31,19,22,0,4,15,"pmd/pmd (52)
+phpstan/phpstan (30)
+spotbugs/spotbugs (19)
+security-code-scan/security-code-scan (15)
+diffblue/cbmc (7)
+soot-oss/soot (4)
+facebook/infer (3)
+soot-oss/SootUp (3)
+wala/WALA (2)
+secure-software-engineering/phasar (1)
+arguslab/Argus-SAF (1)",suppressing warnings,"Improvements for error management (e.g., SuppressWarnings)",Y,"https://github.com/facebook/infer/issues/1139
+https://github.com/soot-oss/soot/issues/61
+https://github.com/phpstan/phpstan/issues/2050
+https://github.com/spotbugs/spotbugs/issues/240
+https://github.com/pmd/pmd/issues/4404
+https://github.com/diffblue/cbmc/issues/257
+https://github.com/secure-software-engineering/phasar/issues/510
+https://github.com/soot-oss/SootUp/issues/257
+https://github.com/wala/WALA/issues/396
+https://github.com/arguslab/Argus-SAF/issues/25
+https://github.com/security-code-scan/security-code-scan/issues/38"

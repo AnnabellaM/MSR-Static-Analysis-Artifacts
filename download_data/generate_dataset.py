@@ -27,7 +27,7 @@ pull_requests_df = pd.DataFrame(raw_pull_request_data)
 commits_df = pd.DataFrame(raw_commit_data)
 
 
-issues_df = issues_df[['id', 'title', 'body', 'user', 'state', 'created_at', 'closed_at', 'updated_on', 'timeline', 'html_url', 'labels', 'repo', 'host']]
+issues_df = issues_df[['id', 'title', 'body', 'user', 'state', 'created_at', 'closed_at', 'updated_on', 'timeline', 'comments', 'html_url', 'labels', 'repo', 'host']]
 pull_requests_df = pull_requests_df[['id', 'html_url', 'repo', 'host', 'commits']]
 
 commits_df = commits_df[['sha', 'files']]

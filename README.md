@@ -53,7 +53,7 @@ pip install -r requirements.txt
 
 ### Download Data (From Google Drive) (Recommended)
 To get the data used in this project, download the data from the following link:
-[MSR-Static-Analysis Data](https://drive.google.com/file/d/12cIILySkvsyZYdkrPSwRWKQaI0dDLTKq/view?usp=sharing)
+[MSR-Static-Analysis Data](https://drive.google.com/file/d/159g3vpngk6OmsKBZnDTJgNyrwETmhkAO/view?usp=sharing)
 Save the data in the root directory of this repository and unzip it. The data should be in a folder named `data`.
 
 #### `issues_metadata.csv`

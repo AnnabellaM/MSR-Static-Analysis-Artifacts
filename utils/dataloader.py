@@ -30,11 +30,11 @@ def get_issues(filter=None):
     return issues
 
 def get_pull_requests():
-    pull_requests = pd.read_csv(f'{data_folder_path}/processed/pull_requests_metadata.csv')
+    pull_requests = pd.read_csv(f'{data_folder_path}/pull_requests_metadata.csv')
 
     return pull_requests
 
 def get_commits():
-    commits = pd.read_csv(f'{data_folder_path}/processed/commits_metadata.csv')
+    commits = pd.read_csv(f'{data_folder_path}/commits_metadata.csv')
 
     return commits

@@ -38,6 +38,7 @@ This artifact repository contains the code, data, and results for the paper *"Mi
 ### Requirements
 The evaluation of this artifact does not require specific hardware. However, the recommended specifications are as listed:
 - **Python** 3.9.6 (version project was developed on)
+- **Pip** 25.1.1 (version project was developed on)
 
 First create a virtual enviornment using the commands:
 ```bash

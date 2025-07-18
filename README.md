@@ -76,73 +76,73 @@ This file contains the properties of the issues which are generated from this [n
 - `repositories.csv`
 This file contains the repositories used in the paper. It includes the repository name and host (GitHub or BitBucket).
 
-#### Code
+### Code
 #### Analysis
 The analysis performed in the paper is located in the `code/analysis/` directory. They answer RQ1 of the paper. The analysis is divided into the following subdirectories:
 
-##### `subject_tools/`
+##### subject_tools
 Contains the code to provide the general statistics of the subject tools. This answers Section 3 of the paper (Research Questions and Study Objects). It identifies the number of stars, issues, and LoC of the subject tools (using cloc).
 
-#### [subject_tools.ipynb](./code/analysis/subject_tools/subject_tools.ipynb)
+- [subject_tools.ipynb](./code/analysis/subject_tools/subject_tools.ipynb)
 This notebook contains the code to provide the general statistics of the subject tools. It collects the number of stars and issues from each repository.
 
-#### [loc.ipynb](./code/analysis/subject_tools/loc.ipynb)
+- [loc.ipynb](./code/analysis/subject_tools/loc.ipynb)
 This notebook contains the code to calculate the lines of code (LoC) of the subject tools using the `cloc` tool. It runs `cloc` on each repository and collects the LoC information.
 
-#### [set_tool_name.py](./code/analysis/subject_tools/set_tool_name.py)
+- [set_tool_name.py](./code/analysis/subject_tools/set_tool_name.py)
 This script is used to set the formatted names of the subject tools in the issue data.
 
-### `common_properties/`
-#### [generate_common_properties.ipynb](./code/analysis/common_properties/generate_common_properties.ipynb)
+##### common_properties
+- [generate_common_properties.ipynb](./code/analysis/common_properties/generate_common_properties.ipynb)
 Contains the code to generate the common properties of the issues. The properties are listed as follows:
-- *state*: whether the issue is open or closed
-- *category*: whether the issue is a bug, question, or enhancement
-- *resolution time*: the time taken to resolve the issue (if closed)
-- *number of comments*: the number of comments on the issue
-- *number of unique users*: the number of unique users who commented on the issue
-- *number of files changed*: the number of files changed in the issue (from linked pull requests and commits)
-- *number of lines changed*: the number of lines changed in the issue (from linked pull requests and commits)
+    - *state*: whether the issue is open or closed
+    - *category*: whether the issue is a bug, question, or enhancement
+    - *resolution time*: the time taken to resolve the issue (if closed)
+    - *number of comments*: the number of comments on the issue
+    - *number of unique users*: the number of unique users who commented on the issue
+    - *number of files changed*: the number of files changed in the issue (from linked pull requests and commits)
+    - *number of lines changed*: the number of lines changed in the issue (from linked pull requests and commits)
 
-Each of these properties is calculated for each issue in the dataset. The results of this analysis are stored in the `issues_properties.csv` file in the `data/` directory.
+<!-- Each of these properties is calculated for each issue in the dataset. The results of this analysis are stored in the `issues_properties.csv` file in the `data/` directory. -->
 
-#### [collect_specific_datapoints.ipynb](./code/analysis/common_properties/collect_specific_datapoints.ipynb)
+- [collect_specific_datapoints.ipynb](./code/analysis/common_properties/collect_specific_datapoints.ipynb)
 Contains the code used to collect specific datapoints from the issues mentioned throughout the paper. This includes various distributions of the properties of the issues.
 
-#### [investigation.ipynb](./code/analysis/common_properties/investigation.ipynb)
+- [investigation.ipynb](./code/analysis/common_properties/investigation.ipynb)
 Contains the code to investigate the specific case or a large amount of files and LoC in PMD and SootUp issues.
 
-### `analysis/catiss_classification/`
+- `analysis/catiss_classification/`
 While all of the other properties can be easily extracted from the datasets, the category property requires additional processing, as it is not directly provided from metadata. This directory contains the code to classify issues into bugs, questions, and enhancements using CatISS.
 
-#### [catiss_classification.ipynb](./code/analysis/catiss_classification/catiss_classification.ipynb)
+- [catiss_classification.ipynb](./code/analysis/catiss_classification/catiss_classification.ipynb)
 This notebook contains the code to classify issues into bugs, questions, and enhancements using CatISS. It uses the CatISS model to classify the issues based on their title and body. The results are stored in the `issues_properties.csv` file in the `data/` directory.
 
-#### [predictions_analysis.ipynb](./code/analysis/catiss_classification/predictions_analysis.ipynb) 
+    - [predictions_analysis.ipynb](./code/analysis/catiss_classification/predictions_analysis.ipynb) 
 This notebook contains the code to analyze the accuracy of the CatISS model predictions. It compares the predictions with the existing labels in the dataset and calculates the accuracy of the model.
 
-### `interest_groups/`
-Contains the code to generate the interest groups (RQ1).
-
-#### [interest_groups.ipynb](./code/analysis/interest_groups/interest_groups.ipynb)
-This notebook contains the code to generate the interest groups from the issues. The interest groups are as follows: quick resolution, slow resolution, easy fix, hard fix, hot topic, and ignored. It defines the interest group conditions, and then applies these conditions to these issues. The results are stored in the `issues_properties.csv` file in the `data/` directory.
-
-## Topic Modeling
-The topic modeling is performed using BERTopic and is located in the `code/topic_modeling/` directory. This answers RQ2 of the paper. Each of the notebooks in this directory contains code to perform topic modeling on the three categories of issues: bugs, questions, and enhancements independently ([cluster_bugs.ipynb](./code/topic_modeling/cluster_bugs.ipynb), [cluster_questions.ipynb](./code/topic_modeling/cluster_questions.ipynb), [cluster_enhancements.ipynb](./code/topic_modeling/cluster_enhancements.ipynb)). The results of the topic modeling are stored in the `data/issues_properties.csv` file in the `data/` directory.
-
-## Figures
+##### figures
 The figures in the paper are generated using the code in the `code/analysis/figures/` directory. These figure notebooks are calculated from the results of the analysis. The figures are as follows:
 - *Figure 2*: Distribution of properties of static analysis issues across all tools. ([common_properties_figures.ipynb](./code/analysis/figures/common_properties_figures.ipynb))
 - *Figure 3*: Distribution of interest groups by tool. ([interest_groups_figures.ipynb](./code/analysis/figures/interest_groups_figures.ipynb))
 - *Figure 4*: Distribution of interest groups by topic groups. ([interest_groups_per_group_figures.ipynb](./code/analysis/figures/interest_groups_per_group_figures.ipynb))
 
-## Utils
+##### interest_groups
+Contains the code to generate the interest groups (RQ1).
+
+- [interest_groups.ipynb](./code/analysis/interest_groups/interest_groups.ipynb)
+This notebook contains the code to generate the interest groups from the issues. The interest groups are as follows: quick resolution, slow resolution, easy fix, hard fix, hot topic, and ignored. It defines the interest group conditions, and then applies these conditions to these issues. The results are stored in the `issues_properties.csv` file in the `data/` directory.
+
+#### Topic Modeling
+The topic modeling is performed using BERTopic and is located in the `code/topic_modeling/` directory. This answers RQ2 of the paper. Each of the notebooks in this directory contains code to perform topic modeling on the three categories of issues: bugs, questions, and enhancements independently ([cluster_bugs.ipynb](./code/topic_modeling/cluster_bugs.ipynb), [cluster_questions.ipynb](./code/topic_modeling/cluster_questions.ipynb), [cluster_enhancements.ipynb](./code/topic_modeling/cluster_enhancements.ipynb)). The results of the topic modeling are stored in the `data/issues_properties.csv` file in the `data/` directory.
+
+#### Utils
 The utility functions and constants used throughout the code are located in the `code/utils/` directory. This includes functions to read and write data, process data, and constants used in the code.
 
-### [constants.py](./code/utils/constants.py)
+- [constants.py](./code/utils/constants.py)
 The constants used in the code are located in the `code/utils/constants.py` file. They include stop words, formatted names, and other constants used in the code.
 
-### [dataloader.py](./code/utils/dataloader.py)
+- [dataloader.py](./code/utils/dataloader.py)
 The dataloader is responsible for loading issue, pull request, commit, and repository data from the CSV files and providing it to the analysis code.
 
-### [diamantopoulos_preprocessor.py](./code/utils/diamantopoulos_preprocessor.py)
+- [diamantopoulos_preprocessor.py](./code/utils/diamantopoulos_preprocessor.py)
 The `diamantopoulos_preprocessor.py` file contains functions to preprocess the issue data using steps by Diamantopoulos et al. This includes text cleaning, tokenization, and other preprocessing steps to prepare the data for analysis.

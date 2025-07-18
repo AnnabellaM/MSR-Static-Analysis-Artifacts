@@ -91,6 +91,8 @@ Then run the following command to generate the csv data files:
 python download_data/generate_csv.py
 ```
 
+**IMPORTANT: If you wish to recreate the entire results, perform every step. If you wish to only to generate the figures, you can simply run the sections with a :bar_chart: icon.**
+
 ## General
 This section contains the generation of the general statistics of the repositories.
 ### Generate General Statistics
@@ -118,13 +120,13 @@ cd analysis/general
 python set_tool_name.py
 ```
 
-### Common Properties Figures
+### Common Properties Figures :bar_chart:
 The common properties figures are generated from [common_properties_figures.ipynb](./analysis/common_properties/common_properties_figures.ipynb). This notebook generates the figures for the common properties of the issues and saves them in the `results/figures/common_properties` folder.
 
 ### Generate Interest Groups (already included with Google Drive download)
 The next step of RQ1 is generating the interest groups. The interest groups are generated from [interest_groups.ipynb](./analysis/interest_groups/interest_groups.ipynb). This notebook generates the interest groups and saves them in the `issues_properties.csv` file in the `data` folder. The interest groups are identified by the prefix `ig:` in the column names.
 
-### Interest Groups Figures
+### Interest Groups Figures :bar_chart:
 The interest groups figures are generated from [interest_groups_figures.ipynb](./analysis/interest_groups/interest_groups_figures.ipynb). This notebook generates the figures for the interest groups and saves them in the `results/figures/interest_groups` folder.
 
 ## RQ2. Common Challenges
@@ -133,10 +135,10 @@ The common challenges are identified through topic modeling with BERTopic. The c
 
 **IMPORTANT: At this point, to recreate the results, you must use the `data` folder provided from the Google Drive link previously mentioned, as it contains the clustering results we generated. If prior steps were performed, please re-download the data, as topic information may have been lost in prior steps.**
 
-### Topic Modeling Figures
+### Topic Modeling Figures :bar_chart:
 The topic modeling figures are generated from [topic_modeling_figures.ipynb](./analysis/topic_modeling/topic_modeling_figures.ipynb). This notebook generates the figures for the topic modeling and saves them in the `results/figures/topic_modeling` folder.
 
-### Cross Comparison of Interest Groups and Topic Groups
+### Cross Comparison of Interest Groups and Topic Groups Figures :bar_chart:
 The cross-comparison of interest groups and topic groups is performed to identify common patterns and relationships between the two. This analysis helps in understanding how different interest groups are associated with specific topics and vice versa. The cross-comparison is done in [interest_groups_per_group.ipynb](./analysis/cross_comparison/interest_groups_per_group.ipynb). This notebook generates the cross-comparison and saves the results in the `results/cross_comparison` folder.
 
 ## RQ3. Static Analysis Tools

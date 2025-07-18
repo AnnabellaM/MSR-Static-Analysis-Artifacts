@@ -3,9 +3,7 @@
 ## Table of Contents
 - [Purpose](#purpose)
 - [Repository Structure](#repository-structure)
-- [Setup](#setup)
-    - [Requirements](#requirements)
-    - [Data](#data)
+- [Requirements](#requirements)
 - [Detailed Description](#detailed-description)
     - [Data](#data)
         - [data.zip](#datazip)
@@ -19,7 +17,6 @@
             - [Figures](#figures)
             - [Interest Groups](#interest-groups)
         - [Topic Modeling](#topic-modeling)
-        - [Download Data](#download-data)
         - [Utils](#utils)
 
 ## Purpose
@@ -45,8 +42,7 @@ This artifact repository contains the code, data, and results for the paper *"Mi
         - `RQ2_Raw_Topic_Enhancements.csv`: Contains the original topics for enhancements.
     - `RQ3/`: Contains the results of the manual analysis performed on the 60 issues.
 
-## Setup
-### Requirements
+## Requirements
 The evaluation of this artifact does not require specific hardware. However, the recommended specifications are as listed:
 - **Python** 3.9.6 (version project was developed on)
 - **Pip** 25.1.1 (version project was developed on)
@@ -72,11 +68,13 @@ This file contains the properties of the issues which are generated from this [n
 This file contains the repositories used in the paper. It includes the repository name and host (GitHub or BitBucket).
 
 ### Code
+
 #### Download Data
 The data is downloaded from GitHub and BitBucket in the scripts located in the `code/download_data/` directory. The scripts are as follows:
-- [download_issues.py](./code/download_data/download_issues.py): This script downloads issues and pull requests from GitHub and BitBucket. These are saved into json files in a `raw_data/` directory.
-- [download_commits.py](./code/download_data/download_commits.py): This script downloads commits from GitHub and BitBucket. These are saved into json files in a `raw_data/` directory.
-- [generate_dataset.py](./code/download_data/generate_dataset.py): This script generates the dataset from the raw data downloaded from GitHub and BitBucket. It processes the raw data and saves it into CSV files in the `data/` directory. Specifically, it generates the `issues_metadata.csv`, `pull_requests_metadata.csv`, and `commits_metadata.csv`.
+- [download_issues.py](./code/download_data/download_issues.py): This script downloads issues and pull requests from GitHub and BitBucket, and saves results into json files in a generated `raw_data/` folder.
+- [download_commits.py](./code/download_data/download_commits.py): This script downloads commits from GitHub and BitBucket, and saves results into json files in a generated `raw_data/` folder.
+- [generate_dataset.py](./code/download_data/generate_dataset.py): This script generates the dataset from the raw data downloaded from GitHub and BitBucket. It processes the raw data and generates the `issues_metadata.csv`, `pull_requests_metadata.csv`, and `commits_metadata.csv` files, which can be found inside the `data/data.zip`.
+
 #### Analysis
 The analysis performed in the paper is located in the `code/analysis/` directory. They answer RQ1 of the paper. The analysis is divided into the following subdirectories:
 

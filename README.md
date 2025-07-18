@@ -114,7 +114,8 @@ The Catiss model is used to classify all the issues into bug, question, and enha
 ### Format Tool Names
 The formatted tool names are generated from [set_tool_name.py](./analysis/general/set_tool_name.py). The script reads the `issues_properties.csv` file and generates the tool names for each issue from the constants in `utils/constants.py`. The tool names are saved in the `issues_properties.csv` file in the `data` folder in the column `tool_name`. Run the following command to format the tool names:
 ```bash
-python analysis/general/set_tool_name.py
+cd analysis/general
+python set_tool_name.py
 ```
 
 ### Common Properties Figures

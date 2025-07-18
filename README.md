@@ -31,17 +31,24 @@
 This artifact repository contains the code, data, and results for the paper *"Mining Repositories to Understand User and Developer Challenges with Static Analysis Tools"*.
 
 ## Repository Structure
-- `code/`: Contains the code of the project
-    - `analysis/`: Contains the various analysis performed in the paper
-        - `subject_tools/`: Contains the code to provide the general statistics of the subject tools
-        - `common_properties/`: Contains the code to generate the common properties of issues (RQ1)
-            - `catiss_classification/`: Contains the code to classify issues into bugs, questions, and enhancements using CatISS
-        - `interest_groups/`: Contains the code to generate the interest groups (RQ1)
-        - `figures/`: Contains the code to generate the figures in the paper
-    - `topic_modeling/`: Contains the code for topic modeling using BERTopic (RQ2)
-    - `download_data/`: Contains scripts to download the data from GitHub and BitBucket
-    - `utils/`: Contains utility functions and constants used throughout the code
-- `data.zip`: Zip file containing the data used in the project
+- `code/`: Contains the code of the project.
+    - `analysis/`: Contains the various analysis performed in the paper.
+        - `subject_tools/`: Contains the code to provide the general statistics of the subject tools.
+        - `common_properties/`: Contains the code to generate the common properties of issues (RQ1).
+            - `catiss_classification/`: Contains the code to classify issues into bugs, questions, and enhancements using CatISS.
+        - `interest_groups/`: Contains the code to generate the interest groups (RQ1).
+        - `figures/`: Contains the code to generate the figures in the paper.
+    - `topic_modeling/`: Contains the code for topic modeling using BERTopic (RQ2).
+    - `download_data/`: Contains scripts to download the data from GitHub and BitBucket.
+    - `utils/`: Contains utility functions and constants used throughout the code.
+- `data/`: Contains the data used in the project.
+    - `data.zip`: Zip file containing all issues used in the project.
+    - `RQ2/`: Contains the full list of original and refined topics.
+        - `RQ2_Topic_List.pdf`: Contains the full list of the refined topics.
+        - `RQ2_Raw_Topic_Bugs.csv`: Contains the original topics for bugs.
+        - `RQ2_Raw_Topic_Questions.csv`: Contains the original topics for questions.
+        - `RQ2_Raw_Topic_Enhancements.csv`: Contains the original topics for enhancements.
+    - `RQ3/`: Contains the results of the manual analysis performed on the 60 issues.
 
 ## Setup
 ### Requirements

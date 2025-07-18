@@ -5,34 +5,46 @@
 - [Repository Structure](#repository-structure)
 - [Setup](#setup)
     - [Requirements](#requirements)
-    - [Download Data (From Google Drive) (Recommended)](#download-data-from-google-drive-recommended)
-    - [Download Data (From GitHub/BitBucket)](#download-data-from-githubbitbucket)
-- [General](#general)
-    - [Generate General Statistics](#generate-general-statistics)
-    - [Calculate LoC For Each Repository](#calculate-loc-for-each-repository)
-- [RQ1. Common Properties and Patterns](#rq1-common-properties-and-patterns)
-    - [Generate Common Properties (already included with Google Drive download)](#generate-common-properties-already-included-with-google-drive-download)
-    - [Generate Category With Catiss (already included with Google Drive download)](#generate-category-with-catiss-already-included-with-google-drive-download)
-    - [Format Tool Names](#format-tool-names)
-    - [Common Properties Figures](#common-properties-figures)
-    - [Interest Groups (already included with Google Drive download)](#generate-interest-groups-already-included-with-google-drive-download)
-    - [Generate Interest Groups Figures](#interest-groups-figures)
-- [RQ2. Common Challenges](#rq2-common-challenges)
-    - [Topic Modeling with BERTopic (already included with Google Drive download)](#topic-modeling-with-bertopic-already-included-with-google-drive-download)
-    - [Topic Modeling Figures](#topic-modeling-figures)
-    - [Cross Comparison of Interest Groups and Topic Groups](#cross-comparison-of-interest-groups-and-topic-groups)
-- [RQ3. Static Analysis Tools](#rq3-static-analysis-tools)
+    - [Data](#data)
+- [Analysis/](#analysis)
+    - [Subject Tools/](#subject-tools)
+        - [`subject_tools.ipynb`](#subject_toolsipynb)
+        - [`loc.ipynb`](#locipynb)
+        - [`set_tool_name.py`](#set_tool_namepy)
+    - [Common Properties/](#common-properties)
+        - [`generate_common_properties.ipynb`](#generate_common_propertiesipynb)
+        - [`collect_specific_datapoints.ipynb`](#collect_specific_datapointsipynb)
+        - [`investigation.ipynb`](#investigationipynb)
+        - [CatISS Classification/](#catiss-classification)
+            - [`catiss_classification.ipynb`](#catiss_classificationipynb)
+            - [`predictions_analysis.ipynb`](#predictions_analysisipynb)
+    - [Interest Groups/](#interest-groups)
+        - [`interest_groups.ipynb`](#interest_groupsipynb)
+- [Topic Modeling/](#topic-modeling)
+- [Figures/](#figures)
+    - [`common_properties_figures.ipynb`](#common_properties_figuresipynb)
+    - [`interest_groups_figures.ipynb`](#interest_groups_figuresipynb)
+    - [`interest_groups_per_group_figures.ipynb`](#interest_groups_per_group_figuresipynb)
+- [Utils/](#utils)
+    - [`constants.py`](#constantspy)
+    - [`dataloader.py`](#dataloaderpy)
+    - [`diamantopoulos_preprocessor.py`](#diamantopoulos_preprocessorpy)
 
 ## Purpose
 This artifact repository contains the code, data, and results for the paper *"Mining Repositories to Understand User and Developer Challenges with Static Analysis Tools"*.
 
 ## Repository Structure
-- `analysis`: Contains the scripts and notebooks for all analyses performed in the paper.
-- `download_data`: Contains scripts to download the data used in the analyses.
-- `results`: Contains the results of the analyses, including figures and tables (csv)
-- `utils`: Contains utility functions used across the different analyses (ex. constants, data loading functions, preprocessing functions).
-
-
+- `code/`: Contains the code of the project
+    - `analysis/`: Contains the various analysis performed in the paper
+        - `subject_tools/`: Contains the code to provide the general statistics of the subject tools
+        - `common_properties/`: Contains the code to generate the common properties of issues (RQ1)
+            - `catiss_classification/`: Contains the code to classify issues into bugs, questions, and enhancements using CatISS
+        - `interest_groups/`: Contains the code to generate the interest groups (RQ1)
+        - `figures/`: Contains the code to generate the figures in the paper
+    - `topic_modeling/`: Contains the code for topic modeling using BERTopic (RQ2)
+    - `download_data/`: Contains scripts to download the data from GitHub and BitBucket
+    - `utils/`: Contains utility functions and constants used throughout the code
+- `data.zip`: Zip file containing the data used in the project
 
 ## Setup
 ### Requirements
@@ -40,106 +52,90 @@ The evaluation of this artifact does not require specific hardware. However, the
 - **Python** 3.9.6 (version project was developed on)
 - **Pip** 25.1.1 (version project was developed on)
 
-First create a virtual enviornment using the commands:
-```bash
-python -m venv .venv
-source .venv/bin/activate  # On Windows use .venv\Scripts\activate
-```
-Then install the required packages. The requirements are listed in the `requirements.txt` file.
-The packages used in this project can be install using the following command:
-```bash
-pip install -r requirements.txt
-```
+### Data
+To get the data used in this project are located in the `data.zip` file in the root directory of this repository. Details regarding each of the files are provided below:
 
-### Download Data (From Google Drive) (Recommended)
-To get the data used in this project, download the data from the following link:
-[MSR-Static-Analysis Data](https://drive.google.com/file/d/159g3vpngk6OmsKBZnDTJgNyrwETmhkAO/view?usp=sharing)
-Save the data in the root directory of this repository and unzip it. The data should be in a folder named `data`.
-
-#### `issues_metadata.csv`
+- `issues_metadata.csv`
 This file contains the raw metadata of the issues collected from GitHub or BitBucket. It includes information such as issue ID, title, body, labels, etc..
 
-#### `pull_requests_metadata.csv`
+- `pull_requests_metadata.csv`
 This file contains the raw metadata of the pull requests collected from GitHub or BitBucket. It includes information such as pull request ID, linked commits, etc.
 
-#### `commits_metadata.csv`
+- `commits_metadata.csv`
 This file contains the raw metadata of the commits collected from GitHub or BitBucket. It includes information such as commit ID, number of files changed, etc.
 
-#### `issues_properties.csv`
-This file contains the properties of the issues which are generated from this [notebook](./analysis/common_properties/generate_common_properties.ipynb). All the columns with the prefix `prop:` are considered properties. The columns with the prefix `ig:` are interest group information, having a boolean value indicating whether the corresponding issue is part of the interest group or not.
+- `issues_properties.csv`
+This file contains the properties of the issues which are generated from this [notebook](./code/analysis/common_properties/generate_common_properties.ipynb). All the columns with the prefix `prop:` are considered properties. The columns with the prefix `ig:` are interest group information, having a boolean value indicating whether the corresponding issue is part of the interest group or not.
 
-#### `repositories.csv`
+- `repositories.csv`
 This file contains the repositories used in the paper. It includes the repository name and host (GitHub or BitBucket).
 
-### Download Data (From GitHub/BitBucket)
-If you want to download the data directly from GitHub or BitBucket, you can use the scripts in the `download_data` folder.
-First, get API keys from both Github and Atlassian and save them in a .env file in the root directory of this repository. The file should contain the following variables:
-```GITHUB_TOKEN=your_github_token
-ATLASSIAN_TOKEN=your_atlassian_token
-```
+## Analysis
+The analysis performed in the paper is located in the `code/analysis/` directory. They answer RQ1 of the paper. The analysis is divided into the following subdirectories:
 
-Run the following command to download the issues and pull requests metadata from GitHub or BitBucket:
-```bash
-python download_data/download_issues.py
-```
-Run the following command to download the commits metadata from GitHub or BitBucket:
-```bash
-python download_data/download_commits.py
-```
-Then run the following command to generate the csv data files:
-```bash
-python download_data/generate_csv.py
-```
+### `subject_tools/`
+Contains the code to provide the general statistics of the subject tools. This answers Section 3 of the paper (Research Questions and Study Objects). It identifies the number of stars, issues, and LoC of the subject tools (using cloc).
 
-**IMPORTANT: If you wish to recreate the entire results, perform every step. If you wish to only to generate the figures, you can simply run the sections with a :bar_chart: icon.**
+#### [subject_tools.ipynb](./code/analysis/subject_tools/subject_tools.ipynb)
+This notebook contains the code to provide the general statistics of the subject tools. It collects the number of stars and issues from each repository.
 
-## General
-This section contains the generation of the general statistics of the repositories.
-### Generate General Statistics
-The general statistics of the repositories are generated from [subject_tools.ipynb](./analysis/general/subject_tools.ipynb). This notebook generates the general statistics of the repositories and saves them in the `results/csv/general` folder. The statistics include the number of stars and issues for each repository.
-### Calculate LoC For Each Repository
-The lines of code (LoC) for each repository is calculated from [loc.ipynb](./analysis/general/loc.ipynb). This notebook calculates the LoC with `cloc` for each repository and saves the results in the `results/csv/general/loc/` folder. Each repository has its own file.
+#### [loc.ipynb](./code/analysis/subject_tools/loc.ipynb)
+This notebook contains the code to calculate the lines of code (LoC) of the subject tools using the `cloc` tool. It runs `cloc` on each repository and collects the LoC information.
 
-## RQ1. Common Properties and Patterns
-### Generate Common Properties (already included with Google Drive download)
-The common properties of the issues are generated from [generate_common_properties.ipynb](./analysis/common_properties/generate_common_properties.ipynb). This notebook generates the common properties of the issues and saves them in the `issues_properties.csv` file in the `data` folder. The properties are identified by the prefix `prop:` in the column names.
-### Generate Category With Catiss (already included with Google Drive download)
-The Catiss model is used to classify all the issues into bug, question, and enhancement. To download the Catiss model, perform the following steps:
-1. Clone the Catiss Repository in the current directory:
-    ```bash
-    git clone https://github.com/MalihehIzadi/catiss.git catiss
-    ```
-2. Download the catiss model (pytorch_model.bin) from https://drive.google.com/drive/folders/1jgV4U41-2acctpc6jH5DWL3fF5V6bKF8 and place in the `catiss/model/` directory.
-3. Run the [catiss_classification.ipynb](./analysis/catiss_classification/catiss_classification.ipynb) notebook to classify the issues into bug, question, and enhancement. The results are saved in the `issues_properties.csv` file in the `data` folder. The category is identified by `prop:category` in the column names.
-4. Verify the results by running [predictions_analysis.ipynb](./analysis/catiss_classification/predictions_analysis.ipynb). This notebook calculates the accuracy of the Catiss model against the issues with labels.
+#### [set_tool_name.py](./code/analysis/subject_tools/set_tool_name.py)
+This script is used to set the formatted names of the subject tools in the issue data.
 
-### Format Tool Names
-The formatted tool names are generated from [set_tool_name.py](./analysis/general/set_tool_name.py). The script reads the `issues_properties.csv` file and generates the tool names for each issue from the constants in `utils/constants.py`. The tool names are saved in the `issues_properties.csv` file in the `data` folder in the column `tool_name`. Run the following command to format the tool names:
-```bash
-cd analysis/general
-python set_tool_name.py
-```
+### `common_properties/`
+#### [generate_common_properties.ipynb](./code/analysis/common_properties/generate_common_properties.ipynb)
+Contains the code to generate the common properties of the issues. The properties are listed as follows:
+- *state*: whether the issue is open or closed
+- *category*: whether the issue is a bug, question, or enhancement
+- *resolution time*: the time taken to resolve the issue (if closed)
+- *number of comments*: the number of comments on the issue
+- *number of unique users*: the number of unique users who commented on the issue
+- *number of files changed*: the number of files changed in the issue (from linked pull requests and commits)
+- *number of lines changed*: the number of lines changed in the issue (from linked pull requests and commits)
 
-### Common Properties Figures :bar_chart:
-The common properties figures are generated from [common_properties_figures.ipynb](./analysis/common_properties/common_properties_figures.ipynb). This notebook generates the figures for the common properties of the issues and saves them in the `results/figures/common_properties` folder.
+Each of these properties is calculated for each issue in the dataset. The results of this analysis are stored in the `issues_properties.csv` file in the `data/` directory.
 
-### Generate Interest Groups (already included with Google Drive download)
-The next step of RQ1 is generating the interest groups. The interest groups are generated from [interest_groups.ipynb](./analysis/interest_groups/interest_groups.ipynb). This notebook generates the interest groups and saves them in the `issues_properties.csv` file in the `data` folder. The interest groups are identified by the prefix `ig:` in the column names.
+#### [collect_specific_datapoints.ipynb](./code/analysis/common_properties/collect_specific_datapoints.ipynb)
+Contains the code used to collect specific datapoints from the issues mentioned throughout the paper. This includes various distributions of the properties of the issues.
 
-### Interest Groups Figures :bar_chart:
-The interest groups figures are generated from [interest_groups_figures.ipynb](./analysis/interest_groups/interest_groups_figures.ipynb). This notebook generates the figures for the interest groups and saves them in the `results/figures/interest_groups` folder.
+#### [investigation.ipynb](./code/analysis/common_properties/investigation.ipynb)
+Contains the code to investigate the specific case or a large amount of files and LoC in PMD and SootUp issues.
 
-## RQ2. Common Challenges
-### Topic Modeling with BERTopic (already included with Google Drive download)
-The common challenges are identified through topic modeling with BERTopic. The clustering can found in the [clustering](./analysis/topic_modeling/clustering) folder. Each file in this folder clusters one of the issue categories (bug, question, enhancement). Run each of the notebooks in this folder to generate the clusters. The topics for each are generated in `results/csv/topic_modeling/manual_review` folder. These are the topics that we label during the *Topic Refinement* step in the paper. The cluster results for each issue are saved in the `results/csv/topic_modeling/clusters` folder.
+### `analysis/catiss_classification/`
+While all of the other properties can be easily extracted from the datasets, the category property requires additional processing, as it is not directly provided from metadata. This directory contains the code to classify issues into bugs, questions, and enhancements using CatISS.
 
-**IMPORTANT: At this point, to recreate the results, you must use the `data` folder provided from the Google Drive link previously mentioned, as it contains the clustering results we generated. If prior steps were performed, please re-download the data, as topic information may have been lost in prior steps.**
+#### [catiss_classification.ipynb](./code/analysis/catiss_classification/catiss_classification.ipynb)
+This notebook contains the code to classify issues into bugs, questions, and enhancements using CatISS. It uses the CatISS model to classify the issues based on their title and body. The results are stored in the `issues_properties.csv` file in the `data/` directory.
 
-### Topic Modeling Figures :bar_chart:
-The topic modeling figures are generated from [topic_modeling_figures.ipynb](./analysis/topic_modeling/topic_modeling_figures.ipynb). This notebook generates the figures for the topic modeling and saves them in the `results/figures/topic_modeling` folder.
+#### [predictions_analysis.ipynb](./code/analysis/catiss_classification/predictions_analysis.ipynb) 
+This notebook contains the code to analyze the accuracy of the CatISS model predictions. It compares the predictions with the existing labels in the dataset and calculates the accuracy of the model.
 
-### Cross Comparison of Interest Groups and Topic Groups Figures :bar_chart:
-The cross-comparison of interest groups and topic groups is performed to identify common patterns and relationships between the two. This analysis helps in understanding how different interest groups are associated with specific topics and vice versa. The cross-comparison is done in [interest_groups_per_group.ipynb](./analysis/cross_comparison/interest_groups_per_group.ipynb). This notebook generates the cross-comparison and saves the results in the `results/cross_comparison` folder.
+### `interest_groups/`
+Contains the code to generate the interest groups (RQ1).
 
-## RQ3. Static Analysis Tools
-The work in this section is performed manually.
+#### [interest_groups.ipynb](./code/analysis/interest_groups/interest_groups.ipynb)
+This notebook contains the code to generate the interest groups from the issues. The interest groups are as follows: quick resolution, slow resolution, easy fix, hard fix, hot topic, and ignored. It defines the interest group conditions, and then applies these conditions to these issues. The results are stored in the `issues_properties.csv` file in the `data/` directory.
+
+## Topic Modeling
+The topic modeling is performed using BERTopic and is located in the `code/topic_modeling/` directory. This answers RQ2 of the paper. Each of the notebooks in this directory contains code to perform topic modeling on the three categories of issues: bugs, questions, and enhancements independently ([cluster_bugs.ipynb](./code/topic_modeling/cluster_bugs.ipynb), [cluster_questions.ipynb](./code/topic_modeling/cluster_questions.ipynb), [cluster_enhancements.ipynb](./code/topic_modeling/cluster_enhancements.ipynb)). The results of the topic modeling are stored in the `data/issues_properties.csv` file in the `data/` directory.
+
+## Figures
+The figures in the paper are generated using the code in the `code/analysis/figures/` directory. These figure notebooks are calculated from the results of the analysis. The figures are as follows:
+- *Figure 2*: Distribution of properties of static analysis issues across all tools. ([common_properties_figures.ipynb](./code/analysis/figures/common_properties_figures.ipynb))
+- *Figure 3*: Distribution of interest groups by tool. ([interest_groups_figures.ipynb](./code/analysis/figures/interest_groups_figures.ipynb))
+- *Figure 4*: Distribution of interest groups by topic groups. ([interest_groups_per_group_figures.ipynb](./code/analysis/figures/interest_groups_per_group_figures.ipynb))
+
+## Utils
+The utility functions and constants used throughout the code are located in the `code/utils/` directory. This includes functions to read and write data, process data, and constants used in the code.
+
+### [constants.py](./code/utils/constants.py)
+The constants used in the code are located in the `code/utils/constants.py` file. They include stop words, formatted names, and other constants used in the code.
+
+### [dataloader.py](./code/utils/dataloader.py)
+The dataloader is responsible for loading issue, pull request, commit, and repository data from the CSV files and providing it to the analysis code.
+
+### [diamantopoulos_preprocessor.py](./code/utils/diamantopoulos_preprocessor.py)
+The `diamantopoulos_preprocessor.py` file contains functions to preprocess the issue data using steps by Diamantopoulos et al. This includes text cleaning, tokenization, and other preprocessing steps to prepare the data for analysis.

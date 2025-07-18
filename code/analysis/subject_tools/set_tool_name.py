@@ -18,4 +18,4 @@ for index, issue in issues.iterrows():
 
 # add the new tool names to the issues dataframe
 issues['tool_name'] = new_tool_names
-issues.to_csv('../../data/issues_properties.csv', index=False)
+issues.to_csv('../../../data/issues_properties.csv', index=False)

@@ -7,9 +7,13 @@
     - [Requirements](#requirements)
     - [Download Data (From Google Drive) (Recommended)](#download-data-from-google-drive-recommended)
     - [Download Data (From GitHub/BitBucket)](#download-data-from-githubbitbucket)
+- [General](#general)
+    - [Generate General Statistics](#generate-general-statistics)
+    - [Calculate LoC For Each Repository](#calculate-loc-for-each-repository)
 - [RQ1. Common Properties and Patterns](#rq1-common-properties-and-patterns)
     - [Generate Common Properties (already included with Google Drive download)](#generate-common-properties-already-included-with-google-drive-download)
     - [Generate Category With Catiss (already included with Google Drive download)](#generate-category-with-catiss-already-included-with-google-drive-download)
+    - [Format Tool Names](#format-tool-names)
     - [Common Properties Figures](#common-properties-figures)
     - [Interest Groups (already included with Google Drive download)](#generate-interest-groups-already-included-with-google-drive-download)
     - [Generate Interest Groups Figures](#interest-groups-figures)
@@ -81,6 +85,13 @@ Then run the following command to generate the csv data files:
 python download_data/generate_csv.py
 ```
 
+## General
+This section contains the generation of the general statistics of the repositories.
+### Generate General Statistics
+The general statistics of the repositories are generated from [subject_tools.ipynb](./analysis/general/subject_tools.ipynb). This notebook generates the general statistics of the repositories and saves them in the `results/csv/general` folder. The statistics include the number of stars and issues for each repository.
+### Calculate LoC For Each Repository
+The lines of code (LoC) for each repository is calculated from [loc.ipynb](./analysis/general/loc.ipynb). This notebook calculates the LoC with `cloc` for each repository and saves the results in the `results/csv/general/loc/` folder. Each repository has its own file.
+
 ## RQ1. Common Properties and Patterns
 ### Generate Common Properties (already included with Google Drive download)
 The common properties of the issues are generated from [generate_common_properties.ipynb](./analysis/common_properties/generate_common_properties.ipynb). This notebook generates the common properties of the issues and saves them in the `issues_properties.csv` file in the `data` folder. The properties are identified by the prefix `prop:` in the column names.
@@ -93,6 +104,9 @@ The Catiss model is used to classify all the issues into bug, question, and enha
 2. Download the catiss model (pytorch_model.bin) from https://drive.google.com/drive/folders/1jgV4U41-2acctpc6jH5DWL3fF5V6bKF8 and place in the `catiss/model/` directory.
 3. Run the [catiss_classification.ipynb](./analysis/catiss_classification/catiss_classification.ipynb) notebook to classify the issues into bug, question, and enhancement. The results are saved in the `issues_properties.csv` file in the `data` folder. The category is identified by `prop:category` in the column names.
 4. Verify the results by running [predictions_analysis.ipynb](./analysis/catiss_classification/predictions_analysis.ipynb). This notebook calculates the accuracy of the Catiss model against the issues with labels.
+
+### Format Tool Names
+The formatted tool names are generated from [set_tool_name.py](./analysis/general/set_tool_name.py). The script reads the `issues_properties.csv` file and generates the tool names for each issue from the constants in `utils/constants.py`. The tool names are saved in the `issues_properties.csv` file in the `data` folder in the column `tool_name`.
 
 ### Common Properties Figures
 The common properties figures are generated from [common_properties_figures.ipynb](./analysis/common_properties/common_properties_figures.ipynb). This notebook generates the figures for the common properties of the issues and saves them in the `results/figures/common_properties` folder.

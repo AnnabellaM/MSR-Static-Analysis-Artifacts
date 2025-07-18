@@ -51,6 +51,27 @@ TOOLS_ORDER = [
     'Infer',
     'PMD',
 ]
+TOOL_NAME_MAPPING = {
+    'soot': 'Soot',
+    'sootup': 'SootUp',
+    'wala': 'WALA',
+    'doop': 'DOOP',
+    'doop-deprecated': 'DOOP',
+    'opal': 'OPAL',
+    'spotbugs': 'SpotBugs',
+    'flowdroid': 'FlowDroid',
+    'argus-saf': 'Amandroid',
+    'droidsafe': 'DroidSafe',
+    'phasar': 'Phasar',
+    'cbmc': 'CBMC',
+    'security-code-scan': 'SCS',
+    'pycg': 'PyCG',
+    'code2flow': 'Code2Flow',
+    'tajs': 'TAJS',
+    'phpstan': 'PHPStan',
+    'infer': 'Infer',
+    'pmd': 'PMD'
+}
 
 GROUPS_ORDER = [
     'Language Features',

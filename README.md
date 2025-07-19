@@ -102,9 +102,9 @@ This file contains the results of the manual analysis performed on the 60 issues
 
 #### Download Data
 The data is downloaded from GitHub and BitBucket in the scripts located in the `code/download_data/` directory. The scripts are as follows:
-- [download_issues.py](./code/download_data/download_issues.py): This script downloads issues and pull requests from GitHub and BitBucket, and saves results into json files in a generated `raw_data/` folder.
-- [download_commits.py](./code/download_data/download_commits.py): This script downloads commits from GitHub and BitBucket, and saves results into json files in a generated `raw_data/` folder.
-- [generate_dataset.py](./code/download_data/generate_dataset.py): This script generates the dataset from the raw data downloaded from GitHub and BitBucket. It processes the raw data and generates the `issues_metadata.csv`, `pull_requests_metadata.csv`, and `commits_metadata.csv` files, which can be found inside the `data/data.zip`.
+- [download_issues.py](./code/download_data/download_issues.py): This script downloads issues and pull requests from GitHub and BitBucket, and saves results into json files in a generated `raw_data/issues` and `raw_data/pull_requests` folder. This is a temporary folder that is used to store the raw data before it is processed into the final dataset.
+- [download_commits.py](./code/download_data/download_commits.py): This script downloads commits from GitHub and BitBucket, and saves results into json files in a generated `raw_data/commits` folder. This is a temporary folder that is used to store the raw data before it is processed into the final dataset.
+- [generate_dataset.py](./code/download_data/generate_dataset.py): This script generates the csv datasets from all the folders in the `raw_data` folder generated from `download_issues.py` and `download_commits.py`. It processes this raw json data and generates the `issues_metadata.csv`, `pull_requests_metadata.csv`, and `commits_metadata.csv` files, which can be found at `data/data.zip`.
 
 #### Analysis
 The analysis performed in the paper is located in the `code/analysis/` directory. They answer RQ1 of the paper. The analysis is divided into the following subdirectories:

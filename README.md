@@ -149,17 +149,17 @@ This notebook contains the code to classify issues into bugs, questions, and enh
     - [predictions_analysis.ipynb](./code/analysis/catiss_classification/predictions_analysis.ipynb) 
 This notebook contains the code to analyze the accuracy of the CatISS model predictions. It compares the predictions with the existing labels in the dataset and calculates the accuracy of the model.
 
-##### Figures
-The figures in the paper are generated using the code in the `code/analysis/figures/` directory. These figure notebooks are calculated from the results of the analysis. The figures are as follows:
-- *Figure 2*: Distribution of properties of static analysis issues across all tools. ([common_properties_figures.ipynb](./code/analysis/figures/common_properties_figures.ipynb))
-- *Figure 3*: Distribution of interest groups by tool. ([interest_groups_figures.ipynb](./code/analysis/figures/interest_groups_figures.ipynb))
-- *Figure 4*: Distribution of interest groups by topic groups. ([interest_groups_per_group_figures.ipynb](./code/analysis/figures/interest_groups_per_group_figures.ipynb))
-
 ##### Interest Groups
 Contains the code to generate the interest groups (RQ1).
 
 - [interest_groups.ipynb](./code/analysis/interest_groups/interest_groups.ipynb)
 This notebook contains the code to generate the interest groups from the issues. The interest groups are as follows: quick resolution, slow resolution, easy fix, hard fix, hot topic, and ignored. It defines the interest group conditions, and then applies these conditions to these issues. The results are stored in the `issues_properties.csv` file in the zipped data file.
+
+##### Figures
+The figures in the paper are generated using the code in the `code/analysis/figures/` directory. These figure notebooks are calculated from the results of the analysis. The figures are as follows:
+- *Figure 2*: Distribution of properties of static analysis issues across all tools. ([common_properties_figures.ipynb](./code/analysis/figures/common_properties_figures.ipynb))
+- *Figure 3*: Distribution of interest groups by tool. ([interest_groups_figures.ipynb](./code/analysis/figures/interest_groups_figures.ipynb))
+- *Figure 4*: Distribution of interest groups by topic groups. ([interest_groups_per_group_figures.ipynb](./code/analysis/figures/interest_groups_per_group_figures.ipynb))
 
 #### Topic Modeling
 The topic modeling is performed using BERTopic and is located in the `code/topic_modeling/` directory. This answers RQ2 of the paper. Each of the notebooks in this directory contains code to perform topic modeling on the three categories of issues: bugs, questions, and enhancements independently ([cluster_bugs.ipynb](./code/topic_modeling/cluster_bugs.ipynb), [cluster_questions.ipynb](./code/topic_modeling/cluster_questions.ipynb), [cluster_enhancements.ipynb](./code/topic_modeling/cluster_enhancements.ipynb)). The results of the topic modeling are stored in the `issues_properties.csv` file in the zipped data file.

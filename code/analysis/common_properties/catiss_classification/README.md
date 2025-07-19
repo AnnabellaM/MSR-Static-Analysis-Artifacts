@@ -1,6 +1,6 @@
 # Catiss Classification (RQ1)
 
-This directory contains notebooks for classification of issues into bugs, questions, and enhancements, which is a subsection of the common properties section of the work (RQ1). They provide the results for the category property which is found in Figure 2(a) of the paper.
+This directory contains notebooks for classification of issues into bugs, questions, and enhancements, which is a subsection of the common properties section of the work (RQ1). They provide the results for the category property which is found in Figure 2(b) of the paper.
 
 ## Notebooks
 - 'catiss_classification.ipynb': Contains the classification of issues into bugs, questions, and enhancements using the Catiss model.

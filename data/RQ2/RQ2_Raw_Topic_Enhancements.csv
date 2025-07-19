@@ -1,147 +1,147 @@
-ID,Count,Percentage,Refined Topic,Representation,KeyBERTInspired,PartOfSpeech,MaximalMarginalRelevance,Top Documents
-1,228,0.0730301089,Rule Definitions,"['rule', 'code', 'propose', 'flag', 'apex', 'describe', 'property', 'description', 'category', 'possible']","['rule flag', 'description rule', 'rule customizable', 'flag rule', 'properties rule', 'apex rule', 'rule propose', 'code flag', 'propose rule', 'rule rule']","['rule', 'code', 'propose', 'apex', 'category', 'ruleset', 'describe', 'description', 'flag', 'property']","['apex', 'category', 'ruleset', 'description', 'flag', 'propose category', 'propose rule', 'code sample', 'properties', 'rule propose']","https://github.com/pmd/pmd/issues/2845
+ID,Count,Percentage,Refined Topic,Representation,MaximalMarginalRelevance,Top Documents
+1,228,0.0730301089,Rule Definitions,"['rule', 'code', 'propose', 'flag', 'apex', 'describe', 'property', 'description', 'category', 'possible']","['apex', 'category', 'ruleset', 'description', 'flag', 'propose category', 'propose rule', 'code sample', 'properties', 'rule propose']","https://github.com/pmd/pmd/issues/2845
 https://github.com/pmd/pmd/issues/5304
 https://github.com/pmd/pmd/issues/1495
 https://github.com/pmd/pmd/issues/5427
 https://github.com/pmd/pmd/issues/2851"
-2,196,0.06278026906,Type Inference,"['array', 'key', 'value', 'request', 'shape', 'feature request', 'feature', 'array shape', 'help', 'happy way']","['array feature', 'array shape', 'array key', 'arraytype', 'define array', 'array array', 'array', 'value array', 'array_filter', 'param array']","['array', 'key', 'shape', 'request', 'value', 'feature', 'help', 'happy', 'happy way', 'today']","['array', 'key', 'feature request', 'feature', 'array shape', 'array key', 'list', 'array feature', 'expect', 'template']","https://github.com/phpstan/phpstan/issues/10206
+2,196,0.06278026906,Type Inference,"['array', 'key', 'value', 'request', 'shape', 'feature request', 'feature', 'array shape', 'help', 'happy way']","['array', 'key', 'feature request', 'feature', 'array shape', 'array key', 'list', 'array feature', 'expect', 'template']","https://github.com/phpstan/phpstan/issues/10206
 https://github.com/phpstan/phpstan/issues/4298
 https://github.com/phpstan/phpstan/issues/7275
 https://github.com/phpstan/phpstan/issues/6892
 https://github.com/phpstan/phpstan/issues/2322"
-3,179,0.05733504164,Type Inference,"['phpdoc', 'feature', 'request', 'feature request', 'annotation', 'stub', 'help', 'param', 'support', 'happy']","['phpdoc feature', 'phpdoc param', 'phpdoc', 'phpdoc block', 'error phpdoc', 'var annotation', 'annotation', 'php7', 'phpstan', 'feature request']","['phpdoc', 'annotation', 'request', 'feature', 'symfony', 'param', 'var', 'error', 'help', 'happy']","['phpdoc', 'annotation', 'feature request', 'symfony', 'param', 'var', 'error', 'help today', 'doctrine', 'template']","https://github.com/phpstan/phpstan/issues/2842
+3,179,0.05733504164,Type Inference,"['phpdoc', 'feature', 'request', 'feature request', 'annotation', 'stub', 'help', 'param', 'support', 'happy']","['phpdoc', 'annotation', 'feature request', 'symfony', 'param', 'var', 'error', 'help today', 'doctrine', 'template']","https://github.com/phpstan/phpstan/issues/2842
 https://github.com/phpstan/phpstan/issues/3005
 https://github.com/phpstan/phpstan/issues/10742
 https://github.com/phpstan/phpstan/issues/7183
 https://github.com/phpstan/phpstan/issues/5736"
-4,133,0.04260089686,Error Messages Refinement,"['request', 'feature request', 'feature', 'expect', 'value', 'range', 'comparison', 'integer', 'happy', 'foo']","['asserttype filter_var', 'expect output', 'expect error', 'value specify', 'option min_range', 'filter_varstr option', 'integer range', 'min_range max_range', 'min_range', 'request expect']","['request', 'feature', 'range', 'numeric', 'value', 'integer', 'dump', 'happy', 'min_range', 'happy way']","['expect', 'range', 'asserttype', 'filter_var', 'min_range', 'expect output', 'max_range', 'option min_range', 'filter_varstr', 'expect error']","https://github.com/phpstan/phpstan/issues/5522
+4,133,0.04260089686,Error Messages Refinement,"['request', 'feature request', 'feature', 'expect', 'value', 'range', 'comparison', 'integer', 'happy', 'foo']","['expect', 'range', 'asserttype', 'filter_var', 'min_range', 'expect output', 'max_range', 'option min_range', 'filter_varstr', 'expect error']","https://github.com/phpstan/phpstan/issues/5522
 https://github.com/phpstan/phpstan/issues/7834
 https://github.com/phpstan/phpstan/issues/10814
 https://github.com/phpstan/phpstan/issues/1421
 https://github.com/phpstan/phpstan/issues/10547"
-5,190,0.06085842409,Unable to summarize a topic,"['pointer', 'std', 'line', '__u', 'std __u', 'loop', 'program', 'implement', 'main', 'allocator']","['pointer check', 'failure pointer', 'pointer', 'invalid pointer', 'implement', 'program', 'dereference failure', 'x86_64', 'instruction', 'code']","['pointer', 'loop', 'program', 'failure', 'dereference', 'check', 'success', 'analysis', 'instruction', 'line']","['pointer', 'program', 'line dereference', 'dereference failure', 'success line', 'exit', 'failure pointer', 'uint32_t', 'myprocessbuilder', 'termination']","https://github.com/diffblue/cbmc/issues/6468
+5,190,0.06085842409,Unable to summarize a topic,"['pointer', 'std', 'line', '__u', 'std __u', 'loop', 'program', 'implement', 'main', 'allocator']","['pointer', 'program', 'line dereference', 'dereference failure', 'success line', 'exit', 'failure pointer', 'uint32_t', 'myprocessbuilder', 'termination']","https://github.com/diffblue/cbmc/issues/6468
 https://github.com/facebook/infer/issues/1799
 https://github.com/diffblue/cbmc/issues/7821
 https://github.com/diffblue/cbmc/issues/6841
 https://github.com/diffblue/cbmc/issues/8217"
-6,133,0.04260089686,Documentation,"['documentation', 'github', 'page', 'release', 'build', 'logo', 'project', 'doc', 'need', 'version']","['documentation', 'upgrade guide', 'github', 'github actions', 'build tool', 'build source', 'repo', 'guide', 'maintain', 'repository']","['documentation', 'github', 'page', 'release', 'build', 'website', 'devdoc', 'wiki', 'project', 'note']","['documentation', 'github', 'build', 'devdoc', 'userdoc', 'release note', 'travis', 'changelog', 'version', 'sourceforge']","https://github.com/facebook/infer/issues/1171
+6,133,0.04260089686,Documentation,"['documentation', 'github', 'page', 'release', 'build', 'logo', 'project', 'doc', 'need', 'version']","['documentation', 'github', 'build', 'devdoc', 'userdoc', 'release note', 'travis', 'changelog', 'version', 'sourceforge']","https://github.com/facebook/infer/issues/1171
 https://github.com/pmd/pmd/issues/791
 https://github.com/facebook/infer/issues/1228
 https://github.com/diffblue/cbmc/issues/7907
 https://github.com/pmd/pmd/issues/985"
-7,174,0.05573350416,Config Files,"['file', 'path', 'cache', 'config', 'configuration', 'directory', 'project', 'option', 'neon', 'request']","['path config', 'configuration file', 'path file', 'relative path', 'config file', 'file path', 'configdir', 'filepath', 'path command', 'absolute path']","['file', 'path', 'config', 'relative', 'configuration', 'relative path', 'setting', 'option', 'directory', 'project']","['path', 'config', 'configuration', 'config file', 'relative path', 'configuration file', 'directory', 'absolute path', 'configure', 'filepath']","https://github.com/phpstan/phpstan/issues/171
+7,174,0.05573350416,Config Files,"['file', 'path', 'cache', 'config', 'configuration', 'directory', 'project', 'option', 'neon', 'request']","['path', 'config', 'configuration', 'config file', 'relative path', 'configuration file', 'directory', 'absolute path', 'configure', 'filepath']","https://github.com/phpstan/phpstan/issues/171
 https://github.com/phpstan/phpstan/issues/145
 https://github.com/phpstan/phpstan/issues/8422
 https://github.com/security-code-scan/security-code-scan/issues/37
 https://github.com/phpstan/phpstan/issues/8011"
-8,163,0.05221012172,Multi-Language Support,"['language', 'rule', 'node', 'deprecate', 'core', 'remove', 'version', 'ruleset', 'need', 'parse']","['base language', 'language language', 'language specific', 'parseroptions', 'language version', 'languageregistry', 'language property', 'language', 'annotation', 'parser']","['language', 'node', 'common base', 'common', 'parse', 'base', 'core', 'need', 'comma_expression', 'parser']","['common base', 'parse', 'core', 'base language', 'comma_expression', 'parser', 'grammar', 'language version', 'xml', 'heavy_check_mark']","https://github.com/diffblue/cbmc/issues/2908
+8,163,0.05221012172,Multi-Language Support,"['language', 'rule', 'node', 'deprecate', 'core', 'remove', 'version', 'ruleset', 'need', 'parse']","['common base', 'parse', 'core', 'base language', 'comma_expression', 'parser', 'grammar', 'language version', 'xml', 'heavy_check_mark']","https://github.com/diffblue/cbmc/issues/2908
 https://github.com/pmd/pmd/issues/4120
 https://github.com/pmd/pmd/issues/334
 https://github.com/pmd/pmd/issues/677
 https://github.com/soot-oss/SootUp/issues/317"
-9,66,0.02114029468,Test Suites,"['test', 'unit', 'source', 'suite', 'test suite', 'regression', 'unit test', 'test source', 'test test', 'coverage']","['test test', 'test', 'testing', 'test separately', 'test module', 'create test', 'test implement', 'test suite', 'test need', 'unit test']","['test', 'suite', 'unit', 'regression', 'source', 'junit', 'bytecode', 'coverage', 'write', 'build']","['test suite', 'unit test', 'regression test', 'junit', 'create test', 'test source', 'testing', 'minimaltestsuite', 'testcase', 'integration test']","https://github.com/soot-oss/SootUp/issues/257
+9,66,0.02114029468,Test Suites,"['test', 'unit', 'source', 'suite', 'test suite', 'regression', 'unit test', 'test source', 'test test', 'coverage']","['test suite', 'unit test', 'regression test', 'junit', 'create test', 'test source', 'testing', 'minimaltestsuite', 'testcase', 'integration test']","https://github.com/soot-oss/SootUp/issues/257
 https://github.com/diffblue/cbmc/issues/257
 https://github.com/facebook/infer/issues/1139
 https://github.com/soot-oss/SootUp/issues/823
 https://github.com/diffblue/cbmc/issues/921"
-10,55,0.01761691224,Call Graph,"['graph', 'callgraph', 'algorithm', 'edge', 'spark', 'graph algorithm', 'call', 'handle', 'worklist', 'entrypoint']","['graph algorithm', 'graph implementation', 'graph construction', 'graph', 'create graph', 'generate graph', 'give graph', 'graphql', 'graph worklist', 'dependency graph']","['graph', 'callgraph', 'spark', 'edge', 'call', 'handle', 'worklist', 'entrypoint', 'helper', 'classhierarchy']","['graph', 'callgraph', 'algorithm', 'spark', 'edge', 'graph algorithm', 'analysisscope', 'implementation', 'node', 'generate graph']","https://github.com/soot-oss/SootUp/issues/71
+10,55,0.01761691224,Call Graph,"['graph', 'callgraph', 'algorithm', 'edge', 'spark', 'graph algorithm', 'call', 'handle', 'worklist', 'entrypoint']","['graph', 'callgraph', 'algorithm', 'spark', 'edge', 'graph algorithm', 'analysisscope', 'implementation', 'node', 'generate graph']","https://github.com/soot-oss/SootUp/issues/71
 https://github.com/soot-oss/SootUp/issues/1298
 https://github.com/soot-oss/SootUp/issues/1000
 https://github.com/soot-oss/SootUp/issues/429
 https://github.com/scottrogowski/code2flow/issues/3"
-11,56,0.01793721973,XPath,"['xpath', 'rule', 'node', 'attribute', 'expression', 'xpath rule', 'xpath query', 'query', 'xpath expression', 'tree']","['rule xpath', 'xpath support', 'xpath rule', 'core xpath', 'xpath expression', 'xpath', 'xpath query', 'xpath attribute', 'resolution xpath', 'attribute node']","['xpath', 'rule', 'node', 'attribute', 'expression', 'element', 'saxon', 'designer', 'match', 'core']","['xpath', 'attribute', 'xpath rule', 'xpath query', 'xpath expression', 'rule xpath', 'element', 'saxon', 'domnode', 'xpath attribute']","https://github.com/pmd/pmd/issues/1115
+11,56,0.01793721973,XPath,"['xpath', 'rule', 'node', 'attribute', 'expression', 'xpath rule', 'xpath query', 'query', 'xpath expression', 'tree']","['xpath', 'attribute', 'xpath rule', 'xpath query', 'xpath expression', 'rule xpath', 'element', 'saxon', 'domnode', 'xpath attribute']","https://github.com/pmd/pmd/issues/1115
 https://github.com/pmd/pmd/issues/2523
 https://github.com/pmd/pmd/issues/569
 https://github.com/pmd/pmd/issues/2511
 https://github.com/pmd/pmd/issues/3876"
-12,114,0.03651505445,Error Management,"['error', 'baseline', 'file', 'ignore', 'ignore error', 'line', 'feature', 'level', 'request', 'feature request']","['regenerate baseline', 'error baseline', 'update baseline', 'remove error', 'baseline remove', 'baseline file', 'issue baseline', 'ignore error', 'ignore baseline', 'remove ignore']","['baseline', 'error', 'ignore', 'file', 'baseline file', 'remove', 'regenerate', 'line', 'generate', 'unmatched']","['baseline', 'ignore error', 'baseline file', 'error baseline', 'error pattern', 'generate baseline', 'baseline feature', 'regenerate baseline', 'remove ignore', 'find error']","https://github.com/phpstan/phpstan/issues/3973
+12,114,0.03651505445,Error Management,"['error', 'baseline', 'file', 'ignore', 'ignore error', 'line', 'feature', 'level', 'request', 'feature request']","['baseline', 'ignore error', 'baseline file', 'error baseline', 'error pattern', 'generate baseline', 'baseline feature', 'regenerate baseline', 'remove ignore', 'find error']","https://github.com/phpstan/phpstan/issues/3973
 https://github.com/phpstan/phpstan/issues/3082
 https://github.com/phpstan/phpstan/issues/9695
 https://github.com/phpstan/phpstan/issues/11929
 https://github.com/phpstan/phpstan/issues/6852"
-13,105,0.033632287,Language Version Support,"['update', 'preview', 'version', 'support', 'module', 'jep', 'update update', 'kotlin', 'remove', 'release']","['support openjdk', 'openjdk schedule', 'openjdk', 'jdk22', 'jep pattern', 'javadoc', 'follow jeps', 'jeps', 'jsp', 'jeps important']","['preview', 'update', 'version', 'jep', 'support', 'release', 'experimental', 'remove', 'language', 'pattern']","['jep', 'update update', 'preview update', 'version preview', 'language version', 'update implementation', 'preview feature', 'openjdk', 'patterns', 'dependency update']","https://github.com/spotbugs/spotbugs/issues/1244
+13,105,0.033632287,Language Version Support,"['update', 'preview', 'version', 'support', 'module', 'jep', 'update update', 'kotlin', 'remove', 'release']","['jep', 'update update', 'preview update', 'version preview', 'language version', 'update implementation', 'preview feature', 'openjdk', 'patterns', 'dependency update']","https://github.com/spotbugs/spotbugs/issues/1244
 https://github.com/soot-oss/soot/issues/300
 https://github.com/pmd/pmd/issues/4333
 https://github.com/pmd/pmd/issues/5478
 https://github.com/pmd/pmd/issues/4015"
-14,68,0.02178090967,Missing Results,"['report', 'feature request', 'feature', 'request', 'error', 'today', 'way', 'happy way', 'today happy', 'help today']","['report error', 'request report', 'report invalid', 'response report', 'report closure', 'report unreachable', 'unresolvable report', 'undefined report', 'request error', 'report useless']","['report', 'request', 'feature', 'error', 'unreachable', 'way', 'response', 'today', 'happy way', 'happy']","['report', 'feature request', 'feature', 'report error', 'error', 'request report', 'way response', 'response report', 'report unreachable', 'unreachable statement']","https://github.com/phpstan/phpstan/issues/9660
+14,68,0.02178090967,Missing Results,"['report', 'feature request', 'feature', 'request', 'error', 'today', 'way', 'happy way', 'today happy', 'help today']","['report', 'feature request', 'feature', 'report error', 'error', 'request report', 'way response', 'response report', 'report unreachable', 'unreachable statement']","https://github.com/phpstan/phpstan/issues/9660
 https://github.com/phpstan/phpstan/issues/11320
 https://github.com/phpstan/phpstan/issues/4710
 https://github.com/phpstan/phpstan/issues/10900
 https://github.com/spotbugs/spotbugs/issues/873"
-15,56,0.01793721973,Rule Definitions,"['rule', 'description', 'affects version', 'affects', 'version rule', 'sample', 'version', 'rule description', 'run', 'code sample']","['version rule', 'ignore statement', 'option ignore', 'flag statement', 'configure flag', 'version description', 'affects version', 'description rule', 'rule description', 'statement affects']","['affects', 'rule', 'description', 'sample', 'statement', 'version', 'run', 'code', 'gradle', 'simplify']","['affects version', 'version rule', 'rule description', 'version', 'code sample', 'gradle', 'gradle designer', 'cli maven', 'maven gradle', 'description rule']","https://github.com/pmd/pmd/issues/2187
+15,56,0.01793721973,Rule Definitions,"['rule', 'description', 'affects version', 'affects', 'version rule', 'sample', 'version', 'rule description', 'run', 'code sample']","['affects version', 'version rule', 'rule description', 'version', 'code sample', 'gradle', 'gradle designer', 'cli maven', 'maven gradle', 'description rule']","https://github.com/pmd/pmd/issues/2187
 https://github.com/pmd/pmd/issues/1608
 https://github.com/facebook/infer/issues/568
 https://github.com/pmd/pmd/issues/2223
 https://github.com/pmd/pmd/issues/1362"
-16,52,0.01665598975,Cleanup Deprecations,"['deprecate', 'remove', 'migrate', 'cleanup', 'remove deprecate', 'deprecated', 'core', 'replace', 'task', 'release']","['remove deprecate', 'deprecate api', 'core deprecate', 'cleanup deprecated', 'deprecate system', 'officially deprecate', 'deprecate', 'deprecation notice', 'deprecate attribute', 'usage deprecate']","['deprecate', 'remove', 'cleanup', 'core', 'release', 'core deprecate', 'task', 'api', 'replace', 'issue']","['deprecate', 'remove deprecate', 'deprecated', 'core remove', 'core deprecate', 'deprecate system', 'cleanup deprecated', 'mark deprecated', 'deprecate api', 'deprecation notice']","https://github.com/pmd/pmd/issues/4301
+16,52,0.01665598975,Cleanup Deprecations,"['deprecate', 'remove', 'migrate', 'cleanup', 'remove deprecate', 'deprecated', 'core', 'replace', 'task', 'release']","['deprecate', 'remove deprecate', 'deprecated', 'core remove', 'core deprecate', 'deprecate system', 'cleanup deprecated', 'mark deprecated', 'deprecate api', 'deprecation notice']","https://github.com/pmd/pmd/issues/4301
 https://github.com/diffblue/cbmc/issues/2070
 https://github.com/pmd/pmd/issues/4767
 https://github.com/soot-oss/soot/issues/250
 https://github.com/pmd/pmd/issues/5703"
-17,78,0.02498398463,Generic Types,"['template', 'generic', 'param', 'promise', 'value', 'callable', 'literal', 'feature', 'feature request', 'request']","['template generic', 'generic template', 'bound template', 'support generic', 'generics', 'template param', 'generic feature', 'define generic', 'template feature', 'param collection']","['template', 'promise', 'generic', 'param', 'collection', 'covariant', 'feature', 'ref', 'generic template', 'request']","['template', 'param', 'promise promise', 'covariant', 'feature request', 'generic template', 'generic feature', 'generics', 'template feature', 'request template']","https://github.com/phpstan/phpstan/issues/6240
+17,78,0.02498398463,Generic Types,"['template', 'generic', 'param', 'promise', 'value', 'callable', 'literal', 'feature', 'feature request', 'request']","['template', 'param', 'promise promise', 'covariant', 'feature request', 'generic template', 'generic feature', 'generics', 'template feature', 'request template']","https://github.com/phpstan/phpstan/issues/6240
 https://github.com/phpstan/phpstan/issues/4049
 https://github.com/wala/WALA/issues/36
 https://github.com/phpstan/phpstan/issues/4856
 https://github.com/phpstan/phpstan/issues/12646"
 18,122,0.03907751441,"Speed
 Memory
-Usability Issues","['analysis', 'solver', 'project', 'code', 'result', 'slice', 'deliverable', 'provide', 'level', 'implement']","['application', 'framework', 'criteria follow', 'implement', 'criteria', 'scope acceptance', 'issue scope', 'runtime', 'program', 'analysis']","['analysis', 'solver', 'deliverable', 'slice', 'structure', 'project', 'result', 'communication', 'summary', 'integer']","['analysis', 'solver', 'slice', 'project', 'bitvec', 'coverage', 'application', 'smt2lib', 'iteration', 'step']","https://github.com/secure-software-engineering/phasar/issues/540
+Usability Issues","['analysis', 'solver', 'project', 'code', 'result', 'slice', 'deliverable', 'provide', 'level', 'implement']","['analysis', 'solver', 'slice', 'project', 'bitvec', 'coverage', 'application', 'smt2lib', 'iteration', 'step']","https://github.com/secure-software-engineering/phasar/issues/540
 https://github.com/pmd/pmd/issues/319
 https://github.com/secure-software-engineering/phasar/issues/668
 https://github.com/pmd/pmd/issues/2507
 https://github.com/soot-oss/soot/issues/55"
-19,40,0.01281229981,Annotation,"['annotation', 'filter', 'support', 'annotate', 'annotation support', 'element', 'guava', 'support annotation', 'javax', 'symbol']","['annotation support', 'annotation filter', 'filter annotation', 'specific annotation', 'example annotation', 'support annotation', 'annotation like', 'annotations', 'annotation information', 'check annotation']","['annotation', 'filter', 'support', 'annotate', 'element', 'guava', 'inject', 'racerd', 'value', 'symbol']","['annotation', 'annotation support', 'annotate', 'support annotation', 'annotation like', 'annotation filter', 'filter annotation', 'support filter', 'annotation value', 'fxml']","https://github.com/spotbugs/spotbugs/issues/464
+19,40,0.01281229981,Annotation,"['annotation', 'filter', 'support', 'annotate', 'annotation support', 'element', 'guava', 'support annotation', 'javax', 'symbol']","['annotation', 'annotation support', 'annotate', 'support annotation', 'annotation like', 'annotation filter', 'filter annotation', 'support filter', 'annotation value', 'fxml']","https://github.com/spotbugs/spotbugs/issues/464
 https://github.com/spotbugs/spotbugs/issues/523
 https://github.com/spotbugs/spotbugs/issues/1691
 https://github.com/pmd/pmd/issues/3752
 https://github.com/spotbugs/spotbugs/issues/947"
-20,80,0.02562459962,Exception Handling,"['exception', 'feature request', 'request', 'feature', 'regex', 'check', 'error', 'detect', 'like', 'describe']","['exception feature', 'exception support', 'exception factory', 'detect exception', 'handle exception', 'exception report', 'exception handling', 'exception chain', 'have exception', 'exception allow']","['exception', 'check', 'unchecked', 'unchecked exception', 'handle', 'possible', 'chain', 'request', 'feature', 'child']","['check exception', 'unchecked exception', 'exception feature', 'exception allow', 'exception handling', 'exception check', 'child exception', 'parent exception', 'detect exception', 'catchclasse']","https://github.com/spotbugs/spotbugs/issues/2547
+20,80,0.02562459962,Exception Handling,"['exception', 'feature request', 'request', 'feature', 'regex', 'check', 'error', 'detect', 'like', 'describe']","['check exception', 'unchecked exception', 'exception feature', 'exception allow', 'exception handling', 'exception check', 'child exception', 'parent exception', 'detect exception', 'catchclasse']","https://github.com/spotbugs/spotbugs/issues/2547
 https://github.com/phpstan/phpstan/issues/8021
 https://github.com/phpstan/phpstan/issues/9921
 https://github.com/phpstan/phpstan/issues/4316
 https://github.com/phpstan/phpstan/issues/8163"
-21,35,0.01121076233,Test Suites,"['test', 'rule', 'junit', 'exclude', 'junit5', 'assertion', 'code', 'description', 'expect', 'junit4']","['junit test', 'test rule', 'rule test', 'asserttrue', 'assertequals', 'junit5', 'test exceptionteste', 'junit4', 'junit', 'test testbad']","['test', 'rule', 'junit', 'junit5', 'assertion', 'exception', 'exclude', 'sample', 'code', 'issue']","['test', 'junit', 'junit5', 'assertion', 'exception', 'junit4', 'test code', 'rule test', 'assertequals', 'junit test']","https://github.com/pmd/pmd/issues/1435
+21,35,0.01121076233,Test Suites,"['test', 'rule', 'junit', 'exclude', 'junit5', 'assertion', 'code', 'description', 'expect', 'junit4']","['test', 'junit', 'junit5', 'assertion', 'exception', 'junit4', 'test code', 'rule test', 'assertequals', 'junit test']","https://github.com/pmd/pmd/issues/1435
 https://github.com/spotbugs/spotbugs/issues/390
 https://github.com/pmd/pmd/issues/638
 https://github.com/diffblue/cbmc/issues/1091
 https://github.com/pmd/pmd/issues/2944"
-22,90,0.02882767457,Build System,"['maven', 'gradle', 'plugin', 'build', 'release', 'project', 'core', 'designer', 'eclipse', 'dependency']","['maven build', 'gradle build', 'maven project', 'gradlew build', 'compilation gradlew', 'documentation maven', 'configure gradle', 'remove maven', 'gradle configuration', 'task gradle']","['gradle', 'maven', 'task', 'build', 'plugin', 'project', 'eclipse', 'linter', 'check', 'compilation']","['gradle', 'maven', 'gradlew', 'gradle plugin', 'maven build', 'maven project', 'gradle build', 'gradlew check', 'maven plugin', 'msridhar']","https://github.com/spotbugs/spotbugs/issues/82
+22,90,0.02882767457,Build System,"['maven', 'gradle', 'plugin', 'build', 'release', 'project', 'core', 'designer', 'eclipse', 'dependency']","['gradle', 'maven', 'gradlew', 'gradle plugin', 'maven build', 'maven project', 'gradle build', 'gradlew check', 'maven plugin', 'msridhar']","https://github.com/spotbugs/spotbugs/issues/82
 https://github.com/wala/WALA/issues/466
 https://github.com/soot-oss/SootUp/issues/595
 https://github.com/spotbugs/spotbugs/issues/133
 https://github.com/spotbugs/spotbugs/issues/515"
-23,36,0.01153106983,IR,"['jimple', 'javajimple', 'implement', 'names', 'nest base', 'interfaceinvoke', 'dacapo', 'access control', 'base access', 'trap']","['implement jimple', 'jimple javajimple', 'jimple file', 'directly jimple', 'jimple', 'factory jimple', 'logic jimple', 'migrate jimple', 'like jimple', 'marker jimple']","['jimple', 'javajimple', 'interfaceinvoke', 'stack18', 'stack16', 'name', 'factory', 'trap', 'sink', 'operands']","['jimple', 'interfaceinvoke', 'declare sink', 'jimple javajimple', 'interfaceinvoke names', 'jimpleprinter', 'stack17 interfaceinvoke', 'jimple file', 'implement jimple', 'stack18 dynamicinvoke']","https://github.com/soot-oss/SootUp/issues/1119
+23,36,0.01153106983,IR,"['jimple', 'javajimple', 'implement', 'names', 'nest base', 'interfaceinvoke', 'dacapo', 'access control', 'base access', 'trap']","['jimple', 'interfaceinvoke', 'declare sink', 'jimple javajimple', 'interfaceinvoke names', 'jimpleprinter', 'stack17 interfaceinvoke', 'jimple file', 'implement jimple', 'stack18 dynamicinvoke']","https://github.com/soot-oss/SootUp/issues/1119
 https://github.com/soot-oss/SootUp/issues/692
 https://github.com/soot-oss/SootUp/issues/756
 https://github.com/soot-oss/SootUp/issues/412
 https://github.com/soot-oss/SootUp/issues/18"
-24,137,0.04388212684,Language Version Support,"['version', 'update', 'release', 'action', 'build', 'checkout', 'action checkout', 'support', 'docker', 'checkout action']","['version release', 'release support', 'release update', 'late release', 'release number', 'improve release', 'support version', 'release date', 'beta version', 'file version']","['release', 'version', 'beta', 'update', 'stable', 'late', 'stable version', 'support', 'repo', 'date']","['beta', 'version release', 'release support', 'stable version', 'release update', 'baksmali version', 'beta version', 'update beta', 'release date', 'release number']","https://github.com/pmd/pmd/issues/4642
+24,137,0.04388212684,Language Version Support,"['version', 'update', 'release', 'action', 'build', 'checkout', 'action checkout', 'support', 'docker', 'checkout action']","['beta', 'version release', 'release support', 'stable version', 'release update', 'baksmali version', 'beta version', 'update beta', 'release date', 'release number']","https://github.com/pmd/pmd/issues/4642
 https://github.com/pmd/pmd/issues/2505
 https://github.com/spotbugs/spotbugs/issues/373
 https://github.com/spotbugs/spotbugs/issues/3391
 https://github.com/facebook/infer/issues/809"
-25,34,0.01089045484,Output Format,"['json', 'sarif', 'output', 'format', 'json output', 'ui', 'report', 'json ui', 'json format', 'sarif report']","['support json', 'json ui', 'json file', 'json output', 'json parser', 'output json', 'json format', 'custom json', 'instead json', 'json']","['json', 'output', 'json output', 'format', 'assertion', 'ui', 'json format', 'information', 'xml', 'property']","['json', 'output', 'json output', 'format', 'json ui', 'json format', 'json xml', 'json parser', 'json file', 'json_encode']","https://github.com/security-code-scan/security-code-scan/issues/14
+25,34,0.01089045484,Output Format,"['json', 'sarif', 'output', 'format', 'json output', 'ui', 'report', 'json ui', 'json format', 'sarif report']","['json', 'output', 'json output', 'format', 'json ui', 'json format', 'json xml', 'json parser', 'json file', 'json_encode']","https://github.com/security-code-scan/security-code-scan/issues/14
 https://github.com/phpstan/phpstan/issues/3495
 https://github.com/diffblue/cbmc/issues/1770
 https://github.com/phpstan/phpstan/issues/6958
 https://github.com/phpstan/phpstan/issues/158"
-26,36,0.01153106983,IR,"['body', 'interceptor', 'bodyinterceptor', 'trap', 'unit', 'bytecode', 'stmt', 'stmtgraph', 'replacement', 'enclose']","['interceptors', 'interceptor', 'interceptor test', 'bodyinterceptor stubs', 'propagate bodyinterceptors', 'body constructor', 'modification bodybuilder', 'bodyinterceptor', 'bodyinterceptors', 'bodybuilder']","['interceptor', 'body', 'bodyinterceptor', 'trap', 'unit', 'stmtgraph', 'enclose', 'bodyinterceptors', 'bodybuilder', 'graph']","['interceptor', 'body', 'bodyinterceptor', 'trap', 'bodyinterceptors', 'bodybuilder', 'enclosing body', 'interceptor test', 'body constructor', 'interceptors']","https://github.com/soot-oss/SootUp/issues/1010
+26,36,0.01153106983,IR,"['body', 'interceptor', 'bodyinterceptor', 'trap', 'unit', 'bytecode', 'stmt', 'stmtgraph', 'replacement', 'enclose']","['interceptor', 'body', 'bodyinterceptor', 'trap', 'bodyinterceptors', 'bodybuilder', 'enclosing body', 'interceptor test', 'body constructor', 'interceptors']","https://github.com/soot-oss/SootUp/issues/1010
 https://github.com/soot-oss/SootUp/issues/56
 https://github.com/soot-oss/soot/issues/1711
 https://github.com/soot-oss/SootUp/issues/281
 https://github.com/soot-oss/SootUp/issues/306"
-27,229,0.0733504164,Type Inference,"['property', 'check', 'feature', 'request', 'feature request', 'value', 'nullable', 'like', 'code', 'constructor']","['property feature', 'uninitialised property', 'property nullable', 'property allow', 'nullable property', 'property property', 'property initialization', 'property beeing', 'property constructor', 'declare property']","['property', 'nullable', 'constructor', 'non', 'access', 'access property', 'epgprogramme', 'bar', 'username', 'initialization']","['property', 'property feature', 'non nullable', 'access property', 'property constructor', 'property initialization', 'property value', 'nullable property', 'epgprogramme epgprogramme', 'initialization feature']","https://github.com/phpstan/phpstan/issues/7442
+27,229,0.0733504164,Type Inference,"['property', 'check', 'feature', 'request', 'feature request', 'value', 'nullable', 'like', 'code', 'constructor']","['property', 'property feature', 'non nullable', 'access property', 'property constructor', 'property initialization', 'property value', 'nullable property', 'epgprogramme epgprogramme', 'initialization feature']","https://github.com/phpstan/phpstan/issues/7442
 https://github.com/phpstan/phpstan/issues/9062
 https://github.com/phpstan/phpstan/issues/2984
 https://github.com/pmd/pmd/issues/1027
 https://github.com/phpstan/phpstan/issues/9500"
-28,100,0.03203074952,Error Management,"['error', 'report', 'output', 'format', 'feature', 'message', 'request', 'formatter', 'feature request', 'file']","['error formatter', 'errorformat custom', 'error format', 'errorformat', 'errorformat config', 'run errorformat', 'custom error', 'error formatraw', 'ignore error', 'error identifier']","['error', 'formatter', 'message', 'line', 'inspection', 'output', 'errorformat', 'identifier', 'teamcity', 'print']","['error', 'formatter', 'errorformat', 'teamcity', 'print', 'format', 'error message', 'error formatter', 'error format', 'error identifier']","https://github.com/phpstan/phpstan/issues/1686
+28,100,0.03203074952,Error Management,"['error', 'report', 'output', 'format', 'feature', 'message', 'request', 'formatter', 'feature request', 'file']","['error', 'formatter', 'errorformat', 'teamcity', 'print', 'format', 'error message', 'error formatter', 'error format', 'error identifier']","https://github.com/phpstan/phpstan/issues/1686
 https://github.com/phpstan/phpstan/issues/8041
 https://github.com/phpstan/phpstan/issues/553
 https://github.com/diffblue/cbmc/issues/1314
 https://github.com/phpstan/phpstan/issues/2921"
-29,137,0.04388212684,Error Management,"['log', 'error', 'report', 'suppression', 'warning', 'ignore', 'describe', 'suppress', 'rule', 'renderer']","['report suppress', 'suppression code', 'suppress', 'warning generate', 'suppress violation', 'disable suppression', 'suppresswarning nopmd', 'warning core', 'disable certain', 'unnecessary suppressfbwarning']","['suppression', 'warning', 'disable', 'rule', 'certain check', 'suppress', 'check', 'certain', 'option', 'securerandom']","['suppression', 'disable', 'certain check', 'suppress', 'disable certain', 'securerandom', 'warning notice', 'disable suppression', 'nopmd', 'option disable']","https://github.com/pmd/pmd/issues/5174
+29,137,0.04388212684,Error Management,"['log', 'error', 'report', 'suppression', 'warning', 'ignore', 'describe', 'suppress', 'rule', 'renderer']","['suppression', 'disable', 'certain check', 'suppress', 'disable certain', 'securerandom', 'warning notice', 'disable suppression', 'nopmd', 'option disable']","https://github.com/pmd/pmd/issues/5174
 https://github.com/pmd/pmd/issues/1900
 https://github.com/spotbugs/spotbugs/issues/641
 https://github.com/security-code-scan/security-code-scan/issues/35

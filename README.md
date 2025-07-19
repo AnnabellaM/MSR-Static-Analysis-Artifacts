@@ -140,14 +140,11 @@ Contains the code used to collect specific datapoints from the issues mentioned 
 - [investigation.ipynb](./code/analysis/common_properties/investigation.ipynb)
 Contains the code to investigate the specific case or a large amount of files and LoC in PMD and SootUp issues.
 
-- catiss_classification
-While all of the other properties can be easily extracted from the datasets, the category property requires additional processing, as it is not directly provided from metadata. This directory contains the code to classify issues into bugs, questions, and enhancements using CatISS.
+- catiss_classification: While all of the other properties can be easily extracted from the datasets, the category property requires additional processing, as it is not directly provided from metadata. This directory contains the code to classify issues into bugs, questions, and enhancements using CatISS.
 
-    - [catiss_classification.ipynb](./code/analysis/catiss_classification/catiss_classification.ipynb)
-This notebook contains the code to classify issues into bugs, questions, and enhancements using CatISS. It uses the CatISS model to classify the issues based on their title and body. The results are stored in the `issues_properties.csv` file in the zipped data file.
+    - [catiss_classification.ipynb](./code/analysis/catiss_classification/catiss_classification.ipynb) This notebook contains the code to classify issues into bugs, questions, and enhancements using CatISS. It uses the CatISS model to classify the issues based on their title and body. The results are stored in the `issues_properties.csv` file in the zipped data file.
 
-    - [predictions_analysis.ipynb](./code/analysis/catiss_classification/predictions_analysis.ipynb) 
-This notebook contains the code to analyze the accuracy of the CatISS model predictions. It compares the predictions with the existing labels in the dataset and calculates the accuracy of the model.
+    - [predictions_analysis.ipynb](./code/analysis/catiss_classification/predictions_analysis.ipynb) This notebook contains the code to analyze the accuracy of the CatISS model predictions. It compares the predictions with the existing labels in the dataset and calculates the accuracy of the model.
 
 ##### Interest Groups
 Contains the code to generate the interest groups (RQ1).

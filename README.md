@@ -15,7 +15,6 @@ This repository contains the code and data for the paper. We study the GitHub is
   - [Topic Validation](#topic-validation)
   - [In-depth Manual Analysis](#in-depth-manual-analysis)
   - [Appendix: Full List of Cause Categories](#appendix-full-list-of-cause-categories)
-- [Anonymization](#anonymization)
 
 ## Repository Structure
 ```
@@ -35,7 +34,7 @@ data/
 - [prompts.pdf](./code/agents/prompts.pdf) shows the prompts of our two LLM agents.
   - **Summarizer** (Claude Sonnet 5.5) summarizes each issue or pull request from its title, body and comments. It records the item's type, problem, cause and references to other items, and backs every answer with evidence: a verbatim quote and the field it comes from (`TITLE`, `BODY` or `COMMENT_NN`).
   - **Categorizer** derives challenge topics from the summaries and assigns each item to one to three topics, or to `NOT_A_CHALLENGE`. Each topic has a name, a definition, inclusion and exclusion criteria, and up to three example items. In **SEED** mode (Claude Opus 5.5), it processed 300 seed summaries in 12 batches of 25 and created, broadened, merged or sharpened the topics. In **CLASSIFY** mode (Claude Sonnet 5.5), it assigned each remaining item to the frozen topics and proposed a new topic (`NEW`) if none fit.
-- [validate_summary.py](./code/agents/validate_summary.py) is **the validation script** for the summarizer. It checks the schema of a summary and rejects it if any quote is not a substring of the cited field (after whitespace normalization). The agent revises the summary until it passes. All 7,473 summaries passed.
+- [validate_summary.py](./code/agents/validate_summary.py) is **the validation script** for the summarizer. It checks the schema of a summary and rejects it if any quote is not a substring of the cited field (after whitespace normalization). The agent revises the summary until it passes. 
 - [download_issues.py](./code/download_data/download_issues.py) uses PyGithub to download every open and closed issue and pull request of the studied repositories to `data/issues/<tool>_<number>.json`. Each file holds the title, body, state, creation and closing dates, labels, URL and all comments. For a pull request, it also holds every commit with its message and per-file patch, and the PR-level totals of additions, deletions and changed files. It reads the repositories from [repos.csv](./code/download_data/repos.csv). 
 Items that are already downloaded are skipped, so the script can be restarted. To run it, install `PyGithub python-dotenv pandas`, put a GitHub token in `code/download_data/.env` (`GITHUB_TOKEN=...`), and run from `code/download_data/`:
 

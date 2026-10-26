@@ -2,17 +2,3 @@ __pycache__
 .venv
 .env
 .DS_Store
-
-# Catiss
-catiss
-pytorch_model.bin
-model
-output
-
-github-labels-top3-803k-test.csv
-github-labels-top3-803k-train.csv
-
-# Ignore all files in the data directory
-raw_data/
-
-MSR.zip

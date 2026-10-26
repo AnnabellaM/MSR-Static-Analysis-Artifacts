@@ -1,258 +1,112 @@
-from github import Github
-from github import Auth
+from github import Github, Auth
 from dotenv import dotenv_values
-import os
-import json
-from tqdm import tqdm
 import pandas as pd
-import requests
 import json
-import sys
-sys.path.append('../')
 
-from utils.dataloader import get_repos
+config = dotenv_values(".env")
+auth = Auth.Token(config["GITHUB_TOKEN"])
 
-config = dotenv_values("../../.env")
-auth = Auth.Token(config['GITHUB_TOKEN'])
-gh = Github(auth=auth)
+github = Github(auth=auth)
 
-repos = get_repos()
+repos = pd.read_csv("./repos.csv")
 
-output_dir = '../../raw_data'
+for index, row in repos.iterrows():
+    # download issues for each repo
+    tool = row["tool"]
+    repo = row["repo"]
 
-if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
-    os.makedirs(os.path.join(output_dir, 'issues'))
-    os.makedirs(os.path.join(output_dir, 'pull_requests'))
+    print(f"Downloading issues for {tool} - {repo}")
 
-# github issues
-for _, repo_name in repos[repos['Host'] == "Github"].iterrows():
-    tqdm.write(f"Downloading issues for {repo_name['Repository']} (Github)")
+    issues = github.get_repo(repo).get_issues(state="all")
 
-    repository = gh.get_repo(repo_name['Repository'])
-
-    repo_items = repository.get_issues(state='all')
-
-    for repo_item in tqdm(repo_items, desc=repo_name['Repository'], total=repository.get_issues(state='all').totalCount):
-        if repo_item.pull_request:
-            # pull request
-            if os.path.exists(os.path.join(output_dir, 'pull_requests', f"Github_{repo_name['Repository'].split('/')[1]}_{repo_item.id}.json")):
-                tqdm.write(f"Skipping {repo_item.id}")
+    for completed, issue in enumerate(issues, start=1):
+        # check if the issue is already downloaded
+        try:
+            with open(f"./data/issues/{tool}_{issue.number}.json", "r") as f:
+                print(f"Skipping {tool} - {issue.number} - {issue.title}")
                 continue
-            pull_request = repo_item.as_pull_request()
-
-            data = {}
-            data['repo'] = repo_name['Repository']
-            data['host'] = "Github"
-            data['type'] = "pull_request"
-            data['id'] = pull_request.id
-            data['user'] = pull_request.user.login,
-            data['head'] = {
-                'label': pull_request.head.label,
-                'ref': pull_request.head.ref,
-                'sha': pull_request.head.sha,
+        except FileNotFoundError:
+            print(f"Downloading {tool} - {issue.number} - {issue.title}")
+            # ITEMS WE NEED
+            # 1. title
+            # 2. body
+            # 3. id
+            # 4. state
+            # 5. created_at
+            # 6. closed_at
+            # 7. comments
+            # 8. html_url
+            # 9. labels
+            # 10. author
+            # 11. repository
+            # download the issue data
+            issue_type = "pull_request" if issue.pull_request else "issue"
+            issue_data = {
+                "tool": tool,
+                "title": issue.title,
+                "body": issue.body,
+                "id": issue.id,
+                "number": issue.number,
+                "state": issue.state,
+                "created_at": issue.created_at.isoformat() if issue.created_at else None,
+                "closed_at": issue.closed_at.isoformat() if issue.closed_at else None,
+                "comments": [
+                    {
+                        "id": comment.id,
+                        "body": comment.body,
+                        "created_at": comment.created_at.isoformat() if comment.created_at else None,
+                        "updated_at": comment.updated_at.isoformat() if comment.updated_at else None,
+                        "author": comment.user.login if comment.user else None,
+                        "html_url": comment.html_url,
+                    }
+                    for comment in issue.get_comments()
+                ],
+                "html_url": issue.html_url,
+                "labels": [label.name for label in issue.labels],
+                "author": issue.user.login if issue.user else None,
+                "repository": repo,
+                "type": issue_type
             }
-            data['title'] = pull_request.title
-            data['body'] = pull_request.body
-            data['html_url'] = pull_request.html_url
-            data['state'] = pull_request.state
-            data['created_at'] = str(pull_request.created_at)
-            data['closed_at'] = str(pull_request.closed_at)
-            data['merged'] = pull_request.merged
-            data['mergeable'] = pull_request.mergeable
-            data['mergeable_state'] = pull_request.mergeable_state
-            data['merged_at'] = str(pull_request.merged_at)
-            data['merge_commit_sha'] = pull_request.merge_commit_sha
-            data['labels'] = [label.name for label in pull_request.labels]
-            data['timeline'] = [
-                {
-                    'actor': {
-                        'login': event.actor.login,
-                    } if event.actor else None,
-                    'event': event.event,
-                    'commit_id': event.commit_id,
-                    'commit_url': event.commit_url,
-                    'source': {
-                        'type': event.source.type,
-                        'issue': {
-                            'id': event.source.issue.id,
-                            'html_url': event.source.issue.html_url,
-                        },
-                    } if event.source else None,
-                    'body': event.body,
-                    'author_association': event.author_association,
-                    'created_at': str(event.created_at),
-                    'url': event.url,
-                }
-                for event in repo_item.get_timeline()
-            ]
-            data['commits'] = [
-                {
-                    'sha': commit.sha,
-                    'html_url': commit.html_url,
-                }
-                for commit in pull_request.get_commits()
-            ]
-            with open(os.path.join(output_dir, 'pull_requests', f"Github_{repo_name['Repository'].split('/')[1]}_{repo_item.id}.json"), 'w') as f:
-                json.dump(data, f)
-        else:
-            if os.path.exists(os.path.join(output_dir, 'issues', f"Github_{repo_name['Repository'].split('/')[1]}_{repo_item.id}.json")):
-                tqdm.write(f"Skipping {repo_item.id}")
-                continue
-            # issue
-            data = {}
-            data['repo'] = repo_name['Repository']
-            data['id'] = repo_item.id
-            data['host'] = "Github"
-            data['type'] = "issue"
-            data['title'] = repo_item.title
-            data['body'] = repo_item.body
-            data['html_url'] = repo_item.html_url
-            data['created_at'] = str(repo_item.created_at)
-            data['closed_at'] = str(repo_item.closed_at)
-            data['state'] = repo_item.state
-            data['user'] = repo_item.user.login,
-            data['labels'] = [label.name for label in repo_item.labels]
-            data['timeline'] = [
-                {
-                    'actor': {
-                        'login': event.actor.login,
-                    } if event.actor else None,
-                    'event': event.event,
-                    'commit_id': event.commit_id,
-                    'commit_url': event.commit_url,
-                    'source': {
-                        'type': event.source.type,
-                        'issue': {
-                            'id': event.source.issue.id,
-                            'html_url': event.source.issue.html_url,
-                        },
-                    } if event.source else None,
-                    'body': event.body,
-                    'author_association': event.author_association,
-                    'created_at': str(event.created_at),
-                    'url': event.url,
-                }
-                for event in repo_item.get_timeline()
-            ]
-            with open(os.path.join(output_dir, 'issues', f"Github_{repo_name['Repository'].split('/')[1]}_{repo_item.id}.json"), 'w') as f:
-                json.dump(data, f)
 
-# bitbucket issues
-for _, repo in tqdm(repos[repos['Host'] == "Bitbucket"].iterrows(), desc="Bitbucket Repositories", total=len(repos[repos['Host'] == "Bitbucket"])):
-    tqdm.write(f"Downloading issues for {repo['Repository']} (Bitbucket)")
-    url = f"https://api.bitbucket.org/2.0/repositories/{repo['Repository']}/issues"
+            # additional info if a pull request
+            if issue_type == "pull_request":
+                # PULL REQUEST SPECIFIC INFO
+                # 1. merge state
+                # 2. commits
+                # 3. code_changes
+                # 4. files_changed
+                pr = issue.as_pull_request()
+                issue_data["merge_state"] = pr.mergeable_state
+                issue_data["commits"] = []
+                for commit in pr.get_commits():
+                    # For each commit we also need
+                    # 1. list of commit sha
+                    # 2. messages
+                    # 3. list of changed files
+                    # 4. actual code changes (patch file) 
+                    files = []
+                    for file_ in commit.files:
+                        files.append({
+                            "filename": file_.filename,
+                            "patch": file_.patch,
+                            "additions": file_.additions,
+                            "deletions": file_.deletions,
+                            "previous_filename": file_.previous_filename
+                        })
 
-    # download issues
-    while True:
-        issues = requests.get(url).json()
-
-        # process issues
-        for issue in issues['values']:
-            if os.path.exists(os.path.join(output_dir, 'issues', f"Bitbucket_{repo['Repository'].split('/')[1]}_{issue['id']}.json")):
-                tqdm.write(f"Skipping {issue['id']}")
-                continue
-            tqdm.write(issue['id'])
-            data = {}
-            data['repo'] = repo['Repository']
-            data['host'] = "Bitbucket"
-            data['type'] = "issue"
-            data['id'] = issue['id']
-            data['title'] = issue['title']
-            data['body'] = issue['content']['raw']
-            data['html_url'] = issue['links']['html']['href']
-            data['created_at'] = issue['created_on']
-            data['state'] = issue['state']
-            data['user'] = {
-                'uuid': issue['reporter']['uuid'],
-                'account_id': issue['reporter']['account_id'],
-            } if issue['reporter'] else None
-            data['updated_on'] = issue['updated_on']
-            data['comments'] = []
-
-            comments_url = issue['links']['comments']['href']
-            while True:
-                comments = requests.get(comments_url).json()
-                for comment in comments['values']:
-                    data['comments'].append({
-                        'id': comment['id'],
-                        'user': {
-                            'uuid': comment['user']['uuid'],
-                            'account_id': comment['user']['account_id'],
-                        },
-                        'body': comment['content']['raw'],
-                        'created_at': comment['created_on'],
+                    issue_data["commits"].append({
+                        "sha": commit.sha,
+                        "message": commit.commit.message,
+                        "author": commit.commit.author.name if commit.commit.author else None,
+                        "date": commit.commit.author.date.isoformat() if commit.commit.author else None,
+                        "files": files,
+                        "html_url": commit.html_url
                     })
 
-                if 'next' in comments:
-                    comments_url = comments['next']
-                else:
-                    break
+                issue_data["total_additions"] = pr.additions
+                issue_data["total_deletions"] = pr.deletions
+                issue_data["total_files_changed"] = pr.changed_files
 
-            with open(os.path.join(output_dir, 'issues', f"Bitbucket_{repo['Repository'].split('/')[1]}_{issue['id']}.json"), 'w') as f:
-                json.dump(data, f)
-
-        if 'next' in issues:
-            url = issues['next']
-        else:
-            break
-    
-    # download pull requests
-    url = f"https://api.bitbucket.org/2.0/repositories/{repo['Repository']}/pullrequests/?state=ALL"
-    while True:
-        pull_requests = requests.get(url).json()
-
-        for pull_request in pull_requests['values']:
-            if os.path.exists(os.path.join(output_dir, 'pull_requests', f"Bitbucket_{repo['Repository'].split('/')[1]}_{pull_request['id']}.json")):
-                print(f"Skipping {pull_request['id']}")
-                continue
-
-            print(f"Downloading {pull_request['id']}")
-
-            data = {}
-            data['repo'] = repo['Repository']
-            data['host'] = "Bitbucket"
-            data['type'] = "pull_request"
-            data['id'] = pull_request['id']
-            data['title'] = pull_request['title']
-            data['body'] = pull_request['description']
-            data['html_url'] = pull_request['links']['html']['href']
-            data['created_at'] = pull_request['created_on']
-            data['state'] = pull_request['state']
-            data['user'] = {
-                'uuid': pull_request['author']['uuid'],
-                'account_id': pull_request['author']['account_id'],
-            } if pull_request['author'] else None
-            data['updated_on'] = pull_request['updated_on']
-            data['destination'] = {
-                'branch': pull_request['destination']['branch']['name'],
-                'commit': pull_request['destination']['commit']['hash'],
-            }
-            data['comments'] = []
-            comments_url = pull_request['links']['comments']['href']
-            while True:
-                comments = requests.get(comments_url).json()
-                for comment in comments['values']:
-                    data['comments'].append({
-                        'id': comment['id'],
-                        'user': {
-                            'uuid': comment['user']['uuid'],
-                            'account_id': comment['user']['account_id'],
-                        },
-                        'body': comment['content']['raw'],
-                        'created_at': comment['created_on'],
-                    })
-
-                if 'next' in comments:
-                    comments_url = comments['next']
-                else:
-                    break
-
-            with open(os.path.join(output_dir, 'pull_requests', f"Bitbucket_{repo['Repository'].split('/')[1]}_{pull_request['id']}.json"), 'w') as f:
-                json.dump(data, f)
-
-        if 'next' in pull_requests:
-            url = pull_requests['next']
-
-        else:
-            break
+            # save the data to a json file
+            with open(f"./data/issues/{tool}_{issue.number}.json", "w") as f:
+                json.dump(issue_data, f, indent=4)

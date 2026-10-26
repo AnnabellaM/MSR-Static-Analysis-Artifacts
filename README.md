@@ -1,174 +1,62 @@
-# The Artifacts for "Mining Repositories to Understand User and Developer Challenges with Static Analysis Tools"
+# Artifacts for "Mining Repositories to Understand Common Challenges with Static Analysis Frameworks"
+
+This repository contains the code and data for the paper. We study the GitHub issues and pull requests of six static analysis frameworks (Soot, WALA, OPAL, DOOP, PhASAR, and SVF):
+
+1. We summarize all 7,473 items with an LLM agent.
+2. A second LLM agent groups the items into challenge topics.
+3. We manually validate 669 sampled items.
+4. We analyze 229 validated cases in depth to label their symptoms, causes, fixes, and layers.
 
 ## Table of Contents
-- [Purpose](#purpose)
 - [Repository Structure](#repository-structure)
-- [Requirements](#requirements)
-- [Detailed Description](#detailed-description)
-    - [Data](#data)
-        - [data.zip](#datazip)
-        - [RQ2](#rq2)
-        - [RQ3](#rq3)
-    - [Code](#code)
-        - [Download Data](#download-data)
-        - [Analysis](#analysis)    
-            - [Subject Tools](#subject-tools)
-            - [Common Properties](#common-properties)
-            - [Figures](#figures)
-            - [Interest Groups](#interest-groups)
-        - [Topic Modeling](#topic-modeling)
-        - [Utils](#utils)
-
-## Purpose
-This artifact repository contains the code, data, and results for the paper *"Mining Repositories to Understand User and Developer Challenges with Static Analysis Tools"*.
+- [Code](#code)
+- [Data](#data)
+  - [All Items with Summaries and Topics](#all-items-with-summaries-and-topics)
+  - [Topic Validation](#topic-validation)
+  - [In-depth Manual Analysis](#in-depth-manual-analysis)
+  - [Appendix: Full List of Cause Categories](#appendix-full-list-of-cause-categories)
+- [Anonymization](#anonymization)
 
 ## Repository Structure
-- `data/`: Contains the data used in the project.
-    - `data.zip`: Zip file containing all issues used in the project.
-    - `RQ2/`: Contains the full list of original and refined topics.
-        - `RQ2_Topic_List.pdf`: Contains the full list of the refined topics.
-        - `RQ2_Raw_Topic_Bugs.csv`: Contains the original topics for bugs.
-        - `RQ2_Raw_Topic_Questions.csv`: Contains the original topics for questions.
-        - `RQ2_Raw_Topic_Enhancements.csv`: Contains the original topics for enhancements.
-    - `RQ3/`: Contains the results of the manual analysis performed on the 60 issues.
-- `code/`: Contains the code of the project.
-    - `analysis/`: Contains the various analysis performed in the paper.
-        - `subject_tools/`: Contains the code to provide the general statistics of the subject tools.
-        - `common_properties/`: Contains the code to generate the common properties of issues (RQ1).
-            - `catiss_classification/`: Contains the code to classify issues into bugs, questions, and enhancements using CatISS.
-        - `interest_groups/`: Contains the code to generate the interest groups (RQ1).
-        - `figures/`: Contains the code to generate the figures in the paper.
-    - `topic_modeling/`: Contains the code for topic modeling using BERTopic (RQ2).
-    - `download_data/`: Contains scripts to download the data from GitHub and BitBucket.
-    - `utils/`: Contains utility functions and constants used throughout the code.
+```
+code/
+  agents/prompts.pdf                 prompts of the two LLM agents (summarizer and categorizer)
+  agents/validate_summary.py         validation script for the summaries (schema and quoted evidence)
+  download_data/download_issues.py   download issues/PRs from GitHub
+  download_data/repos.csv            the six studied repositories (input of download_issues.py)
+data/
+  full_list_7473.csv                 7,473 items with LLM summaries and topics
+  validation_669.csv                 669 validated samples with final labels
+  manual_analysis_229.csv            229 analyzed cases with final summaries and labels
+  full_list_causes.pdf               appendix: full list of cause categories
+```
 
-## Requirements
-The evaluation of this artifact does not require specific hardware. However, the recommended specifications are as listed:
-- **Python** 3.9.6 (version project was developed on)
-- **Pip** 25.1.1 (version project was developed on)
+## Code
+- [prompts.pdf](./code/agents/prompts.pdf) shows the prompts of our two LLM agents.
+  - **Summarizer** (Claude Sonnet 5.5) summarizes each issue or pull request from its title, body and comments. It records the item's type, problem, cause and references to other items, and backs every answer with evidence: a verbatim quote and the field it comes from (`TITLE`, `BODY` or `COMMENT_NN`).
+  - **Categorizer** derives challenge topics from the summaries and assigns each item to one to three topics, or to `NOT_A_CHALLENGE`. Each topic has a name, a definition, inclusion and exclusion criteria, and up to three example items. In **SEED** mode (Claude Opus 5.5), it processed 300 seed summaries in 12 batches of 25 and created, broadened, merged or sharpened the topics. In **CLASSIFY** mode (Claude Sonnet 5.5), it assigned each remaining item to the frozen topics and proposed a new topic (`NEW`) if none fit.
+- [validate_summary.py](./code/agents/validate_summary.py) is **the validation script** for the summarizer. It checks the schema of a summary and rejects it if any quote is not a substring of the cited field (after whitespace normalization). The agent revises the summary until it passes. All 7,473 summaries passed.
+- [download_issues.py](./code/download_data/download_issues.py) uses PyGithub to download every open and closed issue and pull request of the studied repositories to `data/issues/<tool>_<number>.json`. Each file holds the title, body, state, creation and closing dates, labels, URL and all comments. For a pull request, it also holds every commit with its message and per-file patch, and the PR-level totals of additions, deletions and changed files. It reads the repositories from [repos.csv](./code/download_data/repos.csv). 
+Items that are already downloaded are skipped, so the script can be restarted. To run it, install `PyGithub python-dotenv pandas`, put a GitHub token in `code/download_data/.env` (`GITHUB_TOKEN=...`), and run from `code/download_data/`:
 
-## Detailed Description
-### Data
-#### data.zip
-The full dataset of all issues used in this project are located in the `data/data.zip` file of this repository. Details regarding each of the files inside the zipped data file are provided below:
+## Data
 
-- `issues_metadata.csv`
-This file contains the raw metadata of the issues collected from GitHub or BitBucket. It includes information such as issue ID, title, body, labels, etc..
+### All Items with Summaries and Topics
+[`data/full_list_7473.csv`](./data/full_list_7473.csv) has one row for each of the 7,473 items (2,724 issues and 4,749 pull requests).
+Each evidence column has one `FIELD: quote` per line. The quote is copied verbatim from the cited field of the original item.
 
-- `pull_requests_metadata.csv`
-This file contains the raw metadata of the pull requests collected from GitHub or BitBucket. It includes information such as pull request ID, linked commits, etc.
+### Topic Validation
+[`data/validation_669.csv`](./data/validation_669.csv) holds the 669 sampled items: 619 from the challenge topics and 50 from the `NOT_A_CHALLENGE` pool. 
 
-- `commits_metadata.csv`
-This file contains the raw metadata of the commits collected from GitHub or BitBucket. It includes information such as commit ID, number of files changed, etc.
+### In-depth Manual Analysis
+[`data/manual_analysis_229.csv`](./data/manual_analysis_229.csv) holds the 229 cases we analyzed in depth: 150 core, 55 framework usage, and 24 general software engineering.
 
-- `issues_properties.csv`
-This file contains the properties of the issues which are generated from this [notebook](./code/analysis/common_properties/generate_common_properties.ipynb). All the columns with the prefix `prop:` are considered properties. The columns with the prefix `ig:` are interest group information, having a boolean value indicating whether the corresponding issue is part of the interest group or not.
+The codes are:
+- **Symptoms:** F1 crash/exception, F2 missing results, F3 wrong or imprecise results, F4 inconsistent/nondeterministic results, F5 performance/timeout, F6 invalid output, F7 build/install failure; N1 unsupported feature/limitation, N2 usage question, N3 maintenance/design request.
+- **Causes:** C1–C12 and their subcategories, listed in the [appendix](#appendix-full-list-of-cause-categories).
+- **Fix strategies:** X1 local code fix, X2 extend a model or add support, X3 change an interface or contract, X4 redesign, X5 defensive check or assertion, X6 configuration or workaround answer, X7 explanation or documentation, X8 rejected / won't fix, X9 unresolved, X10 infrastructure or process change.
+- **Layers:** L1 input and front end, L2 program representation, L3 modeling, L4 core analyses, L5 clients and output, L6 configuration and driver, L7 infrastructure.
 
-- `repositories.csv`
-This file contains the repositories used in the paper. It includes the repository name and host (GitHub or BitBucket).
+### Appendix: Full List of Cause Categories
+[`data/full_list_causes.pdf`](./data/full_list_causes.pdf) lists all 12 cause categories and their subcategories. 
 
-#### RQ2
-The topic modeling results for RQ2 are located in the `data/RQ2/` directory. 
-
-- `RQ2_Topic_List.pdf`
-This file contains the full list of the refined topics, including the ID, Group, Topic, # of Issues for each topic and for each group, the categories that each topic comes from, and the Description of each topic group.
-- `RQ2_Raw_Topic_Bugs.csv`
-This file contains the original topics generated by the BERTopic model for bugs. It includes following fields: 
-    - ID: The ID of the topic.
-    - Count: # of Issues in the topic.
-    - Percentage: % of related issues in the dataset.
-    - Refined Topic: The refined topic label.
-    - Representation: The most representative terms for each topic using the class-based TF-IDF algorithm.
-    - Maximal Marginal Relevance: The most diverse set of terms using the Maximal Marginal Relevance algorithm.
-    - Top Documents: The top 5 most relevant issues for each topic.
-- `RQ2_Raw_Topic_Questions.csv`
-This file contains the original topics generated by the BERTopic model for questions, with the same fields as the `RQ2_Raw_Topic_Bugs.csv`.
-- `RQ2_Raw_Topic_Enhancements.csv`
-This file contains the original topics generated by the BERTopic model for enhancements, with the same fields as the `RQ2_Raw_Topic_Bugs.csv`.
-
-#### RQ3
-- `RQ3_Manual_Analysis.csv`
-This file contains the results of the manual analysis performed on the 60 issues. It includes the following fields:
-    - ID: The ID of the issue.
-    - Group: The topic group of the issue (e.g., Language Features).
-    - Topic: The topic of the issue.
-    - Final 5 Examples: The final 5 examples of the issue being analyzed.
-    - Problem: The problem described in the issue.
-    - Root Cause: The root cause of the problem described in the issue.
-    - Response Type: The type of response provided in the issue (e.g., Workaround solution, Existing solution, etc.).
-    - Response: The response provided in the issue.
-
-### Code
-
-#### Download Data
-The data is downloaded from GitHub and BitBucket in the scripts located in the `code/download_data/` directory. The scripts are as follows:
-- [download_issues.py](./code/download_data/download_issues.py): This script downloads issues and pull requests from GitHub and BitBucket, and saves results into json files in a generated `raw_data/issues` and `raw_data/pull_requests` folder. This is a temporary folder that is used to store the raw data before it is processed into the final dataset.
-- [download_commits.py](./code/download_data/download_commits.py): This script downloads commits from GitHub and BitBucket, and saves results into json files in a generated `raw_data/commits` folder. This is a temporary folder that is used to store the raw data before it is processed into the final dataset.
-- [generate_dataset.py](./code/download_data/generate_dataset.py): This script generates the csv datasets from all the folders in the `raw_data` folder generated from `download_issues.py` and `download_commits.py`. It processes this raw json data and generates the `issues_metadata.csv`, `pull_requests_metadata.csv`, and `commits_metadata.csv` files, which can be found at `data/data.zip`.
-
-#### Analysis
-The analysis performed in the paper is located in the `code/analysis/` directory. They answer RQ1 of the paper. The analysis is divided into the following subdirectories:
-
-##### Subject Tools
-Contains the code to provide the general statistics of the subject tools. This answers Section 3 of the paper (Research Questions and Study Objects). It identifies the number of stars, issues, and LoC of the subject tools (using cloc).
-
-- [subject_tools.ipynb](./code/analysis/subject_tools/subject_tools.ipynb)
-This notebook contains the code to provide the general statistics of the subject tools. It collects the number of stars and issues from each repository.
-
-- [loc.ipynb](./code/analysis/subject_tools/loc.ipynb)
-This notebook contains the code to calculate the lines of code (LoC) of the subject tools using the `cloc` tool. It runs `cloc` on each repository and collects the LoC information.
-
-- [set_tool_name.py](./code/analysis/subject_tools/set_tool_name.py)
-This script is used to set the formatted names of the subject tools in the issue data.
-
-##### Common Properties
-- [generate_common_properties.ipynb](./code/analysis/common_properties/generate_common_properties.ipynb)
-Contains the code to generate the common properties of the issues. The properties are listed as follows:
-    - *state*: whether the issue is open or closed
-    - *category*: whether the issue is a bug, question, or enhancement
-    - *resolution time*: the time taken to resolve the issue (if closed)
-    - *number of comments*: the number of comments on the issue
-    - *number of unique users*: the number of unique users who commented on the issue
-    - *number of files changed*: the number of files changed in the issue (from linked pull requests and commits)
-    - *number of lines changed*: the number of lines changed in the issue (from linked pull requests and commits)
-
-Each of these properties is calculated for each issue in the dataset. The results of this analysis are stored in the `issues_properties.csv` file in the zipped data file.
-
-- [collect_specific_datapoints.ipynb](./code/analysis/common_properties/collect_specific_datapoints.ipynb)
-Contains the code used to collect specific datapoints from the issues mentioned throughout the paper. This includes various distributions of the properties of the issues.
-
-- [investigation.ipynb](./code/analysis/common_properties/investigation.ipynb)
-Contains the code to investigate the specific case or a large amount of files and LoC in PMD and SootUp issues.
-
-- catiss_classification: While all of the other properties can be easily extracted from the datasets, the category property requires additional processing, as it is not directly provided from metadata. This directory contains the code to classify issues into bugs, questions, and enhancements using CatISS.
-
-    - [catiss_classification.ipynb](./code/analysis/common_properties/catiss_classification/catiss_classification.ipynb) This notebook contains the code to classify issues into bugs, questions, and enhancements using CatISS. It uses the CatISS model to classify the issues based on their title and body. The results are stored in the `issues_properties.csv` file in the zipped data file.
-
-    - [predictions_analysis.ipynb](./code/analysis/common_properties/catiss_classification/predictions_analysis.ipynb) This notebook contains the code to analyze the accuracy of the CatISS model predictions. It compares the predictions with the existing labels in the dataset and calculates the accuracy of the model.
-
-##### Interest Groups
-Contains the code to generate the interest groups (RQ1).
-
-- [interest_groups.ipynb](./code/analysis/interest_groups/interest_groups.ipynb)
-This notebook contains the code to generate the interest groups from the issues. The interest groups are as follows: quick resolution, slow resolution, easy fix, hard fix, hot topic, and ignored. It defines the interest group conditions, and then applies these conditions to these issues. The results are stored in the `issues_properties.csv` file in the zipped data file.
-
-##### Figures
-The figures in the paper are generated using the code in the `code/analysis/figures/` directory. These figure notebooks are calculated from the results of the analysis. The figures are as follows:
-- *Figure 2*: Distribution of properties of static analysis issues across all tools. ([common_properties_figures.ipynb](./code/analysis/figures/common_properties_figures.ipynb))
-- *Figure 3*: Distribution of interest groups by tool. ([interest_groups_figures.ipynb](./code/analysis/figures/interest_groups_figures.ipynb))
-- *Figure 4*: Distribution of interest groups by topic groups. ([interest_groups_per_group_figures.ipynb](./code/analysis/figures/interest_groups_per_group_figures.ipynb))
-
-#### Topic Modeling
-The topic modeling is performed using BERTopic and is located in the `code/topic_modeling/` directory. This answers RQ2 of the paper. Each of the notebooks in this directory contains code to perform topic modeling on the three categories of issues: bugs, questions, and enhancements independently ([cluster_bugs.ipynb](./code/topic_modeling/cluster_bugs.ipynb), [cluster_questions.ipynb](./code/topic_modeling/cluster_questions.ipynb), [cluster_enhancements.ipynb](./code/topic_modeling/cluster_enhancements.ipynb)). The results of the topic modeling are stored in the `issues_properties.csv` file in the zipped data file.
-
-#### Utils
-The utility functions and constants used throughout the code are located in the `code/utils/` directory. This includes functions to read and write data, process data, and constants used in the code.
-
-- [constants.py](./code/utils/constants.py)
-The constants used in the code are located in the `code/utils/constants.py` file. They include stop words, formatted names, and other constants used in the code.
-
-- [dataloader.py](./code/utils/dataloader.py)
-The dataloader is responsible for loading issue, pull request, commit, and repository data from the CSV files and providing it to the analysis code.
-
-- [diamantopoulos_preprocessor.py](./code/utils/diamantopoulos_preprocessor.py)
-The `diamantopoulos_preprocessor.py` file contains functions to preprocess the issue data using steps by Diamantopoulos et al. This includes text cleaning, tokenization, and other preprocessing steps to prepare the data for analysis.
